@@ -1,6 +1,7 @@
 import "./App.css";
-import { Provider } from "react-redux";
-import { store } from "./store/index.js";
+import PersistedProvider from "./components/PersistedProvider.jsx";
+// import { Provider } from "react-redux";
+// import { store } from "./store/index.js";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Nav from "./components/nav/Nav.jsx";
 import Home from "./pages/home/Home.jsx";
@@ -11,7 +12,7 @@ import Cart from "./pages/cart/Cart.jsx";
 
 function App() {
   return (
-    <Provider store={store}>
+    <PersistedProvider>
       <BrowserRouter>
         <div>
           <Nav />
@@ -27,7 +28,7 @@ function App() {
           </main>
         </div>
       </BrowserRouter>
-    </Provider>
+    </PersistedProvider>
   );
 }
 
