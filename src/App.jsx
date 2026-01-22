@@ -9,26 +9,52 @@ import Products from "./pages/products/Products.jsx";
 import Stores from "./pages/stores/Stores.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Cart from "./pages/cart/Cart.jsx";
+import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
+import { useAgeVerification } from "./hooks/useAgeVerification.js";
 
 function App() {
+  const { isVerified, handleAccept, handleReject } = useAgeVerification();
+
+  // if (!isVerified) {
+  //   return (
+  //     <div
+  //       style={{
+  //         minHeight: "100vh",
+  //         background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+  //         display: "flex",
+  //         alignItems: "center",
+  //         justifyContent: "center",
+  //       }}
+  //     >
+  //       <AgeVerificationModal onAccept={handleAccept} onReject={handleReject} />
+  //     </div>
+  //   );
+  // }
+
   return (
-    <PersistedProvider>
-      <BrowserRouter>
-        <div>
-          <Nav />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/produkty" element={<Products />} />
-              <Route path="/sklepy" element={<Stores />} />
-              <Route path="/kontakt" element={<Contact />} />
-              <Route path="/koszyk" element={<Cart />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-          </main>
-        </div>
-      </BrowserRouter>
-    </PersistedProvider>
+    <>
+      <PersistedProvider>
+        <BrowserRouter>
+          <div>
+            <Nav />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/produkty" element={<Products />} />
+                <Route path="/sklepy" element={<Stores />} />
+                <Route path="/kontakt" element={<Contact />} />
+                <Route path="/koszyk" element={<Cart />} />
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </main>
+          </div>
+        </BrowserRouter>
+      </PersistedProvider>
+
+      {!isVerified && (
+      <AgeVerificationModal onAccept={handleAccept} onReject={handleReject} />
+      )}
+    </>
   );
 }
 
