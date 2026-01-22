@@ -10,6 +10,16 @@ const Cart = () => {
     0,
   );
 
+  const handleIncrement = (id) => {
+    const item = cartItems.find((item) => item.id === id);
+    dispatch(updateQuantity({ id, quantity: item.quantity + 1 }));
+  };
+
+  const handleDecrement = (id) => {
+    const item = cartItems.find((item) => item.id === id);
+    dispatch(updateQuantity({ id, quantity: Math.max(0, item.quantity - 1) }));
+  };
+
   if (cartItems.length === 0) {
     return (
       <div className="cart-empty">
@@ -36,23 +46,15 @@ const Cart = () => {
               />
               <div>
                 <h3>{item.Title}</h3>
-                <p>
-                  {item.Price} zł x
-                  <input
-                    type="number"
-                    min="0"
-                    value={item.quantity}
-                    onChange={(e) =>
-                      dispatch(
-                        updateQuantity({
-                          id: item.id,
-                          quantity: parseInt(e.target.value) || 0,
-                        }),
-                      )
-                    }
-                    style={{ width: "60px" }}
-                  />
-                </p>
+                <div>
+                  <button onClick={() => handleDecrement(item.id)}>-</button>
+                  <span>{item.quantity}</span>
+                  <button onClick={() => handleIncrement(item.id)}>+</button>
+                </div>
+                <div>
+                  {item.Price} zł x {item.quantity} ={" "}
+                  {(item.Price * item.quantity).toFixed(2)} zł
+                </div>
               </div>
               <button onClick={() => dispatch(removeFromCart(item.id))}>
                 Usuń
