@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "../reducers/cartSlice";
+import orderFormReducer from "../reducers/orderFormSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -13,6 +14,7 @@ const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
+    orderForm: orderFormReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

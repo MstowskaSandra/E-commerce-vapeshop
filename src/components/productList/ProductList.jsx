@@ -1,6 +1,6 @@
 import * as S from './ProductList.styles';
 import { useProducts } from '../../hooks/useProducts'
-import ProductCard from '../ProductCard'
+import ProductCard from "../productCard/ProductCard";
 
 const ProductList = () => {
   const { products, loading, error } = useProducts()

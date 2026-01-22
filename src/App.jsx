@@ -11,6 +11,7 @@ import Contact from "./pages/contact/Contact.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
 import { useAgeVerification } from "./hooks/useAgeVerification.js";
+import OrderForm from "./components/orderForm/OrderForm.jsx";
 
 function App() {
   const { isVerified, handleAccept, handleReject } = useAgeVerification();
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/sklepy" element={<Stores />} />
                 <Route path="/kontakt" element={<Contact />} />
                 <Route path="/koszyk" element={<Cart />} />
+                <Route path="/formularz" element={<OrderForm />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </main>
@@ -36,7 +38,7 @@ function App() {
       </PersistedProvider>
 
       {!isVerified && (
-      <AgeVerificationModal onAccept={handleAccept} onReject={handleReject} />
+        <AgeVerificationModal onAccept={handleAccept} onReject={handleReject} />
       )}
     </>
   );
