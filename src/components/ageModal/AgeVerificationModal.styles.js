@@ -95,7 +95,6 @@ export const RejectBtn = styled.button`
   }
 `;
 
-// Mobile-first responsive
 export const responsiveContent = css`
   @media (max-width: 480px) {
     padding: 32px 24px;
