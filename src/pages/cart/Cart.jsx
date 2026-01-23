@@ -26,10 +26,7 @@ const Cart = () => {
   const handleCheckout = () => {
     dispatch(setCartForOrder({ items: cartItems, total: total }));
     navigate("/form");
-    console.log("CART DEBUG:", { items: cartItems.length, total });
   };
-
-  console.log("Cart data:", { items: cartItems, total });
 
   if (cartItems.length === 0) {
     return (
