@@ -12,6 +12,7 @@ import Cart from "./pages/cart/Cart.jsx";
 import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
 import { useAgeVerification } from "./hooks/useAgeVerification.js";
 import OrderForm from "./components/orderForm/OrderForm.jsx";
+import OrderSummary from "./pages/summary/OrderSummary.jsx";
 
 function App() {
   const { isVerified, handleAccept, handleReject } = useAgeVerification();
@@ -29,7 +30,8 @@ function App() {
                 <Route path="/sklepy" element={<Stores />} />
                 <Route path="/kontakt" element={<Contact />} />
                 <Route path="/koszyk" element={<Cart />} />
-                <Route path="/formularz" element={<OrderForm />} />
+                <Route path="/form" element={<OrderForm />} />
+                <Route path="/podsumowanie" element={<OrderSummary />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </main>

@@ -1,9 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../../reducers/cartSlice";
+import { useNavigate } from "react-router-dom";
+import { setCartForOrder } from "../../reducers/orderSlice";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const cartItems = useSelector((state) => state.cart.items);
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.Price * item.quantity,
@@ -19,6 +22,14 @@ const Cart = () => {
     const item = cartItems.find((item) => item.id === id);
     dispatch(updateQuantity({ id, quantity: Math.max(0, item.quantity - 1) }));
   };
+
+  const handleCheckout = () => {
+    dispatch(setCartForOrder({ items: cartItems, total: total }));
+    navigate("/form");
+    console.log("CART DEBUG:", { items: cartItems.length, total });
+  };
+
+  console.log("Cart data:", { items: cartItems, total });
 
   if (cartItems.length === 0) {
     return (
@@ -65,7 +76,9 @@ const Cart = () => {
       </ul>
       <div className="cart-total">
         <h2>Suma: {total.toFixed(2)} zł</h2>
-        <button className="checkout-btn">Przejdź do zamówienia</button>
+        <button className="checkout-btn" onClick={handleCheckout}>
+          Przejdź do zamówienia
+        </button>
       </div>
     </div>
   );
