@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { validateField } from "../utils/validation";
 
 const initialState = {
   step: "form",
@@ -14,6 +15,8 @@ const initialState = {
   },
   cartItems: [],
   totalAmount: 0,
+  errors: {},
+  isValid: false,
 };
 
 const orderSlice = createSlice({
@@ -28,8 +31,23 @@ const orderSlice = createSlice({
       state.totalAmount = action.payload.total;
       state.step = "form";
     },
-    updateFormField: (state, action) => {
-      state.formData[action.payload.field] = action.payload.value;
+    updateFormField: (state, { payload: { field, value } }) => {
+      state.formData[field] = value;
+
+      const fieldErrors = validateField(field, value);
+      state.errors[field] = Object.values(fieldErrors)[0] || "";
+
+      const allErrors = Object.values(state.errors).filter(Boolean);
+      state.isValid = allErrors.length === 0;
+    },
+    setErrors: (state, action) => {
+      state.errors = action.payload;
+      const allErrors = Object.values(action.payload).filter(Boolean);
+      state.isValid = allErrors.length === 0;
+    },
+    clearErrors: (state) => {
+      state.errors = {};
+      state.isValid = true;
     },
     goToSummary: (state) => {
       state.step = "summary";
@@ -41,12 +59,14 @@ const orderSlice = createSlice({
   },
 });
 
-export const { 
+export const {
   setCartForOrder,
   updateFormField,
   goToSummary,
+  setErrors,
+  clearErrors,
   sendOrder,
-  resetForm 
+  resetForm,
 } = orderSlice.actions;
 
 export default orderSlice.reducer;
