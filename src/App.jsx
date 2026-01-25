@@ -1,29 +1,32 @@
-import "./App.css";
+import * as S from "./styles/App.styles.js";
+import GlobalStyles from "./styles/GlobalStyles.js";
 import PersistedProvider from "./components/PersistedProvider.jsx";
-// import { Provider } from "react-redux";
-// import { store } from "./store/index.js";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import Nav from "./components/nav/Nav.jsx";
+import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
+import OrderForm from "./components/orderForm/OrderForm.jsx";
+
 import Home from "./pages/home/Home.jsx";
 import Products from "./pages/products/Products.jsx";
 import Stores from "./pages/stores/Stores.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Cart from "./pages/cart/Cart.jsx";
-import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
-import { useAgeVerification } from "./hooks/useAgeVerification.js";
-import OrderForm from "./components/orderForm/OrderForm.jsx";
 import OrderSummary from "./pages/summary/OrderSummary.jsx";
+
+import { useAgeVerification } from "./hooks/useAgeVerification.js";
 
 function App() {
   const { isVerified, handleAccept, handleReject } = useAgeVerification();
 
   return (
     <>
+      <GlobalStyles />
       <PersistedProvider>
         <BrowserRouter>
-          <div>
+          <S.Body>
             <Nav />
-            <main>
+            <S.Main>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/produkty" element={<Products />} />
@@ -34,8 +37,8 @@ function App() {
                 <Route path="/podsumowanie" element={<OrderSummary />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
-            </main>
-          </div>
+            </S.Main>
+          </S.Body>
         </BrowserRouter>
       </PersistedProvider>
 
