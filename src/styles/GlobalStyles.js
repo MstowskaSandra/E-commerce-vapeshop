@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import BackgroundJPG from "../assets/background.jpg";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -17,8 +18,12 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.5;
-    color: #111827;
-    background-color: #f9fafb;
+    color: white;
+    background-image: url(${BackgroundJPG});
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   #root {
@@ -44,7 +49,7 @@ const GlobalStyles = createGlobalStyle`
 
   a:hover {
     text-decoration: none;
-    
+
   }
 
   img {

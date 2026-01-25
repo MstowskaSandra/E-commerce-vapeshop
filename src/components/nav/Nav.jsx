@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import * as S from "./Nav.styles";
+import Logo from "../../assets/logo-gosmoke.png";
 
 const Nav = () => {
   const navItems = [
@@ -12,13 +13,10 @@ const Nav = () => {
 
   return (
     <S.NavContainer>
-      <div>
-        <Link to="/">
-          <span>Vapeshop</span>
-          <span>GoSmoke</span>
-        </Link>
-        <img></img>
-      </div>
+      <S.LogoWrapper to="/">
+        <img src={Logo} alt="GoSmoke Logo" />
+        <span>GoSmoke</span>
+      </S.LogoWrapper>
 
       <S.Menu>
         {navItems.map((item) => (
