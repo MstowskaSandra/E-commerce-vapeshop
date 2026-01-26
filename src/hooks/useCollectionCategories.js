@@ -3,64 +3,58 @@ import { useState, useEffect } from "react";
 export const useCollectionCategories = (collectionName) => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!collectionName) return;
+    if (!collectionName) {
+      return;
+    }
 
-    const fetchCategories = async () => {
-      try {
-        const url = `${import.meta.env.VITE_STRAPI_URL}/api/${collectionName}?populate=*`;
-        const res = await fetch(url);
+    const controller = new AbortController();
 
+    fetch(
+      `${import.meta.env.VITE_STRAPI_URL}/api/${collectionName}?populate=*`,
+      {
+        signal: controller.signal,
+      },
+    )
+      .then(async (res) => {
         if (!res.ok) {
-          return;
+          await res.text();
+          throw new Error(`HTTP ${res.status}`);
         }
-
-        const { data } = await res.json();
-        if (!Array.isArray(data) || data.length === 0) {
-          return;
-        }
-
-        const possibleCategoryFields = [
-          "categories",
-          "kategoriapods",
-          "categoryPods",
-          "kategorie",
-        ];
-
-        const categoryField = possibleCategoryFields.find((field) => data[0]?.[field]);
-
-        if (!categoryField) {
-          return;
-        }
-
-        const categoryMap = new Map();
+        return res.json();
+      })
+      .then(({ data = [] }) => {
+        const uniqueCategories = new Set();
 
         data.forEach((item) => {
-          const itemCategories = Array.isArray(item[categoryField]) ? item[categoryField] : [];
-
-          itemCategories.forEach((cat) => {
-            const id = cat.id || cat.documentId;
-            const name =
-              cat.Name || cat.name || cat.attributes?.Name || cat.attributes?.name;
-            const slug = cat.slug || cat.attributes?.slug;
-
-            if (id && name && !categoryMap.has(id)) {
-              categoryMap.set(id, { id, name, slug });
+          (item.categories || []).forEach((cat) => {
+            if (cat.id && cat.Name) {
+              uniqueCategories.add(
+                JSON.stringify({
+                  id: cat.id,
+                  name: cat.Name,
+                  slug: cat.slug,
+                }),
+              );
             }
           });
         });
 
-        setCategories(Array.from(categoryMap.values()));
-      } catch (err) {
-        console.error(`❌ Błąd pobierania kategorii: ${err.message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
+        setCategories(Array.from(uniqueCategories).map(JSON.parse));
+        setError(null);
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          setError(err.message);
+          setCategories([]);
+        }
+      })
+      .finally(() => setLoading(false));
 
-    fetchCategories();
+    return () => controller.abort();
   }, [collectionName]);
 
-  return { categories, loading };
+  return { categories, loading, error };
 };
