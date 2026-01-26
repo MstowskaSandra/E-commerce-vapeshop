@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useCollectionItems = (collectionName = 'products') => { 
+export const useCollectionItems = (collectionName = "products") => {
   const [items, setItems] = useState([]);
   const [filters, setFilters] = useState({
     categorySlug: "",
@@ -14,43 +14,49 @@ export const useCollectionItems = (collectionName = 'products') => {
 
   const queryString = new URLSearchParams({
     populate: "*",
-    ...(filters.categorySlug && { 
-      "filters[categories][slug][$eq]": filters.categorySlug 
+    ...(filters.categorySlug && {
+      "filters[categories][slug][$eq]": filters.categorySlug,
     }),
-    ...(filters.search && { 
-      "filters[Title][$containsi]": filters.search 
+    ...(filters.search && {
+      [`filters[${collectionName === "pods" ? "Model" : "Title"}][$containsi]`]:
+        filters.search,
     }),
     ...(filters.brand && {
-        "filters[Brand][$eq]": filters.brand
+      "filters[Brand][$eq]": filters.brand,
     }),
-    ...(filters.minPrice && { 
-      "filters[Price][$gte]": filters.minPrice 
+    ...(filters.minPrice && {
+      "filters[Price][$gte]": filters.minPrice,
     }),
-    ...(filters.maxPrice && { 
-      "filters[Price][$lte]": filters.maxPrice 
+    ...(filters.maxPrice && {
+      "filters[Price][$lte]": filters.maxPrice,
     }),
   }).toString();
 
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/${collectionName}?${queryString}`, { 
-      signal: controller.signal 
-    })
-      .then(async res => {
-        const text = await res.text();
-        if (!res.ok) throw new Error(`HTTP ${res.status}: ${text.slice(0, 100)}`);
-        return JSON.parse(text);
+    fetch(
+      `${import.meta.env.VITE_STRAPI_URL}/api/${collectionName}?${queryString}`,
+      {
+        signal: controller.signal,
+      },
+    )
+      .then(async (res) => {
+        if (!res.ok) {
+          const text = await res.text();
+          throw new Error(`HTTP ${res.status}: ${text.slice(0, 100)}`);
+        }
+        const json = await res.json();
+        return json;
       })
-      .then(({ data }) => {
-        console.log(`Dane ${collectionName}:`, data); 
+      .then(({ data = [] }) => {
         setItems(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         if (err.name !== "AbortError") {
-          console.error(`BŁĄD ${collectionName}:`, err);
-          setError(err);
+          console.error(`❌ BŁĄD ${collectionName}:`, err);
+          setError(err.message);
           setLoading(false);
         }
       });
