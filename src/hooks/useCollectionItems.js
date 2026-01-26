@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 
-export const useFilteredProducts = () => {
-    const [products, setProducts] = useState([]);
-    const [filters, setFilters] = useState({
-        categorySlug: "",
-        search: "",
-        brand: "",
-        minPrice: "",
-        maxPrice: "",
-    });
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+export const useCollectionItems = (collectionName = 'products') => { 
+  const [items, setItems] = useState([]);
+  const [filters, setFilters] = useState({
+    categorySlug: "",
+    search: "",
+    brand: "",
+    minPrice: "",
+    maxPrice: "",
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-const queryString = new URLSearchParams({
+  const queryString = new URLSearchParams({
     populate: "*",
     ...(filters.categorySlug && { 
       "filters[categories][slug][$eq]": filters.categorySlug 
@@ -34,7 +34,7 @@ const queryString = new URLSearchParams({
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/products?${queryString}`, { 
+    fetch(`${import.meta.env.VITE_STRAPI_URL}/api/${collectionName}?${queryString}`, { 
       signal: controller.signal 
     })
       .then(async res => {
@@ -43,20 +43,20 @@ const queryString = new URLSearchParams({
         return JSON.parse(text);
       })
       .then(({ data }) => {
-        console.log('Dane z API (filtrowane):', data); 
-        setProducts(data);
+        console.log(`Dane ${collectionName}:`, data); 
+        setItems(data);
         setLoading(false);
       })
       .catch(err => {
         if (err.name !== "AbortError") {
-          console.error('BŁĄD FETCH (filtrowane):', err);
+          console.error(`BŁĄD ${collectionName}:`, err);
           setError(err);
           setLoading(false);
         }
       });
 
     return () => controller.abort();
-  }, [queryString]); 
+  }, [queryString, collectionName]);
 
-  return { products, loading, error, filters, setFilters };
+  return { items, loading, error, filters, setFilters };
 };
