@@ -38,10 +38,11 @@ function App() {
                 <Route path="/koszyk" element={<Cart />} />
                 <Route path="/form" element={<OrderForm />} />
                 <Route path="/podsumowanie" element={<OrderSummary />} />
-                <Route path="/products" element={<ProductList />} />
+                <Route path="/liquidy" element={<ProductList />} />
                 <Route path="/pods" element={<PodList />} />
-                <Route path="/products/:slug" element={<ProductDetails />} />
+                <Route path="/liquids/:slug" element={<ProductDetails />} />
                 <Route path="/pods/:slug" element={<ProductDetails />} />
+                <Route path="/:collection/:slug" element={<ProductDetails />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </S.Main>
