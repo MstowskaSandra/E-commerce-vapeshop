@@ -1,34 +1,36 @@
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartSlice";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-  const attrs = product;
-  const image = attrs.Image?.[0] || {};
+  const image = product.Image?.[0] || {};
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(attrs));
+  const handleAddToCart = (e) => {
+    e.prevendDefault();
+    e.stopPropagation();
+    dispatch(addToCart(product));
   };
 
   return (
-    <div className="product-card">
+    <Link to={`/products/${product.slug}`}>
       <div className="product-image">
         <img
           src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
-          alt={attrs.Title}
+          alt={product.Title}
           loading="lazy"
         />
       </div>
       <div className="product-info">
-        <h3>{attrs.Title}</h3>
+        <h3>{product.Title}</h3>
         <div className="product-price">
-          <p>Cena: {attrs.Price}</p>
+          <p>Cena: {product.Price}zł </p>
         </div>
         <button className="add-to-cart-btn" onClick={handleAddToCart}>
           🛒 Do koszyka
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
