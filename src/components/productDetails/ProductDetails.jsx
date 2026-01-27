@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useSingleProduct } from "../hooks/useSingleProduct";
+import { useSingleProduct } from "../../hooks/useSingleProduct";
 
 const ProductDetails = () => {
   const navigate = useNavigate();

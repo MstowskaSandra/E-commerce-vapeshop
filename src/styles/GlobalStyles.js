@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
-    color: #111827;
+    color: white;
   }
 
   p {
@@ -43,7 +43,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: inherit;
+    color: white;
     text-decoration: none;
   }
 
@@ -66,6 +66,7 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     background: none;
     cursor: pointer;
+    color: white;
   }
 `;
 

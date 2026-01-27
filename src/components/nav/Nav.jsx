@@ -1,14 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import * as S from "./Nav.styles";
 import Logo from "../../assets/logo-gosmoke.png";
+import { ShoppingBag } from "lucide-react";
 
 const Nav = () => {
+  const cartItems = useSelector((state) => state.cart.items);
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   const navItems = [
     { to: "/", label: "Home" },
     { to: "/produkty", label: "Produkty" },
     { to: "/sklepy", label: "Nasze sklepy" },
     { to: "/kontakt", label: "Kontakt" },
-    { to: "/koszyk", label: "Koszyk" },
   ];
 
   return (
@@ -24,6 +26,10 @@ const Nav = () => {
             {item.label}
           </S.MenuItems>
         ))}
+        <S.CartItem to="/koszyk">
+          <ShoppingBag size={24} />
+          {totalQuantity > 0 && <S.CartCounter>{totalQuantity}</S.CartCounter>}
+        </S.CartItem>
       </S.Menu>
     </S.NavContainer>
   );

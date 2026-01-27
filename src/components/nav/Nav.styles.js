@@ -63,3 +63,33 @@ export const LogoWrapper = styled(Link)`
     letter-spacing: -0.025em;
   }
 `;
+
+export const CartItem = styled(NavLink)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  color: white;
+  text-decoration: none;
+
+  svg {
+    stroke: white;
+  }
+`;
+
+export const CartCounter = styled.span`
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  background: #fa1db2;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+`;

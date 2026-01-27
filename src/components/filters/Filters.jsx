@@ -1,5 +1,5 @@
-import { useCollectionCategories } from "../hooks/useCollectionCategories";
-import { useCollectionBrands } from "../hooks/useCollectionBrands";
+import { useCollectionCategories } from "../../hooks/useCollectionCategories";
+import { useCollectionBrands } from "../../hooks/useCollectionBrands";
 
 const Filters = ({ filters, onChange, collectionName = "products" }) => {
   const { categories, loading: catLoading } =

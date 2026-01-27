@@ -1,5 +1,5 @@
 import { useCollectionItems } from '../../hooks/useCollectionItems';
-import Filters from '../Filters';
+import Filters from "../filters/Filters";
 import PodCard from '../../components/productCard/PodCard'; 
 
 const PodList = () => {

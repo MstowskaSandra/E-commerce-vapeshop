@@ -1,6 +1,6 @@
 import * as S from "./ProductList.styles";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
-import Filters from "../Filters";
+import Filters from "../../components/filters/Filters";
 import ProductCard from "../productCard/ProductCard";
 
 const ProductList = () => {

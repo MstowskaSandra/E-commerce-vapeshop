@@ -8,7 +8,7 @@ import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx
 import OrderForm from "./components/orderForm/OrderForm.jsx";
 import PodList from "./components/productList/PodList.jsx";
 import ProductList from "./components/productList/ProductList.jsx";
-import ProductDetails from "./components/ProductDetails.jsx";
+import ProductDetails from "./components/productDetails/ProductDetails.jsx";
 
 import Home from "./pages/home/Home.jsx";
 import Products from "./pages/products/Products.jsx";
