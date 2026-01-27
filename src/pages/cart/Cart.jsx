@@ -44,16 +44,19 @@ const Cart = () => {
       <h1>Koszyk ({cartItems.length} produkty)</h1>
       <ul className="cart-items">
         {cartItems.map((item) => {
+          console.log("Koszyk items:", cartItems);
+          console.log("Item data:", item);
           const image = item.Image?.[0] || {};
+          const title = item.Model ? item.Model : item.Title || item.Brand;
           return (
             <li key={item.id} className="cart-item">
               <img
                 src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
-                alt={item.Title}
+                alt="product"
                 width="80"
               />
               <div>
-                <h3>{item.Title}</h3>
+                <h3>{title}</h3>
                 <div>
                   <button onClick={() => handleDecrement(item.id)}>-</button>
                   <span>{item.quantity}</span>

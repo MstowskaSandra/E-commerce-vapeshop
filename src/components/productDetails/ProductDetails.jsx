@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useSingleProduct } from "../../hooks/useSingleProduct";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../reducers/cartSlice";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const fullPath = window.location.pathname;
   const pathParts = fullPath.split("/").filter(Boolean);
@@ -37,7 +40,24 @@ const ProductDetails = () => {
     ? `${import.meta.env.VITE_STRAPI_URL}${attrs.Image[0].url}`
     : "/placeholder.jpg";
 
-  const title = `${attrs.Brand || ""} ${attrs.Title || attrs.Model}`;
+  const title =
+    attrs.Title || attrs.Model || attrs.Brand || attrs.Name || "Produkt";
+
+  const handleAddToCart = () => {
+    console.log("ProductDetails attrs:", attrs);
+    const productForCart = {
+      id: `${slug}`,
+      Title: title,
+      Price: attrs.Price,
+      Image: attrs.Image || [],
+      slug: slug,
+      Model: attrs.Model,
+      Brand: attrs.Brand,
+      quantity: 1,
+    };
+    dispatch(addToCart(productForCart));
+  };
+
   const hasLiquids = attrs.Volume || attrs.Strength || attrs.Flavor;
   const hasDevice = attrs.Battery || attrs.Power;
 
@@ -68,6 +88,7 @@ const ProductDetails = () => {
           <strong>Zakres mocy:</strong> {attrs.Power || "-"}
         </div>
       )}
+      <button onClick={handleAddToCart}>Do koszyka</button>
     </div>
   );
 };

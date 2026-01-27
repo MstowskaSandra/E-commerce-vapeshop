@@ -14,11 +14,8 @@ const cartSlice = createSlice({
                 existingItem.quantity += 1;
             } else {
                 state.items.push({
-                    id: productData.id,
-                    Title: productData.Title,
-                    Price: parseFloat(productData.Price),
-                    Image: productData.Image || [],
-                    quantity: 1
+                  ...productData,
+                  quantity: 1,
                 });
             }
         },
