@@ -1,30 +1,45 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSingleProduct } from "../hooks/useSingleProduct";
-import { useCollectionCategories } from "../hooks/useCollectionCategories";
 
 const ProductDetails = () => {
-  const { slug, collection } = useParams();
-  console.log("DEBUG:", { slug, collection });
   const navigate = useNavigate();
 
+  const fullPath = window.location.pathname;
+  const pathParts = fullPath.split("/").filter(Boolean);
+  const slug = pathParts[pathParts.length - 1];
+
+  let collection;
+  if (fullPath.includes("/pods/")) {
+    collection = "pods";
+  } else if (fullPath.includes("/products/")) {
+    collection = "products";
+  } else {
+    collection = "products";
+  }
+
   const { product, loading, error } = useSingleProduct(slug, collection);
-  console.log("DEBUG product:", product, "error:", error);
-  const { categories: allCategories } = useCollectionCategories(collection);
 
   if (loading) return <div>Ładowanie...</div>;
   if (error || !product) {
     return (
       <div>
-        <h2>Produkt nie znaleziony</h2>
+        <h2>
+          Produkt nie znaleziony ({collection}: {slug})
+        </h2>
         <button onClick={() => navigate(-1)}>← Powrót</button>
       </div>
     );
   }
 
-  const imgSrc = `${import.meta.env.VITE_STRAPI_URL}${product.Image?.[0]?.url}`;
-  const title = `${product.Brand} ${product.Title || product.Model}`;
-  const hasLiquids = product.Volume || product.Strength || product.Flavor;
-  const hasDevice = product.Battery || product.Power;
+  const attrs = product.attributes || product;
+
+  const imgSrc = attrs.Image?.[0]?.url
+    ? `${import.meta.env.VITE_STRAPI_URL}${attrs.Image[0].url}`
+    : "/placeholder.jpg";
+
+  const title = `${attrs.Brand || ""} ${attrs.Title || attrs.Model}`;
+  const hasLiquids = attrs.Volume || attrs.Strength || attrs.Flavor;
+  const hasDevice = attrs.Battery || attrs.Power;
 
   return (
     <div className="product-details">
@@ -32,19 +47,16 @@ const ProductDetails = () => {
 
       <img src={imgSrc} alt={title} />
       <h1>{title}</h1>
-      <p className="price">{product.Price} zł</p>
-      {product.Description && <p>{product.Description}</p>}
+      <p className="price">Cena: {attrs.Price || "-"} zł</p>
+      {attrs.Description && <p>{attrs.Description}</p>}
 
       {hasLiquids && (
         <div>
-          <strong>Pojemność:</strong> {product.Volume}
-          <br />
-          <strong>Nikotyna:</strong> {product.Strength}
-          <br />
-          {product.Flavor !== "no flavor" && (
+          <strong>Pojemność:</strong> {attrs.Volume || "-"}
+          <strong>Nikotyna:</strong> {attrs.Strength || "-"}
+          {attrs.Flavor && attrs.Flavor !== "no flavor" && (
             <>
-              <strong>Smak:</strong> {product.Flavor}
-              <br />
+              <strong>Smak:</strong> {attrs.Flavor}
             </>
           )}
         </div>
@@ -52,19 +64,8 @@ const ProductDetails = () => {
 
       {hasDevice && (
         <div>
-          <strong>Bateria:</strong> {product.Battery}
-          <br />
-          <strong>Moc:</strong> {product.Power}
-        </div>
-      )}
-
-      {(product.categories?.length || allCategories?.length) > 0 && (
-        <div>
-          Kategorie:{" "}
-          {[...(product.categories || []), ...(allCategories || [])]
-            .slice(0, 4)
-            .map((cat) => cat.Name || cat.name)
-            .join(", ")}
+          <strong>Pojemnośc baterii:</strong> {attrs.Battery || "-"}
+          <strong>Zakres mocy:</strong> {attrs.Power || "-"}
         </div>
       )}
     </div>

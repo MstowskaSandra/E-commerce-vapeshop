@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
   const image = product.Image?.[0] || {};
 
   const handleAddToCart = (e) => {
-    e.prevendDefault();
+    e.preventDefault();
     e.stopPropagation();
     dispatch(addToCart(product));
   };
