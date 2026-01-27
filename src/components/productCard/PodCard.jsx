@@ -22,14 +22,7 @@ const PodCard = ({ pod }) => {
       className="pod-card"
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <img
-        src={imageUrl}
-        alt={pod.Model || "POD"}
-        loading="lazy"
-        onError={(e) => {
-          e.target.src = "/placeholder.jpg";
-        }}
-      />
+      <img src={imageUrl} alt={pod.Model || "POD"} loading="lazy" />
       <div className="pod-info">
         <h3>
           {pod.Brand} {pod.Model}

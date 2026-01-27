@@ -1,3 +1,4 @@
+import * as S from "./ProductDetails.styles.js";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../reducers/cartSlice";
@@ -42,42 +43,48 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="product-details">
+    <S.ProductDetails>
       <button onClick={() => navigate(-1)}>← Powrót</button>
-      <img src={imgSrc} alt={title} />
-      <h1>{title}</h1>
-      <p className="price">Cena: {attrs.Price || "-"} zł</p>
-      {attrs.Description && <p>{attrs.Description}</p>}
+      <S.ProductGrid>
+        <S.ProductImage>
+          <img src={imgSrc} alt={title} />
+        </S.ProductImage>
+        <S.ProductInfo>
+          <h1>{title}</h1>
+          <p className="price">Cena: {attrs.Price || "-"} zł</p>
+          {attrs.Description && <p>{attrs.Description}</p>}
 
-      {hasLiquids && (
-        <div className="specs">
-          <div>
-            <strong>Pojemność:</strong> {attrs.Volume || "-"}
-          </div>
-          <div>
-            <strong>Nikotyna:</strong> {attrs.Strength || "-"}
-          </div>
-          {attrs.Flavor && attrs.Flavor !== "no flavor" && (
-            <div>
-              <strong>Smak:</strong> {attrs.Flavor}
+          {hasLiquids && (
+            <div className="specs">
+              <div>
+                <strong>Pojemność:</strong> {attrs.Volume || "-"}
+              </div>
+              <div>
+                <strong>Nikotyna:</strong> {attrs.Strength || "-"}
+              </div>
+              {attrs.Flavor && attrs.Flavor !== "no flavor" && (
+                <div>
+                  <strong>Smak:</strong> {attrs.Flavor}
+                </div>
+              )}
             </div>
           )}
-        </div>
-      )}
 
-      {hasDevice && (
-        <div className="specs">
-          <div>
-            <strong>Pojemność baterii:</strong> {attrs.Battery || "-"}
-          </div>
-          <div>
-            <strong>Zakres mocy:</strong> {attrs.Power || "-"}
-          </div>
-        </div>
-      )}
+          {hasDevice && (
+            <div className="specs">
+              <div>
+                <strong>Pojemność baterii:</strong> {attrs.Battery || "-"}
+              </div>
+              <div>
+                <strong>Zakres mocy:</strong> {attrs.Power || "-"}
+              </div>
+            </div>
+          )}
 
-      <button onClick={handleAddToCart}>Do koszyka</button>
-    </div>
+          <button onClick={handleAddToCart}>Do koszyka</button>
+        </S.ProductInfo>
+      </S.ProductGrid>
+    </S.ProductDetails>
   );
 };
 
