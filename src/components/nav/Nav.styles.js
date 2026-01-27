@@ -18,13 +18,14 @@ export const Menu = styled.div`
   max-width: 60%;
   list-style: none;
   text-decoration: none;
+  outline: none;
 `;
 
 export const MenuItems = styled(NavLink)`
   display: block;
   padding: 0.5rem;
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+  color: white !important;
   border-bottom: 3px solid transparent;
   transition: border-bottom 0.3s ease-out;
 
@@ -36,6 +37,8 @@ export const MenuItems = styled(NavLink)`
 
   &:hover {
     border-bottom-color: #fa1db2aa;
+    text-decoration: none;
+    outline: none;
   }
 `;
 
