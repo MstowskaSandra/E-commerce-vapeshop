@@ -1,3 +1,4 @@
+import * as S from "./OrderForm.styles";
 import { useSelector, useDispatch } from "react-redux";
 import {
   goToSummary,
@@ -35,73 +36,77 @@ const OrderForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={formData.name}
-        onChange={(e) => handleChange("name", e.target.value)}
-        placeholder="Imię"
-      />
-      {errors.name && <span className="error">{errors.name}</span>}
-
-      <input
-        type="text"
-        value={formData.lastname}
-        onChange={(e) => handleChange("lastname", e.target.value)}
-        placeholder="Nazwisko"
-      />
-      {errors.lastname && <span className="error">{errors.lastname}</span>}
-
-      <input
-        type="email"
-        value={formData.email}
-        onChange={(e) => handleChange("email", e.target.value)}
-        placeholder="Email"
-      />
-      {errors.email && <span className="error">{errors.email}</span>}
-
-      <input
-        type="tel"
-        value={formData.phone}
-        onChange={(e) => handleChange("phone", e.target.value)}
-        placeholder="Telefon"
-      />
-      {errors.phone && <span className="error">{errors.phone}</span>}
-
-      <select
-        value={formData.shop}
-        onChange={(e) => handleChange("shop", e.target.value)}
-      >
-        <option value="">Wybierz sklep:</option>
-        <option value="Olawa">Oława, Pl. Gimnazjalny 9</option>
-        <option value="Strzelin">Strzelin, Rynek 2a</option>
-      </select>
-      {errors.shop && <span>{errors.shop}</span>}
-
-      <label>
-        <input
-          type="checkbox"
-          checked={formData.contact}
-          onChange={(e) => handleChange("contact", e.target.checked)}
+    <S.FormContainer>
+      <S.Form onSubmit={handleSubmit}>
+        <S.Input
+          type="text"
+          value={formData.name}
+          onChange={(e) => handleChange("name", e.target.value)}
+          placeholder="Imię"
         />
-        Wyrażam zgodę na kontakt w sprawie mojego zamówienia.
-        {errors.contact && <span>{errors.contact}</span>}
-      </label>
+        {errors.name && <S.ErrorText>{errors.name}</S.ErrorText>}
 
-      <label>
-        <input
-          type="checkbox"
-          checked={formData.rules}
-          onChange={(e) => handleChange("rules", e.target.checked)}
+        <S.Input
+          type="text"
+          value={formData.lastname}
+          onChange={(e) => handleChange("lastname", e.target.value)}
+          placeholder="Nazwisko"
         />
-        Akceptuję <strong>regulamin</strong>.
-        {errors.rules && <span>{errors.rules}</span>}
-      </label>
+        {errors.lastname && <S.ErrorText>{errors.lastname}</S.ErrorText>}
 
-      <button type="submit" disabled={!isValid}>
-        Przejdź do podsumowania
-      </button>
-    </form>
+        <S.Input
+          type="email"
+          value={formData.email}
+          onChange={(e) => handleChange("email", e.target.value)}
+          placeholder="Email"
+        />
+        {errors.email && <S.ErrorText>{errors.email}</S.ErrorText>}
+
+        <S.Input
+          type="tel"
+          value={formData.phone}
+          onChange={(e) => handleChange("phone", e.target.value)}
+          placeholder="Telefon"
+        />
+        {errors.phone && <S.ErrorText>{errors.phone}</S.ErrorText>}
+
+        <S.Select
+          value={formData.shop}
+          onChange={(e) => handleChange("shop", e.target.value)}
+        >
+          <option value="">Wybierz sklep:</option>
+          <option value="Olawa">Oława, Pl. Gimnazjalny 9</option>
+          <option value="Strzelin">Strzelin, Rynek 2a</option>
+        </S.Select>
+        {errors.shop && <S.ErrorText>{errors.shop}</S.ErrorText>}
+
+        <S.CheckboxContainer>
+          <S.CheckboxLabel>
+            <S.CheckboxInput
+              type="checkbox"
+              checked={formData.contact}
+              onChange={(e) => handleChange("contact", e.target.checked)}
+            />
+            Wyrażam zgodę na kontakt w sprawie mojego zamówienia.
+          </S.CheckboxLabel>
+          {errors.contact && <S.ErrorText>{errors.contact}</S.ErrorText>}
+
+          <S.CheckboxLabel>
+            <S.CheckboxInput
+              type="checkbox"
+              checked={formData.rules}
+              onChange={(e) => handleChange("rules", e.target.checked)}
+            />
+            Akceptuję <strong>regulamin</strong>
+          </S.CheckboxLabel>
+          {errors.rules && <S.ErrorText>{errors.rules}</S.ErrorText>}
+        </S.CheckboxContainer>
+
+        <S.Button type="submit" disabled={!isValid}>
+          Przejdź do podsumowania
+        </S.Button>
+      </S.Form>
+    </S.FormContainer>
   );
 };
 
