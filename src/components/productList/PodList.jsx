@@ -1,29 +1,31 @@
-import { useCollectionItems } from '../../hooks/useCollectionItems';
+import * as S from "./ProductList.styles";
+import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../filters/Filters";
-import PodCard from '../../components/productCard/PodCard'; 
+import PodCard from "../../components/productCard/PodCard";
 
 const PodList = () => {
-  const { items: pods, loading, error, filters, setFilters } = 
-    useCollectionItems('pods'); 
+  const {
+    items: pods,
+    loading,
+    error,
+    filters,
+    setFilters,
+  } = useCollectionItems("pods");
 
-    if (loading) return <div>Ładowanie urządzeń...</div>;
-    if (error) return <div>Błąd: {error.message}</div>;
+  if (loading) return <div>Ładowanie urządzeń...</div>;
+  if (error) return <div>Błąd: {error.message}</div>;
 
-    return (
-      <>
-        <h2>Urządzenia POD</h2>
-        <Filters
-          filters={filters}
-          onChange={setFilters}
-          collectionName="pods"
-        />
-        <div>
-          {pods.map((pod) => (
-            <PodCard key={pod.id} pod={pod} />
-          ))}
-        </div>
-      </>
-    );
+  return (
+    <>
+      <h2>Urządzenia POD</h2>
+      <Filters filters={filters} onChange={setFilters} collectionName="pods" />
+      <S.ProductsGrid>
+        {pods.map((pod) => (
+          <PodCard key={pod.id} pod={pod} />
+        ))}
+      </S.ProductsGrid>
+    </>
+  );
 };
 
 export default PodList;

@@ -1,3 +1,4 @@
+import * as S from "./ProductCard.styles";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartSlice";
 import { Link } from "react-router-dom";
@@ -14,22 +15,20 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={`/products/${product.slug}`}>
-      <div className="product-image">
-        <img
-          src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
-          alt={product.Title}
-          loading="lazy"
-        />
-      </div>
-      <div className="product-info">
+      <S.ProductContainer>
+        <S.ProductImage>
+          <img
+            src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
+            alt={product.Title}
+            loading="lazy"
+          />
+        </S.ProductImage>
         <h3>{product.Title}</h3>
-        <div className="product-price">
+        <S.ProductInfo>
           <p>Cena: {product.Price}zł </p>
-        </div>
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>
-          🛒 Do koszyka
-        </button>
-      </div>
+          <S.CartBtn onClick={handleAddToCart}>Do koszyka</S.CartBtn>
+        </S.ProductInfo>
+      </S.ProductContainer>
     </Link>
   );
 };

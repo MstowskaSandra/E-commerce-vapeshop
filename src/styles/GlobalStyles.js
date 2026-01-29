@@ -43,13 +43,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: white;
+    color: inherit;
     text-decoration: none;
   }
 
-  a:hover {
+  a:hover,
+  a:focus {
+    color: inherit;
     text-decoration: none;
-
+    outline: none;
   }
 
   img {

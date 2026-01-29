@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../reducers/cartSlice";
 import { useProductData } from "../../hooks/useProductData";
+import { MoveLeft } from "lucide-react";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -44,30 +45,34 @@ const ProductDetails = () => {
 
   return (
     <S.ProductDetails>
-      <button onClick={() => navigate(-1)}>← Powrót</button>
+      <S.BackBtn onClick={() => navigate(-1)}>
+        <MoveLeft size={36} strokeWidth={3} />
+      </S.BackBtn>
       <S.ProductGrid>
         <S.ProductImage>
           <img src={imgSrc} alt={title} />
         </S.ProductImage>
         <S.ProductInfo>
-          <h1>{title}</h1>
-          <p className="price">Cena: {attrs.Price || "-"} zł</p>
+          <h2>{title}</h2>
+          <p className="price">
+            <strong>Cena:</strong> {attrs.Price || "-"} zł
+          </p>
           {attrs.Description && <p>{attrs.Description}</p>}
 
           {hasLiquids && (
-            <div className="specs">
-              <div>
+            <S.InfoWrapper>
+              <p>
                 <strong>Pojemność:</strong> {attrs.Volume || "-"}
-              </div>
-              <div>
+              </p>
+              <p>
                 <strong>Nikotyna:</strong> {attrs.Strength || "-"}
-              </div>
+              </p>
               {attrs.Flavor && attrs.Flavor !== "no flavor" && (
-                <div>
+                <p>
                   <strong>Smak:</strong> {attrs.Flavor}
-                </div>
+                </p>
               )}
-            </div>
+            </S.InfoWrapper>
           )}
 
           {hasDevice && (
@@ -81,7 +86,7 @@ const ProductDetails = () => {
             </div>
           )}
 
-          <button onClick={handleAddToCart}>Do koszyka</button>
+          <S.CartBtn onClick={handleAddToCart}>Do koszyka</S.CartBtn>
         </S.ProductInfo>
       </S.ProductGrid>
     </S.ProductDetails>
