@@ -4,10 +4,15 @@ export const FormContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   box-sizing: border-box;
+  h2 {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 `;
 
 export const Form = styled.form`
@@ -42,7 +47,7 @@ export const Input = styled.input`
     color: rgba(255, 255, 255, 0.6);
   }
 
-  &:focus, 
+  &:focus,
   &:hover {
     outline: none;
     border-color: #fa1db2aa;
@@ -65,14 +70,13 @@ export const Select = styled.select`
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &:focus, 
+  &:focus,
   &:hover {
     outline: none;
     border-color: #fa1db2aa;
     transition: all 0.2s ease-in-out;
     box-shadow: 8px 8px 12px #fa1db2aa;
   }
-  
 
   option {
     background: #100023;
@@ -97,6 +101,10 @@ export const Button = styled.button`
     transition: all 0.2s ease-in-out;
     box-shadow: 8px 8px 12px #fa1db2aa;
   }
+
+  &:disabled {
+    cursor: no-drop;
+  }
 `;
 
 export const CheckboxContainer = styled.div`
@@ -109,7 +117,6 @@ export const CheckboxContainer = styled.div`
 
 export const CheckboxInput = styled.input`
   margin: 0.25rem 0 0 0;
-  accent-color: #fff;
   width: 1.2rem;
   height: 1.2rem;
   flex-shrink: 0;

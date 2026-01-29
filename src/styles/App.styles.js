@@ -7,6 +7,9 @@ export const Body = styled.div`
 `;
 
 export const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
   padding: 1rem 2rem;
   max-width: 100%;

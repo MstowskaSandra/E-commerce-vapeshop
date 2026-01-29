@@ -37,6 +37,7 @@ const OrderForm = () => {
 
   return (
     <S.FormContainer>
+      <h2>Formularz danych do zamówienia</h2>
       <S.Form onSubmit={handleSubmit}>
         <S.Input
           type="text"
