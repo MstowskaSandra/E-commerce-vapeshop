@@ -11,7 +11,7 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   max-width: 100%;
   width: 100%;
   box-sizing: border-box;

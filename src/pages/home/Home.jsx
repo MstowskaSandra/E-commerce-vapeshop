@@ -1,3 +1,4 @@
+import * as S from "./Home.styles";
 import { Award, UserStar, Package, Brain, MapPinPlus } from "lucide-react";
 import Pod from "../../assets/oxva.png";
 import Liquid from "../../assets/liquid.png";
@@ -18,36 +19,36 @@ const categories = [
 ];
 
 const Home = () => (
-  <div className="home">
-    <section>
+  <S.Home>
+    <S.TitleSection>
       <h1>GOSMOKE VAPESHOP</h1>
       <p>
         Doświadczenie którego nie da się zastąpić- łaczymy pasję, wiedzę i
         indywidualne podejście do każdego klienta
       </p>
-    </section>
+    </S.TitleSection>
 
-    <section>
-      <div>
+    <S.AdvantagesSection>
+      <S.AdvantagesContainer>
         {items.map(({ id, header, Icon }) => (
-          <div key={id}>
-            <Icon size={24} strokeWidth={2} />
+          <S.AdvantagesItem key={id}>
+            <Icon size={64} strokeWidth={2} />
             <span>{header}</span>
-          </div>
+          </S.AdvantagesItem>
         ))}
-      </div>
-    </section>
+      </S.AdvantagesContainer>
+    </S.AdvantagesSection>
 
-    <section>
-      <div>
+    <S.CategoriesSection>
+      <S.CategoriesContainer>
         {categories.map(({ id, txt, img }) => (
-          <div key={id}>
+          <S.CategoriesItem key={id}>
             <p>{txt}</p>
             <img src={img} />
-          </div>
+          </S.CategoriesItem>
         ))}
-      </div>
-    </section>
-  </div>
+      </S.CategoriesContainer>
+    </S.CategoriesSection>
+  </S.Home>
 );
 export default Home;
