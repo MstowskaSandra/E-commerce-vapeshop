@@ -1,3 +1,4 @@
+import * as S from "./Products.styles";
 import { useState } from "react";
 import ProductList from "../../components/productList/ProductList";
 import PodList from "../../components/productList/PodList";
@@ -6,7 +7,7 @@ const Products = () => {
   const [activeTab, setActiveTab] = useState("products");
 
   return (
-    <div>
+    <S.ProductsContainer>
       <h1>Katalog produktów:</h1>
       <div className="tabs">
         <button
@@ -25,7 +26,7 @@ const Products = () => {
 
       {activeTab === "products" && <ProductList />}
       {activeTab === "pods" && <PodList />}
-    </div>
+    </S.ProductsContainer>
   );
 };
 

@@ -1,3 +1,4 @@
+import * as S from "./Filters.styles";
 import { useCollectionCategories } from "../../hooks/useCollectionCategories";
 import { useCollectionBrands } from "../../hooks/useCollectionBrands";
 
@@ -21,28 +22,12 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
   }
 
   return (
-    <div
-      style={{
-        marginBottom: "2rem",
-        display: "flex",
-        gap: "1rem",
-        flexWrap: "wrap",
-        padding: "1rem",
-        background: "#f8f9fa",
-        borderRadius: "8px",
-      }}
-    >
-      <select
+    <S.FiltersContainer>
+      <S.Select
         value={filters.categorySlug}
         onChange={(e) =>
           onChange((prev) => ({ ...prev, categorySlug: e.target.value }))
         }
-        style={{
-          padding: "0.75rem",
-          border: "1px solid #ddd",
-          borderRadius: "4px",
-          color: "#333",
-        }}
       >
         <option value="">Wszystkie kategorie</option>
         {categories.map((cat) => (
@@ -50,18 +35,13 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
             {cat.name || cat.Name || cat.attributes?.name || "Brak nazwy"}
           </option>
         ))}
-      </select>
+      </S.Select>
 
-      <select
+      <S.Select
         value={filters.brand}
         onChange={(e) =>
           onChange((prev) => ({ ...prev, brand: e.target.value }))
         }
-        style={{
-          padding: "0.75rem",
-          border: "1px solid #ddd",
-          borderRadius: "4px",
-        }}
       >
         <option value="">
           Wszystkie {collectionName === "pods" ? "urządzenia" : "marki"}
@@ -71,58 +51,39 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
             {brand}
           </option>
         ))}
-      </select>
+      </S.Select>
 
-      <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
-        <input
+      <S.PriceRange>
+        <S.PriceInput
           type="number"
-          placeholder="od"
+          placeholder="cena od:"
           value={filters.minPrice}
           onChange={(e) =>
             onChange((prev) => ({ ...prev, minPrice: e.target.value }))
           }
           min="0"
-          style={{
-            width: "70px",
-            padding: "0.75rem",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
-          }}
         />
-        <span style={{ fontWeight: "bold" }}>-</span>
-        <input
+        <S.Separator>-</S.Separator>
+        <S.PriceInput
           type="number"
-          placeholder="do"
+          placeholder="cena do:"
           value={filters.maxPrice}
           onChange={(e) =>
             onChange((prev) => ({ ...prev, maxPrice: e.target.value }))
           }
-          style={{
-            width: "70px",
-            padding: "0.75rem",
-            border: "1px solid #ddd",
-            borderRadius: "4px",
-          }}
         />
-        <span style={{ fontWeight: "500", color: "#666" }}>zł</span>
-      </div>
+        <S.Currency>zł</S.Currency>
+      </S.PriceRange>
 
-      <input
+      <S.SearchInput
         type="text"
         placeholder="Szukaj po nazwie..."
         value={filters.search}
         onChange={(e) =>
           onChange((prev) => ({ ...prev, search: e.target.value }))
         }
-        style={{
-          padding: "0.75rem",
-          flex: 1,
-          minWidth: "200px",
-          border: "1px solid #ddd",
-          borderRadius: "4px",
-        }}
       />
-    </div>
+    </S.FiltersContainer>
   );
 };
 
