@@ -7,6 +7,7 @@ export const Home = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem 0;
 `;
 
 export const TitleSection = styled.section`
@@ -18,6 +19,7 @@ export const TitleSection = styled.section`
   gap: 2rem;
   letter-spacing: 1px;
   padding: 2rem;
+  margin-bottom: 3rem;
 
   h1 {
     font-size: 3rem;
@@ -38,9 +40,9 @@ export const AdvantagesSection = styled.section`
   align-items: center;
   width: 100%;
   margin: 0;
-  background-color: #231b26;
+  background-color: #1e1e20;
   height: 25vh;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 `;
 
 export const AdvantagesContainer = styled.div`
@@ -78,17 +80,32 @@ export const CategoriesSection = styled.section`
 
 export const CategoriesContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+
+  /* justify-content: space-around;
   gap: 2rem;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 80%; */
+  gap: 1rem;
 `;
 
-export const CategoriesItem = styled.div`
+export const CategorieItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 12rem;
+  background: linear-gradient(
+    135deg,
+    #233fd3 0%,
+    #4a2cbf 35%,
+    #8a1fa8 65%,
+    #e00088 100%
+  );
+  border: none;
+  border-radius: 16px;
+  padding: 2rem;
 
   p {
     font-size: 2rem;

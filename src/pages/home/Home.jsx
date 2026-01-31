@@ -42,10 +42,10 @@ const Home = () => (
     <S.CategoriesSection>
       <S.CategoriesContainer>
         {categories.map(({ id, txt, img }) => (
-          <S.CategoriesItem key={id}>
+          <S.CategorieItem key={id}>
             <p>{txt}</p>
             <img src={img} />
-          </S.CategoriesItem>
+          </S.CategorieItem>
         ))}
       </S.CategoriesContainer>
     </S.CategoriesSection>

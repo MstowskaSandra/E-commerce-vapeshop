@@ -19,12 +19,21 @@ const GlobalStyles = createGlobalStyle`
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.5;
     color: white;
-    background-image: url(${BackgroundJPG});
+    background-image: 
+      linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0) 40vh,
+        rgba(0,0,0,0.75) 100vh
+      ),
+      url(${BackgroundJPG});
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
+
+    
 
   #root {
     min-height: 100vh;
