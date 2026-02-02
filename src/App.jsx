@@ -22,6 +22,7 @@ import { useAgeVerification } from "./hooks/useAgeVerification.js";
 function App() {
   const { isVerified, handleAccept, handleReject } = useAgeVerification();
 
+
   return (
     <>
       <GlobalStyles />

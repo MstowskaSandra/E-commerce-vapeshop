@@ -16,9 +16,10 @@ export const TitleSection = styled.section`
   justify-content: center;
   align-items: center;
   width: 80%;
+  height: 70vh;
   gap: 2rem;
   letter-spacing: 1px;
-  padding: 2rem;
+  padding: 6rem 2rem;
   margin-bottom: 3rem;
 
   h1 {
@@ -39,55 +40,75 @@ export const AdvantagesSection = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 0;
   background-color: #1e1e20;
-  height: 25vh;
-  /* border-radius: 20px; */
+  min-height: 25vh;
 `;
 
 export const AdvantagesContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  gap: 2rem;
+
+  :last-child {
+    border: none;
+  }
 `;
 
 export const AdvantagesItem = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border-right: 1px solid gray;
-  padding: 2rem;
+  padding-top: 1rem;
 
-  &:last-child {
-    border: none;
+  border-right: 3px solid #fa1db2;
+`;
+
+export const TxtWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  justify-content: flex-start;
+  max-width: 50%;
+
+  :first-child {
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
   }
 
-  span {
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
+  :last-child {
+    font-size: medium;
+    font-weight: 400;
   }
 `;
 
 export const CategoriesSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: transparent;
+  backdrop-filter: blur(10px);
   width: 100%;
-  height: 40vh;
+  height: 75vh;
+  min-height: min-content;
+  padding-top: 5rem 2rem;
+
+  h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
 `;
 
 export const CategoriesContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-
-  /* justify-content: space-around;
-  gap: 2rem;
-  height: 100%;
-  width: 80%; */
-  gap: 1rem;
+  width: 100%;
+  height: 80%;
 `;
 
 export const CategorieItem = styled.div`
@@ -95,7 +116,8 @@ export const CategorieItem = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 12rem;
+  width: 25%;
+  height: 75%;
   background: linear-gradient(
     135deg,
     #233fd3 0%,
@@ -103,9 +125,14 @@ export const CategorieItem = styled.div`
     #8a1fa8 65%,
     #e00088 100%
   );
-  border: none;
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1rem;
+  margin: 0;
+
+  &:hover {
+    transform: scale(1.08);
+    transition: all 0.3s ease-in-out;
+  }
 
   p {
     font-size: 2rem;
@@ -115,7 +142,136 @@ export const CategorieItem = styled.div`
   }
 
   img {
-    height: 12rem;
-    width: 12rem;
+    height: 75%;
+  }
+
+  button {
+    align-self: start;
+    border: 1px solid white;
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      transform: translateX(4px);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 8px 8px 10px black;
+    }
   }
 `;
+
+export const NoSmokingSection = styled.section`
+  width: 100%;
+  min-height: 100vh;
+  background: transparent;
+  backdrop-filter: blur(10px);
+`;
+
+export const Header = styled.div`
+  text-align: center;
+  margin-top: 4rem;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 90%;
+  padding: 2rem;
+`;
+
+export const LeftContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  width: 30vw;
+`;
+
+export const RightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30vw;
+`;
+
+export const MiddleContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 30vw;
+`;
+
+export const BackgroundImg = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 100% 0% 100% 0% / 84% 0% 100% 16%;
+  background: linear-gradient(
+    135deg,
+    #233fd3 0%,
+    #4a2cbf 35%,
+    #8a1fa8 65%,
+    #e00088 100%
+  );
+
+  img {
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1) rotate(-15deg);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+`;
+
+export const ReasonItem = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  width: 65%;
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
+export const ReasonTxtWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  width: 50%;
+  padding-top: 1rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  :first-child {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  :last-child {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+`;
+
+

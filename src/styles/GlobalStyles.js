@@ -24,16 +24,16 @@ const GlobalStyles = createGlobalStyle`
         to bottom,
         rgba(0,0,0,0) 0%,
         rgba(0,0,0,0) 40vh,
-        rgba(0,0,0,0.75) 100vh
+        rgba(0,0,0,1.5) 100vh
       ),
       url(${BackgroundJPG});
     background-size: cover;      
     background-position: center; 
     background-repeat: no-repeat;
     background-attachment: fixed;
+    position: relative;
   }
 
-    
 
   #root {
     min-height: 100vh;
