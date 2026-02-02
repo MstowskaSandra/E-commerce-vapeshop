@@ -93,6 +93,7 @@ export const CategoriesSection = styled.section`
   height: 75vh;
   min-height: min-content;
   padding-top: 5rem 2rem;
+  border-top: 1px solid black;
 
   h2 {
     font-size: 3rem;
@@ -172,7 +173,6 @@ export const Header = styled.div`
   h2 {
     font-size: 3rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 2px;
   }
 `;
@@ -274,4 +274,126 @@ export const ReasonTxtWrapper = styled.div`
   }
 `;
 
+export const BrandsSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  background-color: #1e1e20;
+  min-height: 24vh;
+  gap: 1rem;
+
+  h3 {
+    margin: 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+`;
+
+export const Brands = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const BrandLogo = styled.div`
+  img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: white;
+  }
+`;
+
+export const ShopSection = styled.section`
+  background: transparent;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 75vh;
+  padding-top: 5rem;
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 3rem;
+  }
+`;
+
+export const Shop = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  img {
+    width: 20rem;
+    height: 15rem;
+  }
+`;
+
+export const ShopInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 0.25rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 15rem;
+  padding: 1rem;
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+`;
+
+export const ShopTime = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  p {
+    margin: 0;
+  }
+`;
+
+export const MapBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid gray;
+  align-self: center;
+  margin-top: 1rem;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 8px 8px 10px black;
+  }
+`;
+ 
 
