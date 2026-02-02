@@ -119,24 +119,20 @@ export const CategorieItem = styled.div`
   align-items: center;
   width: 25%;
   height: 75%;
-  background: linear-gradient(
-    135deg,
-    #233fd3 0%,
-    #4a2cbf 35%,
-    #8a1fa8 65%,
-    #e00088 100%
-  );
+
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
   border-radius: 16px;
+
   padding: 1rem;
   margin: 0;
-
   &:hover {
-    transform: scale(1.08);
-    transition: all 0.3s ease-in-out;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
   }
 
   p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 1px;
     text-align: center;
@@ -148,13 +144,22 @@ export const CategorieItem = styled.div`
 
   button {
     align-self: start;
-    border: 1px solid white;
     padding: 0.25rem 0.5rem;
+    background: linear-gradient(
+      135deg,
+      #233fd3 0%,
+      #4a2cbf 35%,
+      #8a1fa8 65%,
+      #e00088 100%
+    );
+    border-radius: 8px;
+    box-shadow: 8px 8px 10px black;
+    border: 2px solid transparent;
 
     &:hover {
-      transform: translateX(4px);
+      transform: scale(1.05);
       transition: all 0.2s ease-in-out;
-      box-shadow: 8px 8px 10px black;
+      border: 2px solid #e00088;
     }
   }
 `;
