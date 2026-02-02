@@ -40,7 +40,7 @@ export const AdvantagesSection = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #1e1e20;
+  background-color: #231b26;
   min-height: 25vh;
 `;
 
@@ -285,7 +285,7 @@ export const BrandsSection = styled.section`
   justify-content: center;
   text-align: left;
   width: 100%;
-  background-color: #1e1e20;
+  background-color: #231b26;
   min-height: 24vh;
   gap: 1rem;
 
