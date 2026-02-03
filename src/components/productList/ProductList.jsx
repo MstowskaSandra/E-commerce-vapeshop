@@ -16,7 +16,8 @@ const ProductList = () => {
   if (error) return <div className="error">Błąd: {error.message}</div>;
 
   return (
-    <>
+    <S.ProductsContainer>
+      <h2>Liquidy</h2>
       <Filters filters={filters} onChange={setFilters} />
 
       <S.ProductsGrid>
@@ -24,7 +25,7 @@ const ProductList = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </S.ProductsGrid>
-    </>
+    </S.ProductsContainer>
   );
 };
 

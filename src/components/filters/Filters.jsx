@@ -29,7 +29,7 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
           onChange((prev) => ({ ...prev, categorySlug: e.target.value }))
         }
       >
-        <option value="">Wszystkie kategorie</option>
+        <option value="">Kategorie</option>
         {categories.map((cat) => (
           <option key={cat.id} value={cat.slug}>
             {cat.name || cat.Name || cat.attributes?.name || "Brak nazwy"}
@@ -43,9 +43,7 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
           onChange((prev) => ({ ...prev, brand: e.target.value }))
         }
       >
-        <option value="">
-          Wszystkie {collectionName === "pods" ? "urządzenia" : "marki"}
-        </option>
+        <option value="">Marki:</option>
         {brands.map((brand) => (
           <option key={brand} value={brand}>
             {brand}

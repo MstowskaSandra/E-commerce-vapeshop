@@ -16,15 +16,15 @@ const PodList = () => {
   if (error) return <div>Błąd: {error.message}</div>;
 
   return (
-    <>
-      <h2>Urządzenia POD</h2>
+    <S.ProductsContainer>
+      <h2>Urządzenia</h2>
       <Filters filters={filters} onChange={setFilters} collectionName="pods" />
       <S.ProductsGrid>
         {pods.map((pod) => (
           <PodCard key={pod.id} pod={pod} />
         ))}
       </S.ProductsGrid>
-    </>
+    </S.ProductsContainer>
   );
 };
 

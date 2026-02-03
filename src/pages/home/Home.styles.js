@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ArrowDown } from "lucide-react";
 
 export const Home = styled.div`
   width: 100vw;
@@ -23,15 +24,61 @@ export const TitleSection = styled.section`
   margin-bottom: 3rem;
 
   h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(
+      90deg,
+      #ff6adf 0%,
+      #b56cff 35%,
+      #5fd3ff 70%,
+      #45f3e5 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 6s ease infinite;
+  }
+
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   p {
-    font-size: 2em;
+    width: 55%;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
     text-align: center;
-    font-weight: 500;
+  }
+`;
+
+export const AnimatedArrow = styled(ArrowDown)`
+  animation: floatDown 2s ease-in-out infinite;
+  opacity: 0.7;
+
+  @keyframes floatDown {
+    0% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
   }
 `;
 
@@ -288,13 +335,6 @@ export const BrandsSection = styled.section`
   background-color: #231b26;
   min-height: 24vh;
   gap: 1rem;
-
-  h3 {
-    margin: 0 1rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
 `;
 
 export const Brands = styled.div`
@@ -309,6 +349,11 @@ export const BrandLogo = styled.div`
     height: 6rem;
     border-radius: 50%;
     background-color: white;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
   }
 `;
 
@@ -400,5 +445,26 @@ export const MapBtn = styled.button`
     box-shadow: 8px 8px 10px black;
   }
 `;
- 
 
+export const ReviewsSection = styled.section`
+  background: transparent;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 75vh;
+  padding-top: 5rem;
+`;
+
+export const Reviews = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 3rem;
+  }
+`;
