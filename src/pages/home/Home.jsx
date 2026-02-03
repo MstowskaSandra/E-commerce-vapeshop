@@ -59,6 +59,7 @@ const categories = [
 
 const Home = () => {
   const navigate = useNavigate();
+
   const handleNavCategory = (navPath) => {
     navigate(navPath);
   };

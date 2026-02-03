@@ -4,6 +4,7 @@ import PersistedProvider from "./components/PersistedProvider.jsx";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Nav from "./components/nav/Nav.jsx";
+import Footer from "./components/footer/Footer.jsx";
 import AgeVerificationModal from "./components/ageModal/AgeVerificationModal.jsx";
 import OrderForm from "./components/orderForm/OrderForm.jsx";
 import PodList from "./components/productList/PodList.jsx";
@@ -19,9 +20,9 @@ import OrderSummary from "./pages/summary/OrderSummary.jsx";
 
 import { useAgeVerification } from "./hooks/useAgeVerification.js";
 
+
 function App() {
   const { isVerified, handleAccept, handleReject } = useAgeVerification();
-
 
   return (
     <>
@@ -49,6 +50,7 @@ function App() {
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </S.Main>
+            <Footer />
           </S.Body>
         </BrowserRouter>
       </PersistedProvider>

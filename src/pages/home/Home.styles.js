@@ -219,7 +219,7 @@ export const CategorieItem = styled.div`
   }
 
   img {
-    height: 75%;
+    height: 80%;
     animation: imageReveal both;
     animation-timeline: view(40% 10%);
 
@@ -243,21 +243,15 @@ export const CategorieItem = styled.div`
   button {
     align-self: start;
     padding: 0.25rem 0.5rem;
-    background: linear-gradient(
-      135deg,
-      #233fd3 0%,
-      #4a2cbf 35%,
-      #8a1fa8 65%,
-      #e00088 100%
-    );
-    border-radius: 8px;
-    box-shadow: 8px 8px 10px black;
-    border: 2px solid transparent;
+    justify-self: center;
+    border: 2px solid gray;
+    box-shadow: 8px 8px 12px black;
 
     &:hover {
-      transform: scale(1.05);
+      border-color: #fa1db2aa;
+      transform: translateX(4px);
       transition: all 0.2s ease-in-out;
-      border: 2px solid #e00088;
+      box-shadow: 4px 4px 6px #fa1db2aa;
     }
   }
 `;
