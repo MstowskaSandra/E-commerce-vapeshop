@@ -94,6 +94,19 @@ export const AdvantagesSection = styled.section`
 export const AdvantagesContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   :last-child {
     border: none;
@@ -134,20 +147,41 @@ export const CategoriesSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
   background: transparent;
   backdrop-filter: blur(10px);
   width: 100%;
   height: 75vh;
-  min-height: min-content;
-  padding-top: 5rem 2rem;
-  border-top: 1px solid black;
+  padding: 4rem 0;
 
   h2 {
-    font-size: 3rem;
-    letter-spacing: 2px;
-    font-weight: 400;
-    padding: 1rem;
-    margin-top: 2rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(
+      90deg,
+      #ff6adf 0%,
+      #b56cff 35%,
+      #5fd3ff 70%,
+      #45f3e5 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 6s ease infinite;
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 `;
 
@@ -155,8 +189,8 @@ export const CategoriesContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
-  height: 80%;
+  width: 80%;
+  height: 75%;
 `;
 
 export const CategorieItem = styled.div`
@@ -165,7 +199,7 @@ export const CategorieItem = styled.div`
   justify-content: center;
   align-items: center;
   width: 25%;
-  height: 75%;
+  height: 90%;
 
   background-color: #231b26;
   box-shadow: 8px 8px 10px black;
@@ -178,15 +212,32 @@ export const CategorieItem = styled.div`
     transition: all 0.2s ease-in-out;
   }
 
-  p {
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-align: center;
+  h4 {
+    font-family: "Barlow SemiBold", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   img {
     height: 75%;
+    animation: imageReveal both;
+    animation-timeline: view(40% 10%);
+
+    @keyframes imageReveal {
+      from {
+        filter: saturate(0) contain-intrinsic-width(4) brightness(0.1)
+          border-top-left-radius(5px);
+        opacity: 0;
+        scale: 0.95;
+        translate: 0 4rem;
+      }
+      to {
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+      }
+    }
   }
 
   button {
@@ -344,6 +395,20 @@ export const Brands = styled.div`
 `;
 
 export const BrandLogo = styled.div`
+  animation: fadeUp both;
+  animation-timeline: view();
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
   img {
     width: 6rem;
     height: 6rem;
@@ -366,10 +431,33 @@ export const ShopSection = styled.section`
 
   h2 {
     text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding-bottom: 3rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(
+      90deg,
+      #ff6adf 0%,
+      #b56cff 35%,
+      #5fd3ff 70%,
+      #45f3e5 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 6s ease infinite;
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 `;
 
@@ -379,6 +467,19 @@ export const Shop = styled.div`
   gap: 3rem;
   align-items: center;
   margin-bottom: 1rem;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   img {
     width: 20rem;
@@ -461,10 +562,32 @@ export const Reviews = styled.div`
   align-items: center;
 
   h2 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    padding-bottom: 3rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: linear-gradient(
+      90deg,
+      #ff6adf 0%,
+      #b56cff 35%,
+      #5fd3ff 70%,
+      #45f3e5 100%
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 6s ease infinite;
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 `;

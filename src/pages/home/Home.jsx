@@ -71,21 +71,9 @@ const Home = () => {
           indywidualne podejście do każdego klienta
         </p>
         <p>Sprawdź nas</p>
-        <S.AnimatedArrow height={24} size={36} strokeWidth={2} />
+        <S.AnimatedArrow size={64} strokeWidth={2} />
       </S.TitleSection>
 
-      <S.CategoriesSection>
-        <h2>PRODUKTY</h2>
-        <S.CategoriesContainer>
-          {categories.map(({ id, txt, img, nav }) => (
-            <S.CategorieItem key={id}>
-              <p>{txt}</p>
-              <img src={img} />
-              <button onClick={() => handleNavCategory(nav)}>Zobacz</button>
-            </S.CategorieItem>
-          ))}
-        </S.CategoriesContainer>
-      </S.CategoriesSection>
       <S.AdvantagesSection>
         <S.AdvantagesContainer>
           {items.map(({ id, header, txt, Icon }) => (
@@ -99,6 +87,19 @@ const Home = () => {
           ))}
         </S.AdvantagesContainer>
       </S.AdvantagesSection>
+
+      <S.CategoriesSection>
+        <h2>PRODUKTY</h2>
+        <S.CategoriesContainer>
+          {categories.map(({ id, txt, img, nav }) => (
+            <S.CategorieItem key={id}>
+              <h4>{txt}</h4>
+              <img src={img} />
+              <button onClick={() => handleNavCategory(nav)}>Zobacz</button>
+            </S.CategorieItem>
+          ))}
+        </S.CategoriesContainer>
+      </S.CategoriesSection>
 
       <S.NoSmokingSection>
         <S.Header>
@@ -246,6 +247,16 @@ const Home = () => {
           </S.ShopTime>
         </S.Shop>
       </S.ShopSection>
+
+      <S.ReviewsSection>
+        <S.Reviews>
+          <h2>Opinie naszych klientów</h2>
+          <div
+            id="featurable-151286f1-95f3-432d-aa0b-bb603d58e6b8"
+            data-featurable-async
+          ></div>
+        </S.Reviews>
+      </S.ReviewsSection>
     </S.Home>
   );
 };

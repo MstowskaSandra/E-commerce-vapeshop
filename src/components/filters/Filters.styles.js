@@ -25,37 +25,37 @@ export const FiltersContainer = styled.div`
 `;
 
 export const Select = styled.select`
-    flex: 1;
-    min-width: 11.25rem;
-    padding: 0.75rem 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+  flex: 1;
+  min-width: 11.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #fa1db2;
+    box-shadow: 0 0 0 3px rgba(250, 29, 178, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:hover {
+    border-color: rgba(250, 29, 178, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  option {
+    background: #1a1a1a;
     color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:focus {
-      outline: none;
-      border-color: #fa1db2;
-      box-shadow: 0 0 0 3px rgba(250, 29, 178, 0.2);
-      transform: translateY(-2px);
-    }
-
-    &:hover {
-      border-color: rgba(250, 29, 178, 0.4);
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    option {
-      background: #1a1a1a;
-      color: white;
-      padding: 0.5rem;
-    }
+    padding: 0.5rem;
+  }
 `;
 
 export const PriceRange = styled.div`
