@@ -6,7 +6,7 @@ export const ProductsContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `;
 
 

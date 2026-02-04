@@ -1,62 +1,121 @@
 import styled from "styled-components";
 
 export const FiltersContainer = styled.div`
-    display: flex;
-    gap: 1rem;
-    align-items: end;
-    padding: 1.5rem 2rem;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
-    border-radius: 16px;
-    border-left: 4px solid #fa1db2;
-    border-right: 4px solid #fa1db2;
-    box-shadow: 8px 8px 12px black;
-    margin-bottom: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: end;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border-left: 4px solid #fa1db2;
+  border-right: 4px solid #fa1db2;
+  box-shadow: 8px 8px 12px black;
+  max-width: 1200px;
 
-    @media (max-width: 768px) {
-        max-width: 650px;
-      flex-direction: column;
-      align-items: stretch;
-      padding: 1.5rem;
-    }
+  @media (max-width: 768px) {
+    max-width: 650px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
 `;
+
+// export const Select = styled.select`
+//   flex: 1;
+//   min-width: 11.25rem;
+//   padding: 0.75rem 1rem;
+//   background: rgba(255, 255, 255, 0.15);
+//   backdrop-filter: blur(20px);
+//   border: 2px solid rgba(255, 255, 255, 0.2);
+//   border-radius: 12px;
+//   color: white;
+//   font-size: 1rem;
+//   font-weight: 500;
+//   letter-spacing: 0.5px;
+//   cursor: pointer;
+//   transition: all 0.3s ease;
+
+//   &:focus {
+//     outline: none;
+//     border-color: #fa1db2;
+//     box-shadow: 0 0 0 3px rgba(250, 29, 178, 0.2);
+//     transform: translateY(-2px);
+//   }
+
+//   &:hover {
+//     border-color: rgba(250, 29, 178, 0.4);
+//     background: rgba(255, 255, 255, 0.2);
+//   }
+
+//   option {
+//     background: #1a1a1a;
+//     color: white;
+//     padding: 0.5rem;
+//   }
+// `;
 
 export const Select = styled.select`
   flex: 1;
   min-width: 11.25rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  color: white;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+  color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
 
-  &:focus {
-    outline: none;
-    border-color: #fa1db2;
-    box-shadow: 0 0 0 3px rgba(250, 29, 178, 0.2);
-    transform: translateY(-2px);
-  }
+  /* GLASS */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+
+  /* REMOVE NATIVE UI */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* CUSTOM ARROW */
+  background-image:
+    linear-gradient(45deg, transparent 50%, #fa1db2 50%),
+    linear-gradient(135deg, #fa1db2 50%, transparent 50%);
+  background-position:
+    calc(100% - 1.25rem) calc(50% - 2px),
+    calc(100% - 1rem) calc(50% - 2px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
 
   &:hover {
-    border-color: rgba(250, 29, 178, 0.4);
     background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(250, 29, 178, 0.45);
+  }
+
+  &:focus-visible {
+    outline: none;
+    transform: translateY(-2px);
+    border-color: #fa1db2;
+
+    box-shadow:
+      0 0 0 3px rgba(250, 29, 178, 0.25),
+      0 0 18px rgba(250, 29, 178, 0.45);
   }
 
   option {
-    background: #1a1a1a;
+    background: #141414;
     color: white;
-    padding: 0.5rem;
   }
 `;
+
 
 export const PriceRange = styled.div`
     display: flex;

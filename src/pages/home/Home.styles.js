@@ -208,8 +208,7 @@ export const CategoriesSection = styled.section`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background: transparent;
-  backdrop-filter: blur(10px);
+  background-color: #231b26;
   width: 100%;
   min-height: 75vh;
   padding: 8rem 0;
@@ -273,8 +272,13 @@ export const CategorieItem = styled.div`
   align-items: center;
   width: 25%;
   height: 75%;
-
-  background-color: #231b26;
+  background: linear-gradient(
+    90deg,
+    #ff6adf 0%,
+    #b56cff 35%,
+    #5fd3ff 70%,
+    #45f3e5 100%
+  );
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
 
@@ -324,10 +328,10 @@ export const CategorieItem = styled.div`
     box-shadow: 8px 8px 12px black;
 
     &:hover {
-      border-color: #fa1db2aa;
+      border-color: black;
       transform: translateX(4px);
       transition: all 0.2s ease-in-out;
-      box-shadow: 4px 4px 6px #fa1db2aa;
+      box-shadow: 4px 4px 6px black;
     }
   }
 `;

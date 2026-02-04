@@ -17,7 +17,6 @@ const ProductList = () => {
 
   return (
     <S.ProductsContainer>
-      <h2>Liquidy</h2>
       <Filters filters={filters} onChange={setFilters} />
 
       <S.ProductsGrid>

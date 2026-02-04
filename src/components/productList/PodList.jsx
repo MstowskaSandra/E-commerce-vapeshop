@@ -17,7 +17,6 @@ const PodList = () => {
 
   return (
     <S.ProductsContainer>
-      <h2>Urządzenia</h2>
       <Filters filters={filters} onChange={setFilters} collectionName="pods" />
       <S.ProductsGrid>
         {pods.map((pod) => (

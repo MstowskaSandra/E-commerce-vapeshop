@@ -8,21 +8,20 @@ const Products = () => {
 
   return (
     <S.ProductsContainer>
-      <h1>Katalog produktów:</h1>
-      <div className="tabs">
-        <button
+      <S.BtnsWrapper>
+        <S.Button
           className={activeTab === "products" ? "active" : ""}
           onClick={() => setActiveTab("products")}
         >
           Liquidy
-        </button>
-        <button
+        </S.Button>
+        <S.Button
           className={activeTab === "pods" ? "active" : ""}
           onClick={() => setActiveTab("pods")}
         >
           Urządzenia
-        </button>
-      </div>
+        </S.Button>
+      </S.BtnsWrapper>
 
       {activeTab === "products" && <ProductList />}
       {activeTab === "pods" && <PodList />}
