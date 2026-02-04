@@ -375,7 +375,6 @@ export const ContentWrapper = styled.div`
   padding: 2rem;
 `;
 
-
 export const LeftContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -666,4 +665,10 @@ export const Reviews = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
   }
+`;
+
+export const WidgetWrapper = styled.div`
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 `;

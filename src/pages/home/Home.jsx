@@ -270,7 +270,9 @@ const Home = () => {
           <h4>Opinie</h4>
           <h3>Co mówią nasi klienci</h3>
           {pathname === "/" ? (
-            <div data-trustmary-widget="e1ZILCI4H"></div>
+            <S.WidgetWrapper>
+              <div data-trustmary-widget="e1ZILCI4H"></div>
+            </S.WidgetWrapper>
           ) : null}
         </S.Reviews>
       </S.ReviewsSection>
