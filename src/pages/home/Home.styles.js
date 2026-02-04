@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ArrowDown } from "lucide-react";
 
 export const Home = styled.div`
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -373,21 +373,8 @@ export const ContentWrapper = styled.div`
   gap: 2rem;
   width: 90%;
   padding: 2rem;
-
-  animation: fadeUp both;
-  animation-timeline: view(10% 5%);
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
 `;
+
 
 export const LeftContent = styled.div`
   display: flex;
