@@ -1,5 +1,5 @@
 import * as S from "./Home.styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   HeartHandshake,
   UserStar,
@@ -59,6 +59,7 @@ const categories = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleNavCategory = (navPath) => {
     navigate(navPath);
@@ -248,14 +249,12 @@ const Home = () => {
           </S.ShopTime>
         </S.Shop>
       </S.ShopSection>
-
       <S.ReviewsSection>
         <S.Reviews>
           <h2>Opinie naszych klientów</h2>
-          <div
-            id="featurable-151286f1-95f3-432d-aa0b-bb603d58e6b8"
-            data-featurable-async
-          ></div>
+          {pathname === "/" ? (
+            <div data-trustmary-widget="e1ZILCI4H"></div>
+          ) : null}
         </S.Reviews>
       </S.ReviewsSection>
     </S.Home>
