@@ -8,7 +8,7 @@ export const Home = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
+  /* padding: 3rem 0 0 0; */
 `;
 
 export const TitleSection = styled.section`
@@ -142,6 +142,66 @@ export const TxtWrapper = styled.div`
   }
 `;
 
+export const AskSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 75vh;
+  padding: 5rem 0;
+  background: transparent;
+  backdrop-filter: blur(10px);
+`;
+
+export const AskContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+  padding: 5rem 0;
+
+  img {
+    width: 50%;
+    border-radius: 20px;
+  }
+`;
+
+export const AskTxt = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 3rem;
+  gap: 1rem;
+
+  p {
+    text-align: left;
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    text-align: left;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 3.125rem;
+  }
+
+  h4 {
+    text-align: left;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(236, 47, 75);
+  }
+`;
+
 export const CategoriesSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -151,14 +211,15 @@ export const CategoriesSection = styled.section`
   background: transparent;
   backdrop-filter: blur(10px);
   width: 100%;
-  height: 75vh;
-  padding: 4rem 0;
+  min-height: 75vh;
+  padding: 8rem 0;
 
   h2 {
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    font-size: 3.125rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
     background: linear-gradient(
       90deg,
       #ff6adf 0%,
@@ -189,8 +250,20 @@ export const CategoriesContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
-  height: 75%;
+  width: 75%;
+  animation: fadeUp both;
+  animation-timeline: view(10% 5%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 `;
 
 export const CategorieItem = styled.div`
@@ -199,7 +272,7 @@ export const CategorieItem = styled.div`
   justify-content: center;
   align-items: center;
   width: 25%;
-  height: 90%;
+  height: 75%;
 
   background-color: #231b26;
   box-shadow: 8px 8px 10px black;
@@ -213,9 +286,12 @@ export const CategorieItem = styled.div`
   }
 
   h4 {
-    font-family: "Barlow SemiBold", sans-serif;
-    font-size: 1rem;
+    text-align: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   img {
@@ -259,6 +335,7 @@ export const CategorieItem = styled.div`
 export const NoSmokingSection = styled.section`
   width: 100%;
   min-height: 100vh;
+  padding-bottom: 10rem;
   background: transparent;
   backdrop-filter: blur(10px);
 `;
@@ -266,11 +343,26 @@ export const NoSmokingSection = styled.section`
 export const Header = styled.div`
   text-align: center;
   margin-top: 4rem;
+  animation: fadeUp both;
+  animation-timeline: view(10% 5%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    text-align: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 3.125rem;
   }
 `;
 
@@ -281,6 +373,20 @@ export const ContentWrapper = styled.div`
   gap: 2rem;
   width: 90%;
   padding: 2rem;
+
+  animation: fadeUp both;
+  animation-timeline: view(10% 5%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -386,11 +492,9 @@ export const Brands = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`;
 
-export const BrandLogo = styled.div`
   animation: fadeUp both;
-  animation-timeline: view();
+  animation-timeline: view(20% 10%);
 
   @keyframes fadeUp {
     from {
@@ -402,7 +506,9 @@ export const BrandLogo = styled.div`
       transform: translateY(0) scale(1);
     }
   }
+`;
 
+export const BrandLogo = styled.div`
   img {
     width: 6rem;
     height: 6rem;
@@ -421,9 +527,10 @@ export const ShopSection = styled.section`
   backdrop-filter: blur(10px);
   width: 100%;
   min-height: 75vh;
-  padding-top: 5rem;
+  padding-top: 8rem;
 
   h2 {
+    padding-bottom: 2rem;
     text-align: center;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-size: 2rem;
@@ -546,7 +653,7 @@ export const ReviewsSection = styled.section`
   backdrop-filter: blur(10px);
   width: 100%;
   min-height: 75vh;
-  padding-top: 5rem;
+  padding: 8rem 0;
 `;
 
 export const Reviews = styled.div`
@@ -555,33 +662,21 @@ export const Reviews = styled.div`
   justify-content: center;
   align-items: center;
 
-  h2 {
+  h4 {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 2rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    background: linear-gradient(
-      90deg,
-      #ff6adf 0%,
-      #b56cff 35%,
-      #5fd3ff 70%,
-      #45f3e5 100%
-    );
-    -webkit-background-clip: text;
-    color: transparent;
-    background-size: 200% auto;
-    animation: gradientMove 6s ease infinite;
+    color: rgb(236, 47, 75);
+  }
 
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+  h3 {
+    padding: 0 0 0 2rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 3.125rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 `;

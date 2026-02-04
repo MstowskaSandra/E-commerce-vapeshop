@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-    width: 100%;
+  width: 100vw;
   background-color: #231b26;
   /* min-height: 10vh; */
 `;

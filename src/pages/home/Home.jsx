@@ -23,6 +23,7 @@ import Fantos from "../../assets/fantoslogo.png";
 import Gobear from "../../assets/gobearlogo.png";
 import Lostvape from "../../assets/lost-vape.png";
 import Vaporesso from "../../assets/vaporessologo.png";
+import Womanavape from "../../assets/kobietavape.jpg";
 
 const items = [
   {
@@ -90,6 +91,21 @@ const Home = () => {
         </S.AdvantagesContainer>
       </S.AdvantagesSection>
 
+      <S.AskSection>
+        <S.AskContainer>
+          <img src={Womanavape}></img>
+          <S.AskTxt>
+            <h4>Najlepsze usługi</h4>
+            <h3>Zapytaj - my to ogarniemy.</h3>
+            <p>
+              Współpracujemy z najlepszymi markami, producentami i
+              przedstawicielami, aby ciągle być na bieżąco z nowościami w
+              branży.
+            </p>
+          </S.AskTxt>
+        </S.AskContainer>
+      </S.AskSection>
+
       <S.CategoriesSection>
         <h2>PRODUKTY</h2>
         <S.CategoriesContainer>
@@ -156,7 +172,7 @@ const Home = () => {
             <S.ReasonItem>
               <HeartPlus size={36} strokeWidth={2} />
               <S.ReasonTxtWrapper>
-                <p>Lepszy dla zdrowia</p>
+                <p>Lepsze dla zdrowia</p>
                 <p>Możemy kontrolowac ilość nikotyny</p>
               </S.ReasonTxtWrapper>
             </S.ReasonItem>
@@ -251,7 +267,8 @@ const Home = () => {
       </S.ShopSection>
       <S.ReviewsSection>
         <S.Reviews>
-          <h2>Opinie naszych klientów</h2>
+          <h4>Opinie</h4>
+          <h3>Co mówią nasi klienci</h3>
           {pathname === "/" ? (
             <div data-trustmary-widget="e1ZILCI4H"></div>
           ) : null}
