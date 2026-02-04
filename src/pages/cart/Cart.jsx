@@ -4,6 +4,7 @@ import { removeFromCart, updateQuantity } from "../../reducers/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { setCartForOrder } from "../../reducers/orderSlice";
 import CartItem from "../../components/cartItem/CartItem";
+import { ArrowRight } from "lucide-react";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -57,10 +58,10 @@ const Cart = () => {
           ))}
         </S.CartItems>
         <S.CartTotal>
-          <h2>Suma: {total.toFixed(2)} zł</h2>
-          <button className="checkout-btn" onClick={handleCheckout}>
-            Przejdź do zamówienia
-          </button>
+          <p>Suma: {total.toFixed(2)} zł</p>
+          <S.TotalBtn onClick={handleCheckout}>
+            <ArrowRight size={54} strokeWidth={2} />
+          </S.TotalBtn>
         </S.CartTotal>
       </S.CartContainer>
     </S.CartSection>

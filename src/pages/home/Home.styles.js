@@ -8,7 +8,6 @@ export const Home = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 3rem 0 0 0; */
 `;
 
 export const TitleSection = styled.section`

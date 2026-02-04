@@ -18,6 +18,10 @@ export const CartItemLi = styled.li`
     border-radius: 16px;
     border: 1px solid gray;
     box-shadow: 8px 8px 10px black;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -92,21 +96,13 @@ export const RemoveBtn = styled.button`
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition:
-    transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
-    background 200ms ease,
-    color 200ms ease,
-    border-color 200ms ease;
+  box-shadow: 8px 8px 10px black;
 
   &:hover {
     background: rgba(250, 29, 178, 0.15);
-    color: #fa1db2;
+    color: white;
     border-color: #fa1db2;
-    transform: translateY(-1px) scale(1.03);
+    transform: scale(1.1);
     box-shadow:
       0 8px 18px rgba(0, 0, 0, 0.35),
       0 0 18px rgba(250, 29, 178, 0.55),
