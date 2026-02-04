@@ -43,24 +43,26 @@ const Cart = () => {
 
   return (
     <S.CartSection>
-      <h1>Koszyk ({cartItems.length} produkty)</h1>
-      <ul className="cart-items">
-        {cartItems.map((item) => (
-          <CartItem
-            key={item.id}
-            item={item}
-            onIncrement={() => handleIncrement(item.id)}
-            onDecrement={() => handleDecrement(item.id)}
-            onRemove={() => dispatch(removeFromCart(item.id))}
-          />
-        ))}
-      </ul>
-      <div className="cart-total">
-        <h2>Suma: {total.toFixed(2)} zł</h2>
-        <button className="checkout-btn" onClick={handleCheckout}>
-          Przejdź do zamówienia
-        </button>
-      </div>
+      <h1>Twój koszyk ({cartItems.length} produkty)</h1>
+      <S.CartContainer>
+        <S.CartItems>
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              onIncrement={() => handleIncrement(item.id)}
+              onDecrement={() => handleDecrement(item.id)}
+              onRemove={() => dispatch(removeFromCart(item.id))}
+            />
+          ))}
+        </S.CartItems>
+        <S.CartTotal>
+          <h2>Suma: {total.toFixed(2)} zł</h2>
+          <button className="checkout-btn" onClick={handleCheckout}>
+            Przejdź do zamówienia
+          </button>
+        </S.CartTotal>
+      </S.CartContainer>
     </S.CartSection>
   );
 };
