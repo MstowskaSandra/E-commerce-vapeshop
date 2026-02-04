@@ -21,40 +21,6 @@ export const FiltersContainer = styled.div`
   }
 `;
 
-// export const Select = styled.select`
-//   flex: 1;
-//   min-width: 11.25rem;
-//   padding: 0.75rem 1rem;
-//   background: rgba(255, 255, 255, 0.15);
-//   backdrop-filter: blur(20px);
-//   border: 2px solid rgba(255, 255, 255, 0.2);
-//   border-radius: 12px;
-//   color: white;
-//   font-size: 1rem;
-//   font-weight: 500;
-//   letter-spacing: 0.5px;
-//   cursor: pointer;
-//   transition: all 0.3s ease;
-
-//   &:focus {
-//     outline: none;
-//     border-color: #fa1db2;
-//     box-shadow: 0 0 0 3px rgba(250, 29, 178, 0.2);
-//     transform: translateY(-2px);
-//   }
-
-//   &:hover {
-//     border-color: rgba(250, 29, 178, 0.4);
-//     background: rgba(255, 255, 255, 0.2);
-//   }
-
-//   option {
-//     background: #1a1a1a;
-//     color: white;
-//     padding: 0.5rem;
-//   }
-// `;
-
 export const Select = styled.select`
   flex: 1;
   min-width: 11.25rem;
@@ -65,21 +31,14 @@ export const Select = styled.select`
   letter-spacing: 0.5px;
   color: white;
   cursor: pointer;
-
-  /* GLASS */
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
   border-radius: 12px;
   border: 2px solid rgba(255, 255, 255, 0.2);
-
-  /* REMOVE NATIVE UI */
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  /* CUSTOM ARROW */
   background-image:
     linear-gradient(45deg, transparent 50%, #fa1db2 50%),
     linear-gradient(135deg, #fa1db2 50%, transparent 50%);
@@ -88,7 +47,6 @@ export const Select = styled.select`
     calc(100% - 1rem) calc(50% - 2px);
   background-size: 6px 6px;
   background-repeat: no-repeat;
-
   transition:
     border-color 0.25s ease,
     box-shadow 0.25s ease,
