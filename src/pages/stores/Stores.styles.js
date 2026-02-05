@@ -77,3 +77,59 @@ export const ParWrapper = styled.div`
     margin-bottom: 0.5rem;
   }
 `;
+
+
+export const TeamSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #231b26;
+  min-height: 25vh;
+  padding: 4rem 0;
+`;
+
+export const Workers = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+`;
+
+export const Worker = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 20%;
+  background: linear-gradient(
+    90deg,
+    #ff6adf 0%,
+    #b56cff 35%,
+    #5fd3ff 70%,
+    #45f3e5 100%
+  );
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+
+  padding: 1rem;
+  margin: 0;
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
