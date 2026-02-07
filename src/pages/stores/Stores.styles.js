@@ -81,12 +81,23 @@ export const ParWrapper = styled.div`
 
 export const TeamSection = styled.section`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: #231b26;
   min-height: 25vh;
   padding: 4rem 0;
+
+  h2 {
+    text-align: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 3.125rem;
+    padding-bottom: 3rem;
+  }
 `;
 
 export const Workers = styled.div`
@@ -146,23 +157,3 @@ export const Worker = styled.div`
   }
 `;
 
-export const ShopTime = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: #231b26;
-  box-shadow: 8px 8px 10px black;
-  border-radius: 16px;
-
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
-
-  p {
-    margin: 0;
-  }
-`;

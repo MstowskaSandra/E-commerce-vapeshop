@@ -72,6 +72,7 @@ const Stores = () => (
     </S.StorySection>
 
     <S.TeamSection>
+      <h2>Nasza ekipa</h2>
       <S.Workers>
         {team.map(({ id, name, position, description, img }) => (
           <S.Worker key={id}>

@@ -2,6 +2,7 @@ import * as S from "./styles/App.styles.js";
 import GlobalStyles from "./styles/GlobalStyles.js";
 import PersistedProvider from "./components/PersistedProvider.jsx";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import Nav from "./components/nav/Nav.jsx";
 import Footer from "./components/footer/Footer.jsx";
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
+      <Toaster position="bottom-right" />
       <PersistedProvider>
         <BrowserRouter>
           <S.Body>

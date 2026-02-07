@@ -2,6 +2,7 @@ import * as S from "./ProductCard.styles";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartSlice";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,10 @@ const ProductCard = ({ product }) => {
     e.preventDefault();
     e.stopPropagation();
     dispatch(addToCart(product));
+    toast.success("Produkt leci do koszyka", {
+      duration: 2000,
+      icon: "🔥",
+    });
   };
 
   return (

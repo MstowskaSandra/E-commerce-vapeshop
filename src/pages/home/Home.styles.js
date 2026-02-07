@@ -17,7 +17,7 @@ export const TitleSection = styled.section`
   align-items: center;
   width: 80%;
   height: 70vh;
-  gap: 2rem;
+  gap: 1.5rem;
   letter-spacing: 1px;
   padding: 6rem 2rem;
   margin-bottom: 3rem;
@@ -55,14 +55,14 @@ export const TitleSection = styled.section`
   p {
     width: 55%;
     font-family: "Barlow", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 400;
     text-align: center;
   }
 `;
 
 export const AnimatedArrow = styled(ArrowDown)`
-  animation: floatDown 2s ease-in-out infinite;
+  animation: floatDown 3s ease-in-out infinite;
   opacity: 0.7;
 
   @keyframes floatDown {
@@ -71,7 +71,7 @@ export const AnimatedArrow = styled(ArrowDown)`
       opacity: 0.6;
     }
     50% {
-      transform: translateY(10px);
+      transform: translateY(15px);
       opacity: 1;
     }
     100% {
