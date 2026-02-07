@@ -32,6 +32,7 @@ export const StorySection = styled.section`
   border: 1px solid gray;
   box-shadow: 8px 8px 10px black;
   border-radius: 20px;
+  margin-bottom: 5rem;
 `;
 
 export const StoryTxt = styled.div`
@@ -78,6 +79,83 @@ export const ParWrapper = styled.div`
   }
 `;
 
+// export const TeamSection = styled.section`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   background-color: #231b26;
+//   min-height: 25vh;
+//   padding: 4rem 0;
+// `;
+
+// export const Workers = styled.div`
+//   display: flex;
+//   justify-content: space-around;
+//   width: 80%;
+//   animation: fadeUp both;
+//   animation-timeline: view(20% 10%);
+
+//   @keyframes fadeUp {
+//     from {
+//       opacity: 0;
+//       transform: translateY(10px) scale(0.5);
+//     }
+//     to {
+//       opacity: 1;
+//       transform: translateY(0) scale(1);
+//     }
+//   }
+//   border: 1px solid yellow;
+// `;
+
+// export const Worker = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   width: 20%;
+//   background: linear-gradient(
+//     90deg,
+//     #ff6adf 0%,
+//     #b56cff 35%,
+//     #5fd3ff 70%,
+//     #45f3e5 100%
+//   );
+//   box-shadow: 8px 8px 10px black;
+//   border-radius: 16px;
+
+//   padding: 1rem;
+//   margin: 0;
+//   &:hover {
+//     transform: scale(1.05);
+//     transition: all 0.2s ease-in-out;
+//   }
+
+//   border: 1px solid red;
+
+//   img {
+//     border: 1px solid black;
+//     border-radius: 50%;
+//     margin-bottom: 2rem;
+//   }
+
+//   h4 {
+//     font-family: "Barlow Semi Condensed", sans-serif;
+//     font-size: 1.4rem;
+//     font-weight: 600;
+//     letter-spacing: 2px;
+//     margin: 0;
+//   }
+
+//   p {
+//     margin: 0;
+//     font-family: "Barlow", sans-serif;
+//     font-size: 1.1rem;
+//     font-weight: 600;
+//     letter-spacing: 1px;
+//   }
+// `;
 
 export const TeamSection = styled.section`
   display: flex;
@@ -91,30 +169,18 @@ export const TeamSection = styled.section`
 
 export const Workers = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 75%;
-  animation: fadeUp both;
-  animation-timeline: view(20% 10%);
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
+  justify-content: center;
+  gap: 2rem;
+  width: 80%;
+  flex-wrap: wrap;
 `;
 
 export const Worker = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  width: 20%;
+  text-align: center;
+  width: 13.75rem;
   background: linear-gradient(
     90deg,
     #ff6adf 0%,
@@ -124,12 +190,36 @@ export const Worker = styled.div`
   );
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
-
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   margin: 0;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+
+  img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid white;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  p:first-of-type {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  p:last-of-type {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
   }
 `;
-

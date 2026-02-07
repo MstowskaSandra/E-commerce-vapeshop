@@ -1,5 +1,8 @@
 import * as S from "./Stores.styles";
-import Face from "../../assets/kobietavape.jpg";
+import Buba from "../../assets/Buba.jpeg";
+import Daniel from "../../assets/DanielProfilowe.jpg";
+import Kamil from "../../assets/KamilProfilowe.jpg";
+import Kornela from "../../assets/KorneliaProfilowe.jpg";
 
 const team = [
   {
@@ -7,14 +10,14 @@ const team = [
     name: "Daniel",
     position: "Założyciel",
     description: "Zna każdy trick, żeby Twój setup działał bez niespodzianek",
-    img: Face,
+    img: Daniel,
   },
   {
     id: 2,
     name: "Kamil",
     position: "Sprzedawca",
     description: "Zawsze testuje sprzęt, zanim go poleci — na własnej skórze",
-    img: Face,
+    img: Kamil,
   },
   {
     id: 3,
@@ -22,7 +25,7 @@ const team = [
     position: "Sprzedawca",
     description:
       "Wie, który smak sprawi, że uśmiechniesz się przy pierwszym zaciągnięciu",
-    img: Face,
+    img: Kornela,
   },
   {
     id: 4,
@@ -30,7 +33,7 @@ const team = [
     position: "Maskotka",
     description:
       "Szef ds. wąchania wszystkiego, zawsze gotowa na drzemkę w pracy",
-    img: Face,
+    img: Buba,
   },
 ];
 
@@ -73,7 +76,7 @@ const Stores = () => (
         {team.map(({ id, name, position, description, img }) => (
           <S.Worker key={id}>
             <img src={img}></img>
-            <p>{name}</p>
+            <h4>{name}</h4>
             <p>{position}</p>
             <p>{description}</p>
           </S.Worker>

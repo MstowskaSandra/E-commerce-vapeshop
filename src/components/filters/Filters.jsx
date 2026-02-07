@@ -75,7 +75,7 @@ const Filters = ({ filters, onChange, collectionName = "products" }) => {
 
       <S.SearchInput
         type="text"
-        placeholder="Szukaj po nazwie..."
+        placeholder="Szukaj..."
         value={filters.search}
         onChange={(e) =>
           onChange((prev) => ({ ...prev, search: e.target.value }))
