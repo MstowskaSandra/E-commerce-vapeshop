@@ -2,6 +2,7 @@ import * as S from "./PodCard.styles";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../reducers/cartSlice";
+import toast from "react-hot-toast";
 
 const PodCard = ({ pod }) => {
   const dispatch = useDispatch();
@@ -15,6 +16,10 @@ const PodCard = ({ pod }) => {
     e.preventDefault();
     e.stopPropagation();
     dispatch(addToCart(pod));
+    toast.success(`Produkt leci do koszyka`, {
+      duration: 2000,
+      icon: "🔥",
+    });
   };
 
   return (
