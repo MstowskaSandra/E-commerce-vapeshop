@@ -21,6 +21,15 @@ const Contact = () => (
         <p>
           <strong>Lokalizacja: </strong>Pl Gimnazjalny 9, Oława
         </p>
+        <S.ShopTime>
+          <p>Godziny otwarcia:</p>
+          <p>
+            <strong>Pon - Pią: </strong>10:00-19:00
+          </p>
+          <p>
+            <strong>Sob: </strong>11:00-16:00
+          </p>
+        </S.ShopTime>
       </S.Shop>
       <S.Shop>
         <h2>Strzelin</h2>
@@ -33,6 +42,15 @@ const Contact = () => (
         <p>
           <strong>Lokalizacja: </strong>Rynek 2a, 57-100 Strzelin
         </p>
+        <S.ShopTime>
+          <p>Godziny otwarcia:</p>
+          <p>
+            <strong>Pon - Pią: </strong>10:00-19:00
+          </p>
+          <p>
+            <strong>Sob: </strong>10:00-15:00
+          </p>
+        </S.ShopTime>
       </S.Shop>
     </S.ShopsSection>
 

@@ -44,48 +44,64 @@ export const ShopsSection = styled.section`
 
 
 export const Shop = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 1rem;
-    border: 1px solid gray;
-  
-    background: linear-gradient(
-        90deg,
-        #ff6adf 0%,
-        #b56cff 35%,
-        #5fd3ff 70%,
-        #45f3e5 100%
-    );
-    box-shadow: 8px 8px 10px black;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    padding: 1rem;
-    margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  margin: 0;
 
-    &:hover {
-        transform: scale(1.1);
-    }
+  &:hover {
+    transform: scale(1.1);
+  }
 
-    h2 {
-        text-align: center;
-        text-transform: uppercase;
-        font-family: "Barlow Semi Condensed", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid white;
-       
-    }
+  h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid white;
+    margin-bottom: 2rem;
+  }
 
-    p {
-        margin: 0;
-        font-family: "Barlow", sans-serif;
-        font-size: 1.1rem;
-        font-weight: 500;
-        letter-spacing: 1px;
-    }
+  p {
+    margin-bottom: 0.5rem;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+`;
+
+export const ShopTime = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  align-self: center;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 3px solid white;
+  box-shadow: 8px 8px 10px black;
+  margin-top: 2rem;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    border-color: #ff6adf;
+  }
+
+  p:first-of-type {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
 `;
 
 export const SocialMediaSection = styled.section`

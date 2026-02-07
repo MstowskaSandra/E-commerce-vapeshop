@@ -83,3 +83,47 @@ export const TotalBtn = styled.button`
   }
 `;
 
+
+export const CartEmpty = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 3.125rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 2rem;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  p {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-top: 2rem;
+
+    a {
+      color: #fa1db2;
+
+      &:hover {
+        color: blueviolet;
+      }
+    }
+  }
+`;

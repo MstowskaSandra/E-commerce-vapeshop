@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setCartForOrder } from "../../reducers/orderSlice";
 import CartItem from "../../components/cartItem/CartItem";
 import { ArrowRight } from "lucide-react";
+import Hamster from '../../assets/hamsterGIF.gif';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -31,18 +32,16 @@ const Cart = () => {
     navigate("/form");
   };
 
-  if (cartItems.length === 0) {
-    return (
-      <div className="cart-empty">
-        <h1>Twój koszyk jest pusty</h1>
-        <p>
-          Dodaj produkty z <a href="/produkty">katalogu</a>.
-        </p>
-      </div>
-    );
-  }
-
-  return (
+ 
+  return cartItems.length === 0 ? (
+    <S.CartEmpty>
+      <h1>Twój koszyk jest pusty</h1>
+      <img src={Hamster} alt="sad hamster" />
+      <p>
+        Dodaj produkty z <a href="/produkty">katalogu</a>.
+      </p>
+    </S.CartEmpty>
+  ) : (
     <S.CartSection>
       <h1>Twój koszyk ({cartItems.length} produkty)</h1>
       <S.CartContainer>
@@ -66,6 +65,7 @@ const Cart = () => {
       </S.CartContainer>
     </S.CartSection>
   );
-};
+};;
+
 
 export default Cart;

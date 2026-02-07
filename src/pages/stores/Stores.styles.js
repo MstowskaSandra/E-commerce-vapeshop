@@ -79,84 +79,6 @@ export const ParWrapper = styled.div`
   }
 `;
 
-// export const TeamSection = styled.section`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-//   background-color: #231b26;
-//   min-height: 25vh;
-//   padding: 4rem 0;
-// `;
-
-// export const Workers = styled.div`
-//   display: flex;
-//   justify-content: space-around;
-//   width: 80%;
-//   animation: fadeUp both;
-//   animation-timeline: view(20% 10%);
-
-//   @keyframes fadeUp {
-//     from {
-//       opacity: 0;
-//       transform: translateY(10px) scale(0.5);
-//     }
-//     to {
-//       opacity: 1;
-//       transform: translateY(0) scale(1);
-//     }
-//   }
-//   border: 1px solid yellow;
-// `;
-
-// export const Worker = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   width: 20%;
-//   background: linear-gradient(
-//     90deg,
-//     #ff6adf 0%,
-//     #b56cff 35%,
-//     #5fd3ff 70%,
-//     #45f3e5 100%
-//   );
-//   box-shadow: 8px 8px 10px black;
-//   border-radius: 16px;
-
-//   padding: 1rem;
-//   margin: 0;
-//   &:hover {
-//     transform: scale(1.05);
-//     transition: all 0.2s ease-in-out;
-//   }
-
-//   border: 1px solid red;
-
-//   img {
-//     border: 1px solid black;
-//     border-radius: 50%;
-//     margin-bottom: 2rem;
-//   }
-
-//   h4 {
-//     font-family: "Barlow Semi Condensed", sans-serif;
-//     font-size: 1.4rem;
-//     font-weight: 600;
-//     letter-spacing: 2px;
-//     margin: 0;
-//   }
-
-//   p {
-//     margin: 0;
-//     font-family: "Barlow", sans-serif;
-//     font-size: 1.1rem;
-//     font-weight: 600;
-//     letter-spacing: 1px;
-//   }
-// `;
-
 export const TeamSection = styled.section`
   display: flex;
   justify-content: center;
@@ -221,5 +143,26 @@ export const Worker = styled.div`
     margin: 0;
     font-size: 0.9rem;
     font-weight: 400;
+  }
+`;
+
+export const ShopTime = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #231b26;
+  box-shadow: 8px 8px 10px black;
+  border-radius: 16px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  p {
+    margin: 0;
   }
 `;
