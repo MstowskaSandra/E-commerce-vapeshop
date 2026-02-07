@@ -20,6 +20,7 @@ import Cart from "./pages/cart/Cart.jsx";
 import OrderSummary from "./pages/summary/OrderSummary.jsx";
 
 import { useAgeVerification } from "./hooks/useAgeVerification.js";
+import NotFound from "./pages/notFound/NotFound.jsx";
 
 
 function App() {
@@ -49,7 +50,7 @@ function App() {
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/pods" element={<PodList />} />
 
-                <Route path="*" element={<Navigate to="/" />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </S.Main>
             <Footer />
