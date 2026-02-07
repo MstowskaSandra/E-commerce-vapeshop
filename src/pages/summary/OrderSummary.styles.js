@@ -9,11 +9,12 @@ export const SummaryContainer = styled.div`
   max-width: 1000px;
   padding: 3rem 2rem;
   margin: 3rem auto;
-  background: transparent;
-  border: 1px solid gray;
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
-  box-shadow: 8px 8px 12px black;
-  border-radius: 16px;
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  box-shadow: 8px 8px 10px black;
   font-family: "Barlow Semi Condensed", sans-serif;
 
   h2 {
@@ -134,10 +135,10 @@ export const ProductsSection = styled.section`
       justify-content: space-between;
       align-items: flex-start;
       padding: 0.5rem 0;
-      border-bottom: 1px solid gray;
+      border-bottom: 1px solid white;
 
       &:first-child {
-        border-top: 1px solid gray;
+        border-top: 1px solid white;
       }
 
       p {

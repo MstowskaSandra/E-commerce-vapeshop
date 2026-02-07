@@ -89,8 +89,13 @@ export const CartEmpty = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  border: 3px solid white;
-  border-radius: 20px;
+  width: 60%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
   padding: 2rem 2rem;
   margin-bottom: 3rem;
 
