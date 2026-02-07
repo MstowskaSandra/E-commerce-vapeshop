@@ -70,7 +70,9 @@ const OrderSummary = () => {
             <ul>
               {cartItems.map((item) => (
                 <li key={item.id}>
-                  <p>{item.Title}</p>
+                  <p>
+                    {item.Title} || {item.Model}
+                  </p>
                   <p>
                     {item.quantity} x {item.Price}zł –{" "}
                     {(item.Price * item.quantity).toFixed(2)} zł
