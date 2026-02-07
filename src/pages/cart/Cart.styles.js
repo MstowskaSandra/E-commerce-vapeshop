@@ -34,6 +34,27 @@ export const CartContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
+  border: 1px solid yellow;
+`;
+
+export const ShopingBtn = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  align-self: flex-start;
+  padding-left: 5rem;
+  padding-top: 0;
+
+  &:hover {
+    color: #fa1db2;
+    transform: scale(1.1);
+    font-weight: 600;
+  }
 `;
 
 export const CartItems = styled.ul`

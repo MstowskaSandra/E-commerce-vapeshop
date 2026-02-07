@@ -1,11 +1,11 @@
 import * as S from "./Cart.styles";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../../reducers/cartSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { setCartForOrder } from "../../reducers/orderSlice";
 import CartItem from "../../components/cartItem/CartItem";
-import { ArrowRight } from "lucide-react";
-import Hamster from '../../assets/hamsterGIF.gif';
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Hamster from "../../assets/hamsterGIF.gif";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -32,7 +32,6 @@ const Cart = () => {
     navigate("/form");
   };
 
- 
   return cartItems.length === 0 ? (
     <S.CartEmpty>
       <h1>Twój koszyk jest pusty</h1>
@@ -56,6 +55,10 @@ const Cart = () => {
             />
           ))}
         </S.CartItems>
+        <S.ShopingBtn as={Link} to="/products">
+          <ArrowLeft size={32} strokeWidth={2} />
+          Szukaj kolejnego produktu
+        </S.ShopingBtn>
         <S.CartTotal>
           <p>Suma: {total.toFixed(2)} zł</p>
           <S.TotalBtn onClick={handleCheckout}>
@@ -65,7 +68,7 @@ const Cart = () => {
       </S.CartContainer>
     </S.CartSection>
   );
-};;
+};
 
 
 export default Cart;
