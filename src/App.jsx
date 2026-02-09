@@ -1,7 +1,7 @@
 import * as S from "./styles/App.styles.js";
 import GlobalStyles from "./styles/GlobalStyles.js";
 import PersistedProvider from "./components/PersistedProvider.jsx";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
 import Nav from "./components/nav/Nav.jsx";
@@ -21,6 +21,7 @@ import OrderSummary from "./pages/summary/OrderSummary.jsx";
 
 import { useAgeVerification } from "./hooks/useAgeVerification.js";
 import NotFound from "./pages/notFound/NotFound.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Toaster position="bottom-right" />
       <PersistedProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <S.Body>
             <Nav />
             <S.Main>
