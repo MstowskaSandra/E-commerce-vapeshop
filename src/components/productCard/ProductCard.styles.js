@@ -30,9 +30,8 @@ export const ProductImage = styled.div`
   margin-bottom: 1rem;
 
   img {
-    width: 75%;
-    max-width: 500px;
-    height: auto;
+    width: 12rem;
+    height: 12rem;
     border-radius: 16px;
     box-shadow: 10px 10px 15px black;
 

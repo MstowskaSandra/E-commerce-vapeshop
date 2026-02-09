@@ -11,6 +11,7 @@ import {
   Wallet,
   CigaretteOff,
   Smile,
+  ArrowDown,
 } from "lucide-react";
 import Pod from "../../assets/oxva.png";
 import Liquid from "../../assets/liquid.png";
@@ -74,9 +75,10 @@ const Home = () => {
           indywidualne podejście do każdego klienta
         </p>
         <p>Sprawdź nas</p>
-        <S.AnimatedArrow size={64} strokeWidth={2} />
+        <S.ArrowWrapper>
+          <ArrowDown size={48} strokeWidth={2} />
+        </S.ArrowWrapper>
       </S.TitleSection>
-
       <S.AdvantagesSection>
         <S.AdvantagesContainer>
           {items.map(({ id, header, txt, Icon }) => (

@@ -34,7 +34,7 @@ export const CartContainer = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
-  border: 1px solid yellow;
+  border: 1px solid gray;
 `;
 
 export const ShopingBtn = styled.button`

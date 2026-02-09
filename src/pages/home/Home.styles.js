@@ -61,7 +61,27 @@ export const TitleSection = styled.section`
   }
 `;
 
-export const AnimatedArrow = styled(ArrowDown)`
+// export const AnimatedArrow = styled(ArrowDown)`
+//   animation: floatDown 3s ease-in-out infinite;
+//   opacity: 0.7;
+
+//   @keyframes floatDown {
+//     0% {
+//       transform: translateY(0);
+//       opacity: 0.6;
+//     }
+//     50% {
+//       transform: translateY(15px);
+//       opacity: 1;
+//     }
+//     100% {
+//       transform: translateY(0);
+//       opacity: 0.6;
+//     }
+//   }
+// `;
+
+export const ArrowWrapper = styled.div`
   animation: floatDown 3s ease-in-out infinite;
   opacity: 0.7;
 
