@@ -30,6 +30,7 @@ const PodCard = ({ pod }) => {
         </S.ProductImage>
         <h3>{pod.Model}</h3>
         <S.ProductInfo>
+          <p>Kolor: {pod.Color}</p>
           <p>Moc: {pod.Power}</p>
           <p>Bateria: {pod.Battery}</p>
           <p>

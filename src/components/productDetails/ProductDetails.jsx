@@ -78,6 +78,9 @@ const ProductDetails = () => {
           {hasDevice && (
             <div className="specs">
               <div>
+                <strong>Kolor:</strong> {attrs.Color || "-"}
+              </div>
+              <div>
                 <strong>Pojemność baterii:</strong> {attrs.Battery || "-"}
               </div>
               <div>
