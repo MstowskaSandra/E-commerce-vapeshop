@@ -25,6 +25,11 @@ import Gobear from "../../assets/gobearlogo.png";
 import Lostvape from "../../assets/lost-vape.png";
 import Vaporesso from "../../assets/vaporessologo.png";
 import Womanavape from "../../assets/kobietavape.jpg";
+import Photo1 from "../../assets/img11.jpeg";
+import Photo2 from "../../assets/img7.jpeg";
+import Photo3 from "../../assets/img6.jpeg";
+import Photo4 from "../../assets/img12.jpeg";
+import Photo5 from "../../assets/img13.jpeg";
 
 const items = [
   {
@@ -267,6 +272,27 @@ const Home = () => {
           </S.ShopTime>
         </S.Shop>
       </S.ShopSection>
+
+      <S.PhotoSection>
+        <S.Group>
+          <S.Photo>
+            <img src={Photo4} />
+          </S.Photo>
+          <S.Photo>
+            <img src={Photo3} />
+          </S.Photo>
+          <S.Photo>
+            <img src={Photo5} />
+          </S.Photo>
+          <S.Photo>
+            <img src={Photo1} />
+          </S.Photo>
+          <S.Photo>
+            <img src={Photo2} />
+          </S.Photo>
+        </S.Group>
+      </S.PhotoSection>
+
       <S.ReviewsSection>
         <S.Reviews>
           <h4>Opinie</h4>

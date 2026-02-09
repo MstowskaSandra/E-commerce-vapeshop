@@ -512,11 +512,17 @@ export const BrandLogo = styled.div`
 `;
 
 export const ShopSection = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
   background: transparent;
   backdrop-filter: blur(10px);
   width: 100%;
   min-height: 75vh;
   padding-top: 8rem;
+  padding-bottom: 4rem;
 
   h2 {
     padding-bottom: 2rem;
@@ -553,7 +559,9 @@ export const ShopSection = styled.section`
 
 export const Shop = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
   gap: 3rem;
   align-items: center;
   margin-bottom: 1rem;
@@ -645,6 +653,59 @@ export const ReviewsSection = styled.section`
   padding: 8rem 0;
 `;
 
+export const PhotoSection = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+  background-color: #231b26;
+`;
+
+export const Group = styled.div`
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+`;
+
+export const Photo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 15rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    border: 1px solid gray;
+    box-shadow: 8px 8px 10px black;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+`;
+
 export const Reviews = styled.div`
   display: flex;
   flex-direction: column;
@@ -671,7 +732,7 @@ export const Reviews = styled.div`
 `;
 
 export const WidgetWrapper = styled.div`
-  width: 100%;
-  max-width: 100%;
+  width: 75%;
+  max-width: 75%;
   overflow-x: hidden;
 `;

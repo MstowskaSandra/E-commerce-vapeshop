@@ -14,7 +14,8 @@ export const CartItemLi = styled.li`
   box-shadow: 8px 8px 10px black;
 
   img {
-    width: 30%;
+    width: 10rem;
+    height: 10rem;
     border-radius: 16px;
     border: 1px solid gray;
     box-shadow: 8px 8px 10px black;

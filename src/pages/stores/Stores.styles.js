@@ -32,7 +32,7 @@ export const StorySection = styled.section`
   border: 1px solid gray;
   box-shadow: 8px 8px 10px black;
   border-radius: 20px;
-  margin-bottom: 5rem;
+  margin: 5rem 0;
 `;
 
 export const StoryTxt = styled.div`
@@ -68,7 +68,7 @@ const fadeUp = keyframes`
     opacity: 0;
     transform: translateY(20px) scale(0.8);
   }
-  50% {
+  60% {
     opacity: 1;
     transform: translateY(-5px) scale(1.1);
   }
@@ -193,5 +193,49 @@ export const Worker = styled.div`
     margin: 0;
     font-size: 0.9rem;
     font-weight: 400;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+`;
+
+export const PhotoSection = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 0;
+  background-color: #231b26;
+`;
+
+export const Group = styled.div`
+  width: 75%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Photo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 15rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    border: 1px solid gray;
+    box-shadow: 8px 8px 10px black;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+    }
   }
 `;

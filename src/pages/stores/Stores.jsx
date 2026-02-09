@@ -4,6 +4,11 @@ import Buba from "../../assets/Buba.jpeg";
 import Daniel from "../../assets/DanielProfilowe.jpg";
 import Kamil from "../../assets/KamilProfilowe.jpg";
 import Kornela from "../../assets/KorneliaProfilowe.jpg";
+import Photo1 from "../../assets/img1.jpeg";
+import Photo2 from "../../assets/img2.jpeg";
+import Photo3 from "../../assets/img3.jpeg";
+import Photo4 from "../../assets/img5.jpeg";
+import Photo5 from "../../assets/img10.jpeg";
 
 const team = [
   {
@@ -40,6 +45,20 @@ const team = [
 
 const Stores = () => (
   <S.Stores>
+    <S.TeamSection>
+      <h2>Nasza ekipa</h2>
+      <S.Workers>
+        {team.map(({ id, name, position, description, img }) => (
+          <S.Worker key={id}>
+            <img src={img}></img>
+            <h4>{name}</h4>
+            <p>{position}</p>
+            <p>{description}</p>
+          </S.Worker>
+        ))}
+      </S.Workers>
+    </S.TeamSection>
+
     <S.StorySection>
       <S.StoryTxt>
         <h4>12 lat z vapem</h4>
@@ -90,19 +109,42 @@ const Stores = () => (
       </S.StoryTxt>
     </S.StorySection>
 
-    <S.TeamSection>
-      <h2>Nasza ekipa</h2>
-      <S.Workers>
-        {team.map(({ id, name, position, description, img }) => (
-          <S.Worker key={id}>
-            <img src={img}></img>
-            <h4>{name}</h4>
-            <p>{position}</p>
-            <p>{description}</p>
-          </S.Worker>
-        ))}
-      </S.Workers>
-    </S.TeamSection>
+    <S.PhotoSection>
+      <S.Group>
+        <S.Photo>
+          <img src={Photo2} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo3} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo1} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo4} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo5} />
+        </S.Photo>
+      </S.Group>
+    </S.PhotoSection>
+    {/* <S.PhotoSection>
+      <S.Group>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+        <S.Photo></S.Photo>
+      </S.Group>
+    </S.PhotoSection> */}
   </S.Stores>
 );
 
