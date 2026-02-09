@@ -1,4 +1,5 @@
 import * as S from "./ProductList.styles";
+import { useEffect } from "react";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../filters/Filters";
 import PodCard from "../../components/productCard/PodCard";
@@ -15,6 +16,13 @@ const PodList = () => {
     setPage,
     pagination,
   } = useCollectionItems("pods");
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   if (loading) return <div>Ładowanie urządzeń...</div>;
   if (error) return <div>Błąd: {error.message}</div>;

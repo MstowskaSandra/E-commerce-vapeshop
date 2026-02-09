@@ -1,4 +1,5 @@
 import * as S from "./ProductList.styles";
+import { useEffect } from "react";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../../components/filters/Filters";
 import ProductCard from "../productCard/ProductCard";
@@ -15,6 +16,13 @@ const ProductList = () => {
     setPage,
     pagination,
   } = useCollectionItems("products");
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   if (loading) return <div className="loading">Ładowanie produktów...</div>;
   if (error) return <div className="error">Błąd: {error.message}</div>;
