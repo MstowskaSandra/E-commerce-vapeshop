@@ -206,15 +206,16 @@ export const PhotoSection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   padding: 5rem 0;
   background-color: #231b26;
 `;
 
 export const Group = styled.div`
+  display: flex;
   width: 75%;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 `;
 
 export const Photo = styled.div`

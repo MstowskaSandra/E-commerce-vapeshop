@@ -12,21 +12,15 @@ const OrderSummary = () => {
   );
 
   const handleSendOrder = async () => {
-    // try {
-    //     await fetch('/api/send-order', {
-    //         method: 'POST',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({ formData, cartItems, totalAmount })
-    //     });
-    dispatch(sendOrder());
-    console.log("📧 Mock email");
-    alert(`✅ Zamówienie #${orderNumber} wysłane na gosmoke email!`);
-    dispatch(resetForm());
-    dispatch(clearCart());
-    navigate("/");
-    // } catch (error) {
-    //     alert('Błąd wysyłania zamówienia.')
-    // }
+    try {
+      await dispatch(sendOrder()).unwrap();
+      alert(`✅ Zamówienie #${orderNumber} wysłane!`);
+      dispatch(resetForm());
+      dispatch(clearCart());
+      navigate("/");
+    } catch (error) {
+      alert(`❌ Błąd wysyłki: ${error}`);
+    }
   };
 
   return (

@@ -128,23 +128,6 @@ const Stores = () => (
         </S.Photo>
       </S.Group>
     </S.PhotoSection>
-    {/* <S.PhotoSection>
-      <S.Group>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-        <S.Photo></S.Photo>
-      </S.Group>
-    </S.PhotoSection> */}
   </S.Stores>
 );
 
