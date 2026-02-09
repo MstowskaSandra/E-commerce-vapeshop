@@ -1,4 +1,5 @@
 import * as S from "./Stores.styles";
+import { ArrowDown, Tally1 } from "lucide-react";
 import Buba from "../../assets/Buba.jpeg";
 import Daniel from "../../assets/DanielProfilowe.jpg";
 import Kamil from "../../assets/KamilProfilowe.jpg";
@@ -48,23 +49,41 @@ const Stores = () => (
             Kilka lat pracy w branży. Setki godzin rozmów z klientami — najpierw
             u konkurencji.
           </p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
           <p>
             I jedna myśl, która wracała coraz częściej: da się to zrobić lepiej.
           </p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
           <p>
             Z czasem pojawiła się decyzja: stworzyć miejsce, w którym liczy się
             realne doradztwo, uczciwość i atmosfera, do której chce się
             wracać.{" "}
           </p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
           <p>Tak powstał nasz pierwszy vapeshop.</p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
           <p>
             Po ponad roku działania i setkach rozmów z klientami otworzyliśmy
             drugi punkt.
           </p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
           <p>
             Dziś tworzymy zgrany zespół 3 pasjonatów którzy znają się na tym, co
             sprzedają, bo sami z tego korzystają.
           </p>
+          <S.ArrowWrapper>
+            <ArrowDown size={48} strokeWidth={2} />
+          </S.ArrowWrapper>
         </S.ParWrapper>
         <h3>Robimy to po swojemu.</h3>
         <h3>Robimy to dobrze.</h3>

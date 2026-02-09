@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Stores = styled.div`
   width: 100%;
@@ -24,7 +24,7 @@ export const StorySection = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 75%;
+  width: 50%;
   min-height: 75vh;
   padding: 5rem 0;
   background: transparent;
@@ -63,20 +63,59 @@ export const StoryTxt = styled.div`
   }
 `;
 
+const fadeUp = keyframes`
+    0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+`;
+
 export const ParWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem 0;
-  gap: 1rem;
+  gap: 2rem;
+
+  p,
+  div {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: ${fadeUp} both;
+    animation-timeline: view(20% 10%);
+  }
+
+  p:nth-of-type(1) {
+    animation-range: entry 20% cover 40%;
+  }
+  div:nth-of-type(1) {
+    animation-range: entry 40% cover 60%;
+  }
+  p:nth-of-type(2) {
+    animation-range: entry 60% cover 80%;
+  }
 
   p {
-    text-align: left;
+    text-align: center;
     font-family: "Barlow", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     text-transform: uppercase;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
+`;
+
+export const ArrowWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TeamSection = styled.section`
@@ -156,4 +195,3 @@ export const Worker = styled.div`
     font-weight: 400;
   }
 `;
-
