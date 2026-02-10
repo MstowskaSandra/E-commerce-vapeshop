@@ -142,11 +142,13 @@ export const AdvantagesContainer = styled.div`
 export const AdvantagesItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
   padding: 1.5rem;
 
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
+  box-shadow: 8px 8px 10px black;
 
   animation: fadeUp both;
   animation-timeline: view(10% 5%);
@@ -173,7 +175,7 @@ export const AdvantagesItem = styled.div`
 
   @media (min-width: ${breakpoints.laptop}) {
     border-right: 3px solid #fa1db2;
-    gap: 2rem;
+    gap: 3rem;
   }
 `;
 
@@ -227,6 +229,7 @@ export const AskContainer = styled.div`
     width: 100%;
     border-radius: 20px;
     object-fit: cover;
+    box-shadow: 8px 8px 10px black;
   }
 
   @media (min-width: ${breakpoints.tablet}) {
@@ -292,18 +295,16 @@ export const AskTxt = styled.div`
 export const CategoriesSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
-  background-color: #231b26;
   width: 100%;
-  min-height: 75vh;
-  padding: 8rem 0;
+  padding: 4rem 1.5rem;
+  background-color: #231b26;
 
   h2 {
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 3.125rem;
+    font-size: 2rem;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 600;
     background: linear-gradient(
@@ -329,36 +330,36 @@ export const CategoriesSection = styled.section`
         background-position: 0% 50%;
       }
     }
+
+    @media (min-width: ${breakpoints.tablet}) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      font-size: 3.125rem;
+    }
   }
 `;
 
 export const CategoriesContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 75%;
-  animation: fadeUp both;
-  animation-timeline: view(10% 5%);
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  grid-template-columns: 1fr;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 export const CategorieItem = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 25%;
-  height: 75%;
   background: linear-gradient(
     90deg,
     #ff6adf 0%,
@@ -368,72 +369,11 @@ export const CategorieItem = styled.div`
   );
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
-
   padding: 1rem;
-  margin: 0;
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
+  width: 90%;
+  max-width: 17.5rem;
+  transition: transform 0.3s ease-in-out;
 
-  h4 {
-    text-align: center;
-    font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  img {
-    height: 80%;
-    animation: imageReveal both;
-    animation-timeline: view(40% 10%);
-
-    @keyframes imageReveal {
-      from {
-        filter: saturate(0) contain-intrinsic-width(4) brightness(0.1)
-          border-top-left-radius(5px);
-        opacity: 0;
-        scale: 0.95;
-        translate: 0 4rem;
-      }
-      to {
-        filter: none;
-        opacity: 1;
-        scale: 1;
-        translate: 0 0;
-      }
-    }
-  }
-
-  button {
-    align-self: start;
-    padding: 0.25rem 0.5rem;
-    justify-self: center;
-    border: 2px solid gray;
-    box-shadow: 8px 8px 12px black;
-
-    &:hover {
-      border-color: black;
-      transform: translateX(4px);
-      transition: all 0.2s ease-in-out;
-      box-shadow: 4px 4px 6px black;
-    }
-  }
-`;
-
-export const NoSmokingSection = styled.section`
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 10rem;
-  background: transparent;
-  backdrop-filter: blur(10px);
-`;
-
-export const Header = styled.div`
-  text-align: center;
-  margin-top: 4rem;
   animation: fadeUp both;
   animation-timeline: view(10% 5%);
 
@@ -448,54 +388,159 @@ export const Header = styled.div`
     }
   }
 
-  h2 {
+  h4 {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     text-align: center;
+    margin-bottom: 0.5rem;
+
+    @media (min-width: ${breakpoints.tablet}) {
+      font-size: 1.1rem;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    animation: imageReveal both;
+    animation-timeline: view(40% 10%);
+  }
+
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid gray;
+    border-radius: 8px;
+    box-shadow: 8px 8px 12px black;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover {
+      border-color: black;
+      transform: translateX(4px);
+      box-shadow: 4px 4px 6px black;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 80%;
+    max-width: 260px;
+  }
+
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 100%;
+    max-width: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+export const NoSmokingSection = styled.section`
+  width: 100%;
+  padding: 4rem 1.5rem;
+  background: transparent;
+  backdrop-filter: blur(10px);
+`;
+
+export const Header = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeUp both;
+  animation-timeline: view(10% 5%);
+
+  h2 {
     font-family: "Barlow Semi Condensed", sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 3.125rem;
+    font-size: 2rem;
+
+    @media (min-width: ${breakpoints.tablet}) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      font-size: 3.125rem;
+    }
   }
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 2rem;
-  width: 90%;
-  padding: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const LeftContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  justify-content: flex-start;
   align-items: center;
-  width: 30vw;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 25%;
+    align-items: flex-start;
+  }
 `;
 
 export const RightContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  justify-content: flex-end;
   align-items: center;
-  width: 30vw;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 25%;
+    align-items: flex-end;
+  }
 `;
 
 export const MiddleContent = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  width: 30vw;
+  width: 100%;
+  margin: 2rem 0;
+
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 50%;
+    min-height: 30rem;
+    margin: 0;
+  }
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 40%;
+    min-height: 20rem;
+    margin: 0;
+  }
 `;
 
 export const BackgroundImg = styled.div`
   width: 100%;
-  height: 100%;
+  max-width: 25rem;
   border-radius: 100% 0% 100% 0% / 84% 0% 100% 16%;
   background: linear-gradient(
     135deg,
@@ -504,13 +549,17 @@ export const BackgroundImg = styled.div`
     #8a1fa8 65%,
     #e00088 100%
   );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 
   img {
+    width: 100%;
+    height: auto;
     transition: all 0.3s ease-in-out;
-
     &:hover {
       transform: scale(1.1) rotate(-15deg);
-      transition: all 0.3s ease-in-out;
     }
   }
 `;
@@ -519,82 +568,109 @@ export const ReasonItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  width: 65%;
+  gap: 2rem;
+  width: 100%;
+  max-width: 18.75rem;
   background-color: #231b26;
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
+  padding: 0.75rem 1rem;
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+  }
+
+  svg {
+    flex-shrink: 0;
   }
 `;
 
 export const ReasonTxtWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: start;
-  width: 50%;
+  align-items: flex-start;
   padding-top: 1rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  gap: 1rem;
+  width: 50%;
 
-  :first-child {
+  p:first-child {
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
-  :last-child {
-    font-size: 0.8rem;
+  p:last-child {
+    font-size: 0.85rem;
     font-weight: 400;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    width: 60%;
+    p:first-child {
+      font-size: 1rem;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    p:last-child {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (min-width: ${breakpoints.laptop}) {
+    width: 60%;
+    p:first-child {
+      font-size: 1.15rem;
+    }
+    p:last-child {
+      font-size: 1rem;
+    }
   }
 `;
 
 export const BrandsSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: left;
+  align-items: center;
   width: 100%;
   background-color: #231b26;
-  min-height: 24vh;
+  padding: 2rem 1rem;
   gap: 1rem;
 `;
 
 export const Brands = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 
-  animation: fadeUp both;
-  animation-timeline: view(20% 10%);
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  @media (min-width: ${breakpoints.laptop}) {
+    gap: 3rem;
   }
 `;
 
 export const BrandLogo = styled.div`
+  flex: 0 0 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   img {
-    width: 6rem;
-    height: 6rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     background-color: white;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
 
     &:hover {
       transform: scale(1.1);
-      transition: all 0.2s ease-in-out;
+    }
+
+    @media (min-width: ${breakpoints.laptop}) {
+      width: 6rem;
+      height: 6rem;
     }
   }
 `;
