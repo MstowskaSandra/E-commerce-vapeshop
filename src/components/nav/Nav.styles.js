@@ -115,22 +115,22 @@ export const CartItem = styled(NavLink)`
   }
 `;
 
-export const CartCounter = styled.span`
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  min-width: 18px;
-  height: 18px;
-  background: #fa1db2;
-  color: white;
-  border-radius: 50%;
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-`;
+// export const CartCounter = styled.span`
+//   position: absolute;
+//   top: -6px;
+//   right: -6px;
+//   min-width: 18px;
+//   height: 18px;
+//   background: #fa1db2;
+//   color: white;
+//   border-radius: 50%;
+//   font-size: 14px;
+//   font-weight: 500;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+// `;
 
 export const HamburgerButton = styled.button`
   display: none;
@@ -173,4 +173,47 @@ export const MobileMenuItem = styled(NavLink)`
     color: #fa1db2;
     font-weight: 700;
   }
+`;
+
+export const MobileCart = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+
+  svg {
+    stroke: white;
+  }
+
+  span {
+    font-weight: 600;
+  }
+`;
+
+export const CartIconWrapper = styled.span`
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const CartCounter = styled.span`
+  position: absolute;
+  top: -0.8rem;
+  right: -1.4rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
+  background: #fa1db2;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

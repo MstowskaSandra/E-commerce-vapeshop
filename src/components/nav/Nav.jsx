@@ -34,10 +34,15 @@ const Nav = () => {
           </S.MenuItems>
         ))}
         <S.CartItem to="/koszyk">
-          <ShoppingBag size={24} />
-          {totalQuantity > 0 && <S.CartCounter>{totalQuantity}</S.CartCounter>}
+          <S.CartIconWrapper>
+            <ShoppingBag size={24} />
+            {totalQuantity > 0 && (
+              <S.CartCounter>{totalQuantity}</S.CartCounter>
+            )}
+          </S.CartIconWrapper>
         </S.CartItem>
       </S.Menu>
+
       <S.MobileMenu $isOpen={isOpen}>
         {navItems.map((item) => (
           <S.MobileMenuItem
@@ -48,6 +53,15 @@ const Nav = () => {
             {item.label}
           </S.MobileMenuItem>
         ))}
+        <S.MobileCart to="/koszyk" onClick={() => setIsOpen(false)}>
+          <S.CartIconWrapper>
+            <ShoppingBag size={24} />
+            {totalQuantity > 0 && (
+              <S.CartCounter>{totalQuantity}</S.CartCounter>
+            )}
+            <span>Koszyk</span>
+          </S.CartIconWrapper>
+        </S.MobileCart>
       </S.MobileMenu>
       <S.HamburgerButton onClick={toggleMenu}>
         {isOpen ? <X size={28} /> : <MenuIcon size={28} />}
