@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { breakpoints } from "../../styles/breakpoints";
-import { ArrowDown } from "lucide-react";
 
 export const Home = styled.div`
   width: 100%;
@@ -17,13 +16,13 @@ export const TitleSection = styled.section`
   gap: 1.5rem;
 
   width: 100%;
-  min-height: 100vh;
-  padding: 6rem 1.5rem 4rem;
+  min-height: 80vh;
+  padding: 6rem 1rem;
   text-align: center;
 
   h1 {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 600;
     text-transform: uppercase;
 
@@ -43,7 +42,7 @@ export const TitleSection = styled.section`
   p {
     max-width: 40rem;
     font-family: "Barlow", sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     line-height: 1.6;
   }
 
@@ -175,7 +174,7 @@ export const AdvantagesItem = styled.div`
 
   @media (min-width: ${breakpoints.laptop}) {
     border-right: 3px solid #fa1db2;
-    gap: 3rem;
+    gap: 2rem;
   }
 `;
 
@@ -489,7 +488,6 @@ export const ContentWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    justify-content: center;
   }
 `;
 
@@ -560,6 +558,14 @@ export const BackgroundImg = styled.div`
     transition: all 0.3s ease-in-out;
     &:hover {
       transform: scale(1.1) rotate(-15deg);
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    img {
+      &:hover {
+        transform: rotate(-15deg);
+      }
     }
   }
 `;
@@ -685,8 +691,7 @@ export const ShopSection = styled.section`
   backdrop-filter: blur(10px);
   width: 100%;
   min-height: 75vh;
-  padding-top: 8rem;
-  padding-bottom: 4rem;
+  padding: 8rem 0;
 
   h2 {
     padding-bottom: 2rem;
@@ -726,26 +731,37 @@ export const Shop = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
-  gap: 3rem;
-  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
-  animation: fadeUp both;
-  animation-timeline: view(20% 10%);
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+  iframe {
+    box-shadow: 8px 8px 10px black;
+    animation: fadeUp both;
+    animation-timeline: view(20% 10%);
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
   }
 
-  img {
-    width: 20rem;
-    height: 15rem;
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    iframe {
+      width: 80%;
+      max-width: 100%;
+    }
   }
 `;
 
@@ -762,6 +778,8 @@ export const ShopInfo = styled.div`
   background-color: #231b26;
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
 
   &:hover {
     transform: scale(1.05);
@@ -771,6 +789,21 @@ export const ShopInfo = styled.div`
   p {
     margin-bottom: 0;
   }
+
+  h3 {
+    text-align: center;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 `;
 
 export const ShopTime = styled.div`
@@ -779,10 +812,24 @@ export const ShopTime = styled.div`
   justify-content: flex-start;
   align-items: start;
   gap: 1rem;
+  min-width: 10rem;
   padding: 1rem;
   background-color: #231b26;
   box-shadow: 8px 8px 10px black;
   border-radius: 16px;
+  animation: fadeUp both;
+  animation-timeline: view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -809,14 +856,6 @@ export const MapBtn = styled.button`
   }
 `;
 
-export const ReviewsSection = styled.section`
-  background: transparent;
-  backdrop-filter: blur(10px);
-  width: 100%;
-  min-height: 75vh;
-  padding: 8rem 0;
-`;
-
 export const PhotoSection = styled.section`
   width: 100%;
   display: flex;
@@ -827,13 +866,28 @@ export const PhotoSection = styled.section`
 `;
 
 export const Group = styled.div`
-  width: 75%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: ${breakpoints.laptop}) {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+`;
+
+export const Photo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 15rem;
+
   animation: fadeUp both;
-  animation-timeline: view(20% 10%);
+  animation-timeline: smooth view(20% 10%);
 
   @keyframes fadeUp {
     from {
@@ -845,14 +899,6 @@ export const Group = styled.div`
       transform: translateY(0) scale(1);
     }
   }
-`;
-
-export const Photo = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  width: 15rem;
 
   img {
     width: 100%;
@@ -868,6 +914,23 @@ export const Photo = styled.div`
       transition: all 0.3s ease-in-out;
     }
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 20rem;
+    img {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+`;
+
+export const ReviewsSection = styled.section`
+  background: transparent;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 75vh;
+  padding: 8rem 0;
 `;
 
 export const Reviews = styled.div`
@@ -886,12 +949,19 @@ export const Reviews = styled.div`
   }
 
   h3 {
-    padding: 0 0 0 2rem;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-size: 3.125rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    h3 {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 2.2rem;
+    }
   }
 `;
 
