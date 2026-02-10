@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const Footer = styled.footer`
   display: flex;
@@ -8,6 +9,7 @@ export const Footer = styled.footer`
   width: 100%;
   background-color: #231b26;
   border-top: 1px solid gray;
+  padding: 1.5rem 0;
 `;
 
 export const FooterContainer = styled.div`
@@ -15,6 +17,14 @@ export const FooterContainer = styled.div`
   width: 80%;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${breakpoints.laptop}) {
+    width: 100%;
+    padding: 0 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
 `;
 
 export const FooterItems = styled.div`
@@ -22,6 +32,10 @@ export const FooterItems = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const FooterLink = styled(Link)`
@@ -44,13 +58,17 @@ export const Copyright = styled.p`
   letter-spacing: 1px;
   font-size: 1rem;
   margin: 0;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const MediaIcons = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: top;
+  align-items: center;
   padding: 0.5rem 0;
 
   p {
@@ -61,6 +79,7 @@ export const MediaIcons = styled.div`
     font-weight: 500;
   }
 `;
+
 
 export const Icons = styled.div`
   display: flex;
