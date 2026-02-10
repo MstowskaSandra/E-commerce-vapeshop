@@ -30,7 +30,8 @@ export const Menu = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    gap: 0.75rem;
+    gap: 0.5rem;
+    font-size: small;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -76,11 +77,11 @@ export const LogoWrapper = styled(Link)`
     width: auto;
 
     @media (max-width: ${breakpoints.tablet}) {
-      height: 4.5rem;
+      height: 4rem;
     }
 
     @media (max-width: ${breakpoints.mobile}) {
-      height: 4rem;
+      height: 3.5rem;
     }
   }
 
@@ -92,7 +93,7 @@ export const LogoWrapper = styled(Link)`
 
     @media (max-width: ${breakpoints.tablet}) {
       font-weight: 700;
-      font-size: x-large;
+      font-size: large;
     }
 
     @media (max-width: ${breakpoints.mobile}) {
@@ -109,28 +110,12 @@ export const CartItem = styled(NavLink)`
   padding: 0.5rem;
   color: white;
   text-decoration: none;
+  margin-right: 2rem;
 
   svg {
     stroke: white;
   }
 `;
-
-// export const CartCounter = styled.span`
-//   position: absolute;
-//   top: -6px;
-//   right: -6px;
-//   min-width: 18px;
-//   height: 18px;
-//   background: #fa1db2;
-//   color: white;
-//   border-radius: 50%;
-//   font-size: 14px;
-//   font-weight: 500;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-// `;
 
 export const HamburgerButton = styled.button`
   display: none;

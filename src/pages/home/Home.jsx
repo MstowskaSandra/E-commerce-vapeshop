@@ -84,6 +84,7 @@ const Home = () => {
           <ArrowDown size={48} strokeWidth={2} />
         </S.ArrowWrapper>
       </S.TitleSection>
+
       <S.AdvantagesSection>
         <S.AdvantagesContainer>
           {items.map(({ id, header, txt, Icon }) => (
@@ -213,7 +214,7 @@ const Home = () => {
         </S.Brands>
       </S.BrandsSection>
 
-      <S.ShopSection>
+      {/* <S.ShopSection>
         <h2>Nasze sklepy</h2>
         <S.Shop>
           <S.ShopInfo>
@@ -271,7 +272,7 @@ const Home = () => {
             </p>
           </S.ShopTime>
         </S.Shop>
-      </S.ShopSection>
+      </S.ShopSection> */}
 
       <S.PhotoSection>
         <S.Group>
