@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as S from "./Nav.styles";
 import Logo from "../../assets/logo-gosmoke.png";
 import { ShoppingBag, MenuIcon, X } from "lucide-react";
@@ -15,6 +15,10 @@ const Nav = () => {
     { to: "/kontakt", label: "Kontakt" },
   ];
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   return (
     <S.NavContainer>
