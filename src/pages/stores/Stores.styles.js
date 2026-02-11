@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const Stores = styled.div`
   width: 100%;
@@ -33,6 +34,10 @@ export const StorySection = styled.section`
   box-shadow: 8px 8px 10px black;
   border-radius: 20px;
   margin: 5rem 0;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 85%;
+  }
 `;
 
 export const StoryTxt = styled.div`
@@ -60,6 +65,17 @@ export const StoryTxt = styled.div`
     letter-spacing: 1px;
     text-transform: uppercase;
     color: rgb(236, 47, 75);
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    h3 {
+      font-size: 2.2rem;
+    }
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    h3 {
+      font-size: 2.8rem;
+    }
   }
 `;
 
@@ -109,6 +125,12 @@ export const ParWrapper = styled.div`
     text-transform: uppercase;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    p {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -211,11 +233,17 @@ export const PhotoSection = styled.section`
 `;
 
 export const Group = styled.div`
+  width: 80%;
   display: flex;
-  width: 75%;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: ${breakpoints.laptop}) {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Photo = styled.div`
@@ -224,6 +252,20 @@ export const Photo = styled.div`
   align-items: center;
   height: 20rem;
   width: 15rem;
+
+  animation: fadeUp both;
+  animation-timeline: smooth view(20% 10%);
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   img {
     width: 100%;
@@ -237,6 +279,15 @@ export const Photo = styled.div`
     &:hover {
       transform: scale(1.2);
       transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 20rem;
+    img {
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 `;
