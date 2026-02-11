@@ -189,3 +189,16 @@ export const Button = styled.button`
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 `;
+
+export const NavButton = styled.button`
+  border: none;
+  background: transparent;
+  align-self: flex-start;
+
+  svg {
+    &:hover {
+      color: #fa1db2;
+      transform: scale(1.2);
+    }
+  }
+`;

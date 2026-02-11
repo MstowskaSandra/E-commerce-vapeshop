@@ -1,8 +1,9 @@
 import * as S from "./OrderSummary.styles";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { resetForm, sendOrder } from "../../reducers/orderSlice";
 import { clearCart } from "../../reducers/cartSlice";
+import { ArrowLeft } from "lucide-react";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
@@ -82,6 +83,9 @@ const OrderSummary = () => {
         </S.RightColumn>
       </S.ColumnsContainer>
 
+      <S.NavButton as={Link} to="/form">
+        <ArrowLeft size={48} strokeWidth={2} />
+      </S.NavButton>
       <S.Button onClick={handleSendOrder}>Wyślij zamówienie</S.Button>
     </S.SummaryContainer>
   );

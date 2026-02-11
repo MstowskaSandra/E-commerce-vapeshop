@@ -55,7 +55,7 @@ const Cart = () => {
             />
           ))}
         </S.CartItems>
-        <S.ShopingBtn as={Link} to="/products">
+        <S.ShopingBtn as={Link} to="/produkty">
           <ArrowLeft size={32} strokeWidth={2} />
           Szukaj kolejnego produktu
         </S.ShopingBtn>
