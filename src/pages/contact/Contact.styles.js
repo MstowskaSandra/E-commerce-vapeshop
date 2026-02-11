@@ -1,167 +1,187 @@
 import styled from "styled-components";
 
 export const Contact = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 4rem 0;
-    width: 100%;
+  width: 100%;
+  padding: 4rem 0 6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const TitleSection = styled.section`
+  max-width: 1200px;
+  width: 100%;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 80%;
   gap: 1rem;
-  letter-spacing: 1px;
-  padding: 4rem 0;
-  text-transform: uppercase;
 
- h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+
+  h1 {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 600;
+    margin: 0;
   }
 
   p {
-    width: 55%;
+    max-width: 600px;
     font-family: "Barlow", sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
-    text-align: center;
   }
 `;
 
 export const ShopsSection = styled.section`
-    display: flex;
-    width: 80%;
-    justify-content: space-around;
-    padding: 4rem 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
-
 export const Shop = styled.div`
+  background-color: #231b26;
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background-color: #231b26;
-  box-shadow: 8px 8px 10px black;
-  border-radius: 16px;
-  transition: all 0.3s ease;
-  padding: 1rem 2rem;
-  margin: 0;
+  gap: 0.6rem;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 
   h2 {
     text-align: center;
     text-transform: uppercase;
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 600;
     letter-spacing: 1px;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid white;
-    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 1.5rem;
   }
 
   p {
-    margin-bottom: 0.5rem;
     font-family: "Barlow", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    margin: 0;
   }
 `;
 
 export const ShopTime = styled.div`
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: fit-content;
-  align-self: center;
-  padding: 1rem;
-  border-radius: 16px;
-  border: 3px solid white;
-  box-shadow: 8px 8px 10px black;
-  margin-top: 2rem;
-
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-    border-color: #ff6adf;
-  }
+  gap: 0.4rem;
 
   p:first-of-type {
-    margin-bottom: 1.5rem;
     font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 `;
 
 export const SocialMediaSection = styled.section`
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 6rem 0 4rem 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem 2rem;
 
-    h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  h2 {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 600;
     text-transform: uppercase;
+    margin: 0;
   }
 
   p {
-    width: 55%;
+    max-width: 600px;
     font-family: "Barlow", sans-serif;
     font-size: 1.1rem;
     font-weight: 400;
-    text-align: center;
   }
 `;
 
 export const MediaWrapper = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 3rem 0;
+  width: 100%;
+  margin-top: 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Media = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
-    img {
-        width: 50%;
-        padding: 1rem;
-        background: white;
-        transition: all 0.3s ease;
-        box-shadow: 8px 8px 10px black;
-        border-radius: 16px;
+  p {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+  }
 
-        &:hover {
-            transform: scale(1.1);
-        }
+  img {
+    width: 220px;
+    max-width: 100%;
+    padding: 1rem;
+    background: white;
+    border-radius: 16px;
+
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      transform: scale(1.05);
     }
-
-    p {
-        font-family: "Barlow Semi Condensed", sans-serif;
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-    }
+  }
 `;
