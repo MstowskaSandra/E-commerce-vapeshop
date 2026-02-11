@@ -1,21 +1,31 @@
 import styled from "styled-components";
+import { breakpoints } from "../../styles/breakpoints";
 
 export const ProductsContainer = styled.div`
+  width: 100%;
+  max-width: 1400px;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-`;
+  gap: 2rem;
 
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 0 1rem;
+  }
+`;
 
 export const ProductsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  width: 100%;
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  align-items: start;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (min-width: ${breakpoints.tablet}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: ${breakpoints.laptop}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
