@@ -4,8 +4,11 @@ import { useNavigate, Link } from "react-router-dom";
 import { resetForm, sendOrder } from "../../reducers/orderSlice";
 import { clearCart } from "../../reducers/cartSlice";
 import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
+import OrderSuccessModal from "../../components/successOrderModal/OrderSuccessModal";
 
 const OrderSummary = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { formData, cartItems, totalAmount, orderNumber } = useSelector(
@@ -15,13 +18,17 @@ const OrderSummary = () => {
   const handleSendOrder = async () => {
     try {
       await dispatch(sendOrder()).unwrap();
-      alert(`✅ Zamówienie #${orderNumber} wysłane!`);
-      dispatch(resetForm());
-      dispatch(clearCart());
-      navigate("/");
+      setIsModalOpen(true);
     } catch (error) {
       alert(`❌ Błąd wysyłki: ${error}`);
     }
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    dispatch(resetForm());
+    dispatch(clearCart());
+    navigate("/");
   };
 
   return (
@@ -87,6 +94,14 @@ const OrderSummary = () => {
         <ArrowLeft size={48} strokeWidth={2} />
       </S.NavButton>
       <S.Button onClick={handleSendOrder}>Wyślij zamówienie</S.Button>
+      {isModalOpen && (
+        <OrderSuccessModal
+          orderNumber={orderNumber}
+          cartItems={cartItems}
+          phone={formData.phone}
+          onClose={handleCloseModal}
+        />
+      )}
     </S.SummaryContainer>
   );
 };

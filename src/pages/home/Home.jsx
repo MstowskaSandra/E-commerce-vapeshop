@@ -294,7 +294,7 @@ const Home = () => {
         </S.Group>
       </S.PhotoSection>
 
-      <S.ReviewsSection>
+      {/* <S.ReviewsSection>
         <S.Reviews>
           <h4>Opinie</h4>
           <h3>Co mówią nasi klienci</h3>
@@ -304,7 +304,7 @@ const Home = () => {
             </S.WidgetWrapper>
           ) : null}
         </S.Reviews>
-      </S.ReviewsSection>
+      </S.ReviewsSection> */}
     </S.Home>
   );
 };
