@@ -117,18 +117,6 @@ export const CartItem = styled(NavLink)`
   }
 `;
 
-// export const HamburgerButton = styled.button`
-//   display: none;
-//   background: none;
-//   border: none;
-//   color: white;
-
-//   @media (max-width: ${breakpoints.mobile}) {
-//     display: flex;
-//     align-items: center;
-//   }
-// `;
-
 export const HamburgerButton = styled.button`
   display: none;
   background: none;

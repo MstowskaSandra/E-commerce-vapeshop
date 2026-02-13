@@ -98,7 +98,7 @@ export const ParWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 3rem 0;
-  gap: 2rem;
+  gap: 1rem;
 
   p,
   div {
@@ -125,6 +125,18 @@ export const ParWrapper = styled.div`
     text-transform: uppercase;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  span {
+    text-align: center;
+    margin-bottom: 0;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(236, 47, 75);
   }
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -138,6 +150,7 @@ export const ArrowWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2rem 0;
 `;
 
 export const TeamSection = styled.section`

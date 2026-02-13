@@ -64,6 +64,7 @@ const Stores = () => (
         <h4>12 lat z vapem</h4>
         <h3>Od pasji do własnej marki.</h3>
         <S.ParWrapper>
+          <span>2020</span>
           <p>
             Kilka lat pracy w branży. Setki godzin rozmów z klientami — najpierw
             u konkurencji.
@@ -77,6 +78,7 @@ const Stores = () => (
           <S.ArrowWrapper>
             <ArrowDown size={48} strokeWidth={2} />
           </S.ArrowWrapper>
+          <span>2022</span>
           <p>
             Z czasem pojawiła się decyzja: stworzyć miejsce, w którym liczy się
             realne doradztwo, uczciwość i atmosfera, do której chce się
@@ -85,10 +87,12 @@ const Stores = () => (
           <S.ArrowWrapper>
             <ArrowDown size={48} strokeWidth={2} />
           </S.ArrowWrapper>
+          <span>2023</span>
           <p>Tak powstał nasz pierwszy vapeshop.</p>
           <S.ArrowWrapper>
             <ArrowDown size={48} strokeWidth={2} />
           </S.ArrowWrapper>
+          <span>2024</span>
           <p>
             Po ponad roku działania i setkach rozmów z klientami otworzyliśmy
             drugi punkt.
