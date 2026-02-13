@@ -1,8 +1,15 @@
-import styled from 'styled-components';
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     to bottom,
     rgba(10, 10, 10, 0.85),
@@ -14,16 +21,8 @@ export const Overlay = styled.div`
   align-items: center;
   padding: 2rem;
   z-index: 9999;
-  animation: fadeOverlay 0.3s ease forwards;
-width: 100%;
-height: 100%;
-pointer-events: all;
-
-
-  @keyframes fadeOverlay {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+  animation: ${fadeIn} 0.3s ease forwards;
+  pointer-events: all;
 `;
 
 export const ModalCard = styled.div`
@@ -41,38 +40,12 @@ export const ModalCard = styled.div`
     0 2rem 4rem rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(250, 29, 178, 0.2);
   font-family: "Barlow Semi Condensed", sans-serif;
-
-  /* animation: ${({ $isClosing }) =>
-    $isClosing ? "scaleOut 0.3s ease forwards" : "scaleIn 0.3s ease forwards"};
-
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: translateY(1.5rem) scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  @keyframes scaleOut {
-    from {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(1rem) scale(0.95);
-    }
-  } */
 `;
 
 export const Title = styled.h2`
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.4;
-
   background: linear-gradient(90deg, #fa1db2, #ff6ec7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -85,8 +58,8 @@ export const ProductsList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 export const ProductItem = styled.li`
@@ -105,7 +78,7 @@ export const InfoText = styled.p`
   text-align: center;
   line-height: 1.6;
   font-size: 1rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 `;
 
 export const CloseBtn = styled.button`

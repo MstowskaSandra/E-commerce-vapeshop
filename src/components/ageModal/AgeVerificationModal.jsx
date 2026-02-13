@@ -13,8 +13,8 @@ const AgeVerificationModal = ({ onAccept, onReject }) => {
           powyżej <strong>18 lat</strong>.
         </S.Description>
         <S.Buttons>
-          <S.AcceptBtn onClick={onAccept}>✅ Tak, mam 18+ lat</S.AcceptBtn>
-          <S.RejectBtn onClick={onReject}>❌ Nie mam 18 lat</S.RejectBtn>
+          <S.AcceptBtn onClick={onAccept}>Tak, mam 18+ lat</S.AcceptBtn>
+          <S.RejectBtn onClick={onReject}>Nie mam 18 lat</S.RejectBtn>
         </S.Buttons>
       </S.Content>
     </S.Overlay>,

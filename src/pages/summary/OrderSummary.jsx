@@ -56,7 +56,8 @@ const OrderSummary = () => {
             <h3>Informacja dotycząca zamówienia:</h3>
             <p>
               Zamówienie ma charakter rezerwacyjny – poinformujemy Państwa o
-              kolejnych etapach jego przygotowania.
+              kolejnych etapach jego przygotowania oraz czasie realizacji
+              telefonicznie.
             </p>
             <p>
               Przy odbiorze osobistym w sklepie stacjonarnym zostanie ponownie
