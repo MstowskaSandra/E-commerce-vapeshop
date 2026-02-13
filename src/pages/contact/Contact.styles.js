@@ -89,6 +89,12 @@ export const Shop = styled.div`
     letter-spacing: 0.5px;
     margin: 0;
   }
+
+  iframe {
+    margin-top: 2rem;
+    justify-self: center;
+    align-self: center;
+  }
 `;
 
 export const ShopTime = styled.div`
