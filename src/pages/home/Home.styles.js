@@ -342,7 +342,7 @@ export const CategoriesSection = styled.section`
 
 export const CategoriesContainer = styled.div`
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -373,17 +373,19 @@ export const CategorieItem = styled.div`
   max-width: 17.5rem;
   transition: transform 0.3s ease-in-out;
 
-  animation: fadeUp both;
+  animation: fadeUpOpacity both;
   animation-timeline: view(10% 5%);
 
-  @keyframes fadeUp {
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeUpOpacity {
     from {
       opacity: 0;
-      transform: translateY(10px) scale(0.5);
     }
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
     }
   }
 
