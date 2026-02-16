@@ -1,5 +1,5 @@
 import * as S from "./Home.styles";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   HeartHandshake,
   UserStar,
@@ -30,6 +30,7 @@ import Photo2 from "../../assets/img7.jpeg";
 import Photo3 from "../../assets/img6.jpeg";
 import Photo4 from "../../assets/img12.jpeg";
 import Photo5 from "../../assets/img13.jpeg";
+import ReviewsInfiniteCarousel from "../../components/reviewsInfinityCarousel/ReviewsInfinityCarousel";
 
 const items = [
   {
@@ -66,7 +67,6 @@ const categories = [
 
 const Home = () => {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const handleNavCategory = (navPath) => {
     navigate(navPath);
@@ -294,17 +294,9 @@ const Home = () => {
         </S.Group>
       </S.PhotoSection>
 
-      {/* <S.ReviewsSection>
-        <S.Reviews>
-          <h4>Opinie</h4>
-          <h3>Co mówią nasi klienci</h3>
-          {pathname === "/" ? (
-            <S.WidgetWrapper>
-              <div data-trustmary-widget="e1ZILCI4H"></div>
-            </S.WidgetWrapper>
-          ) : null}
-        </S.Reviews>
-      </S.ReviewsSection> */}
+      <S.ReviewsSection>
+        <ReviewsInfiniteCarousel />
+      </S.ReviewsSection>
     </S.Home>
   );
 };
