@@ -1,5 +1,6 @@
 import * as S from "./Stores.styles";
-import { ArrowDown, Tally1 } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import ReviewsInfiniteCarousel from "../../components/reviewsInfinityCarousel/ReviewsInfinityCarousel";
 import Buba from "../../assets/Buba.jpeg";
 import Daniel from "../../assets/DanielProfilowe.jpg";
 import Kamil from "../../assets/KamilProfilowe.jpg";
@@ -59,6 +60,26 @@ const Stores = () => (
       </S.Workers>
     </S.TeamSection>
 
+    <S.PhotoSection>
+      <S.Group>
+        <S.Photo>
+          <img src={Photo2} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo3} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo1} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo4} />
+        </S.Photo>
+        <S.Photo>
+          <img src={Photo5} />
+        </S.Photo>
+      </S.Group>
+    </S.PhotoSection>
+
     <S.StorySection>
       <S.StoryTxt>
         <h4>12 lat z vapem</h4>
@@ -113,25 +134,11 @@ const Stores = () => (
       </S.StoryTxt>
     </S.StorySection>
 
-    <S.PhotoSection>
-      <S.Group>
-        <S.Photo>
-          <img src={Photo2} />
-        </S.Photo>
-        <S.Photo>
-          <img src={Photo3} />
-        </S.Photo>
-        <S.Photo>
-          <img src={Photo1} />
-        </S.Photo>
-        <S.Photo>
-          <img src={Photo4} />
-        </S.Photo>
-        <S.Photo>
-          <img src={Photo5} />
-        </S.Photo>
-      </S.Group>
-    </S.PhotoSection>
+    <S.ReviewsSection>
+      <h4>Opinie</h4>
+      <h3>Co mówią nasi klienci</h3>
+      <ReviewsInfiniteCarousel />
+    </S.ReviewsSection>
   </S.Stores>
 );
 

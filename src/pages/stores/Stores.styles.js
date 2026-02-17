@@ -304,3 +304,27 @@ export const Photo = styled.div`
     }
   }
 `;
+
+export const ReviewsSection = styled.section`
+  background: transparent;
+  width: 100%;
+  min-height: 75vh;
+  padding: 8rem 0;
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgb(236, 47, 75);
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+`;
