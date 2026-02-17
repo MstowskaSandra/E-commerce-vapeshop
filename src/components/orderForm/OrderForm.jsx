@@ -8,6 +8,7 @@ import {
 } from "../../reducers/orderSlice";
 import { useNavigate } from "react-router-dom";
 import { validateForm } from "../../utils/validation";
+import { ArrowLeft } from "lucide-react";
 
 const OrderForm = () => {
   const dispatch = useDispatch();
@@ -35,9 +36,19 @@ const OrderForm = () => {
     navigate("/podsumowanie");
   };
 
+  const handleBack = () => {
+    navigate("/koszyk");
+  };
+
   return (
     <S.FormContainer>
-      <h2>Formularz danych do zamówienia</h2>
+      <S.Header>
+        <S.BackBtn onClick={handleBack}>
+          <ArrowLeft size={48} strokeWidth={2} />
+        </S.BackBtn>
+        <h2>Formularz danych do zamówienia</h2>
+      </S.Header>
+
       <S.Form onSubmit={handleSubmit}>
         <S.Input
           type="text"

@@ -9,9 +9,50 @@ export const FormContainer = styled.div`
   width: 100%;
   padding: 0 2rem 2rem 2rem;
   box-sizing: border-box;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   h2 {
-    font-weight: bold;
-    letter-spacing: 1px;
+    padding-right: 2rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    color: white;
+  }
+`;
+
+export const BackBtn = styled.button`
+  justify-self: left;
+  margin-right: 2rem;
+  transition: all 0.3s ease-in-out;
+  animation: floatDown 2s ease-in-out infinite;
+
+  @keyframes floatDown {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    border: none;
+  }
+
+  svg {
+    &:hover {
+      color: #fa1db2;
+    }
   }
 `;
 
