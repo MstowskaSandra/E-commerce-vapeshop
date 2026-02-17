@@ -37,8 +37,8 @@ export const ProductImage = styled.div`
   img {
     width: 80%;
     height: 80%;
-    object-fit: contain;
-
+    object-fit: cover;
+    object-position: center;
     border-radius: 16px;
     box-shadow: 10px 10px 15px black;
     border: 1px solid gray;
