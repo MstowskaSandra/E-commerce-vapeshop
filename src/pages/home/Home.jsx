@@ -295,6 +295,8 @@ const Home = () => {
       </S.PhotoSection>
 
       <S.ReviewsSection>
+        <h4>Opinie</h4>
+        <h3>Co mówią nasi klienci</h3>
         <ReviewsInfiniteCarousel />
       </S.ReviewsSection>
     </S.Home>

@@ -1,39 +1,54 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
-const infiniteScroll = keyframes`
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-`;
-
-export const ReviewsCarousel = styled.div`
-  position: relative;
+export const Carousel = styled.div`
+  margin: 4rem auto;
   width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  padding: 2.5rem 1.25rem;
+  height: 280px;
+  display: flex;
+  overflow-x: hidden;
+  padding: 1rem;
+  position: relative;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
-export const ReviewsTrack = styled.div`
+export const Group = styled.div`
   display: flex;
-  animation: ${infiniteScroll} 20s linear infinite;
-  gap: 1.5rem;
-  
-  &:hover {
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  animation: spin 35s infinite linear;
+
+  @keyframes spin {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+
+  ${Carousel}:hover & {
     animation-play-state: paused;
   }
 `;
 
-export const ReviewCard = styled.div`
-  flex: 0 0 24rem;
+export const Card = styled.div`
+  flex: 0 0 320px;
+  height: 100%;
   background: #fff;
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 24px;
+  padding: 1.5rem;
   box-shadow: 8px 8px 10px black;
   border: 1px solid #e0e0e0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -48,7 +63,7 @@ export const Avatar = styled.div`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #4285f4, #34a853);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,6 +71,10 @@ export const Avatar = styled.div`
   font-size: 1rem;
   color: white;
   flex-shrink: 0;
+  font-family:
+    "Google Sans",
+    -apple-system,
+    sans-serif;
 `;
 
 export const ReviewMeta = styled.div`
@@ -63,10 +82,10 @@ export const ReviewMeta = styled.div`
   min-width: 0;
 `;
 
-export const ReviewTitle = styled.h4`
+export const ReviewTitle = styled.h5`
   font-size: 1rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #202124;
   margin: 0 0 2px 0;
   white-space: nowrap;
   overflow: hidden;
