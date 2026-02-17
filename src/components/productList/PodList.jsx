@@ -1,14 +1,14 @@
 import * as S from "./ProductList.styles";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../filters/Filters";
 import PodCard from "../../components/productCard/PodCard";
 import Pagination from "../pagination/Pagination";
 
 const PodList = () => {
+  const [loading, setLoading] = useState(true);
   const {
     items: pods,
-    loading,
     error,
     filters,
     setFilters,
@@ -24,7 +24,12 @@ const PodList = () => {
     });
   }, [page]);
 
-  if (loading) return <div>Ładowanie urządzeń...</div>;
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
   if (error) return <div>Błąd: {error.message}</div>;
 
   return (
@@ -37,11 +42,22 @@ const PodList = () => {
         }}
         collectionName="pods"
       />
-      <S.ProductsGrid>
-        {pods.map((pod) => (
-          <PodCard key={pod.id} pod={pod} />
-        ))}
-      </S.ProductsGrid>
+      {loading ? (
+        <S.ProductsGrid>
+          {Array(8)
+            .fill(0)
+            .map((_, index) => (
+              <S.ProductSkeleton key={`skeleton-${index}`} />
+            ))}
+        </S.ProductsGrid>
+      ) : (
+        <S.ProductsGrid>
+          {pods.map((pod) => (
+            <PodCard key={pod.id} pod={pod} />
+          ))}
+        </S.ProductsGrid>
+      )}
+
       <Pagination
         page={page}
         totalPages={pagination.pageCount}
