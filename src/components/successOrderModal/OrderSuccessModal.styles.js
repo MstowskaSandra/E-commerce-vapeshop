@@ -29,6 +29,7 @@ export const ModalCard = styled.div`
   background: linear-gradient(145deg, #111, #1a1a1a);
   width: 100%;
   max-width: 40rem;
+  max-height: 90vh;
   color: #f5f5f5;
   border-radius: 1.5rem;
   padding: 3rem;
@@ -40,6 +41,23 @@ export const ModalCard = styled.div`
     0 2rem 4rem rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(250, 29, 178, 0.2);
   font-family: "Barlow Semi Condensed", sans-serif;
+  flex: 0 1 auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(250, 29, 178, 0.3) transparent;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(250, 29, 178, 0.3);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(250, 29, 178, 0.5);
+  }
 `;
 
 export const Title = styled.h2`
