@@ -265,7 +265,6 @@ export const Photo = styled.div`
   align-items: center;
   height: 20rem;
   width: 15rem;
-
   animation: fadeUp both;
   animation-timeline: smooth view(20% 10%);
 
