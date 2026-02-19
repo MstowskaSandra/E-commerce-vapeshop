@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../reducers/cartSlice";
 import { useProductData } from "../../hooks/useProductData";
 import { MoveLeft } from "lucide-react";
+import toast from "react-hot-toast";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -29,6 +30,10 @@ const ProductDetails = () => {
         quantity: 1,
       }),
     );
+    toast.success("Produkt leci do koszyka", {
+      duration: 2000,
+      icon: "🔥",
+    });
   };
 
   if (loading) return <div>Ładowanie...</div>;
