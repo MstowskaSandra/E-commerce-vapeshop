@@ -94,15 +94,3 @@ export const Button = styled.button`
   }
 `;
 
-// export const responsiveContent = css`
-//   @media (max-width: 480px) {
-//     padding: 32px 24px;
-//     ${Buttons} {
-//       flex-direction: column;
-//     }
-//     ${Title} {
-//       font-size: 1.5rem;
-//     }
-//   }
-// `;
-
