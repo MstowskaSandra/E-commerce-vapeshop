@@ -69,29 +69,6 @@ export const Title = styled.h2`
   -webkit-text-fill-color: transparent;
 `;
 
-export const ProductsList = styled.ul`
-  list-style: none;
-  padding: 1.5rem 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-`;
-
-export const ProductItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-
-  span:last-child {
-    font-weight: 600;
-    color: #fa1db2;
-  }
-`;
-
 export const InfoText = styled.p`
   text-align: center;
   line-height: 1.6;

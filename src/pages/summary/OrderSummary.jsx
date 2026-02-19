@@ -19,6 +19,8 @@ const OrderSummary = () => {
     try {
       await dispatch(sendOrder()).unwrap();
       setIsModalOpen(true);
+      dispatch(resetForm());
+      dispatch(clearCart());
     } catch (error) {
       alert(`❌ Błąd wysyłki: ${error}`);
     }
@@ -26,8 +28,6 @@ const OrderSummary = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
-    dispatch(resetForm());
-    dispatch(clearCart());
     navigate("/");
   };
 
@@ -95,14 +95,7 @@ const OrderSummary = () => {
         <ArrowLeft size={48} strokeWidth={2} />
       </S.NavButton>
       <S.Button onClick={handleSendOrder}>Wyślij zamówienie</S.Button>
-      {isModalOpen && (
-        <OrderSuccessModal
-          orderNumber={orderNumber}
-          cartItems={cartItems}
-          phone={formData.phone}
-          onClose={handleCloseModal}
-        />
-      )}
+      {isModalOpen && <OrderSuccessModal onClose={handleCloseModal} />}
     </S.SummaryContainer>
   );
 };

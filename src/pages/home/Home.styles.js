@@ -241,11 +241,11 @@ export const AskTxt = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  text-align: center;
   padding: 0;
 
   h4 {
+    text-align: center;
+    margin-bottom: 0.5rem;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -254,18 +254,20 @@ export const AskTxt = styled.div`
   }
 
   h3 {
+    text-align: center;
     font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 1.5rem;
   }
 
   p {
+    text-align: center;
     font-family: "Barlow", sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 0.9rem;
-    line-height: 1.4;
   }
 
   @media (min-width: ${breakpoints.tablet}) {
@@ -442,7 +444,7 @@ export const CategorieItem = styled.div`
 
 export const NoSmokingSection = styled.section`
   width: 100%;
-  padding: 4rem 1.5rem;
+  padding: 10rem 1.5rem;
   background: transparent;
   backdrop-filter: blur(10px);
 `;
@@ -453,18 +455,35 @@ export const Header = styled.div`
   animation: fadeUp both;
   animation-timeline: view(10% 5%);
 
-  h2 {
-    font-family: "Barlow Semi Condensed", sans-serif;
+  h4 {
+    text-align: center;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgb(236, 47, 75);
+  }
 
-    @media (min-width: ${breakpoints.tablet}) {
-      font-size: 2.5rem;
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: ${breakpoints.tablet}) {
+    h3 {
+      font-size: 3rem;
     }
 
-    @media (min-width: ${breakpoints.laptop}) {
-      font-size: 3.125rem;
+    h4 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
     }
   }
 `;
@@ -688,10 +707,10 @@ export const ShopSection = styled.section`
   padding: 8rem 0;
 
   h2 {
-    padding-bottom: 2rem;
+    margin-top: 8rem;
     text-align: center;
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     text-transform: uppercase;
     background: linear-gradient(
@@ -720,118 +739,82 @@ export const ShopSection = styled.section`
   }
 `;
 
-export const Shop = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  gap: 1rem;
-  margin-bottom: 1rem;
+export const Shops = styled.section`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
 
-  iframe {
-    box-shadow: 8px 8px 10px black;
-    animation: fadeUp both;
-    animation-timeline: view(20% 10%);
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px) scale(0.5);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+  @media (max-width: ${breakpoints.laptop}) {
+    grid-template-columns: 1fr;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-
-    iframe {
-      width: 80%;
-      max-width: 100%;
-    }
+  @media (max-width: ${breakpoints.laptop}) {
+    grid-template-columns: 1fr;
   }
 `;
 
-export const ShopInfo = styled.div`
+export const Shop = styled.div`
+  background-color: #231b26;
+  border-radius: 16px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
-  gap: 0.25rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  min-width: 15rem;
-  padding: 1rem;
-  background-color: #231b26;
-  box-shadow: 8px 8px 10px black;
-  border-radius: 16px;
-  animation: fadeUp both;
-  animation-timeline: view(20% 10%);
+  gap: 0.6rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  h2 {
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 1.5rem;
+    color: white;
   }
 
   p {
-    margin-bottom: 0;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin: 0;
   }
 
-  h3 {
-    text-align: center;
-  }
-
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  iframe {
+    margin-top: 2rem;
+    justify-self: center;
+    align-self: center;
   }
 `;
 
 export const ShopTime = styled.div`
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
-  gap: 1rem;
-  min-width: 10rem;
-  padding: 1rem;
-  background-color: #231b26;
-  box-shadow: 8px 8px 10px black;
-  border-radius: 16px;
-  animation: fadeUp both;
-  animation-timeline: view(20% 10%);
+  gap: 0.4rem;
 
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px) scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-  }
-
-  p {
-    margin: 0;
+  p:first-of-type {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
   }
 `;
 
