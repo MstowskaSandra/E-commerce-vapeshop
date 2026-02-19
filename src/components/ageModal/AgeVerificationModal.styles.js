@@ -51,11 +51,13 @@ export const Content = styled.div`
 `;
 
 export const Icon = styled.div`
-  font-size: 4rem;
+  svg {
+    color: #fa1db2;
+  }
 `;
 
 export const Title = styled.h2`
-  font-size: 1.4rem;
+  font-size: 2rem;
   line-height: 1.4;
   background: linear-gradient(90deg, #fa1db2, #ff6ec7);
   -webkit-background-clip: text;
@@ -63,7 +65,7 @@ export const Title = styled.h2`
 `;
 
 export const Description = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
 `;
@@ -74,7 +76,7 @@ export const Buttons = styled.div`
   justify-content: center;
 `;
 
-export const AcceptBtn = styled.button`
+export const Button = styled.button`
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   border: 1px solid #fa1db2;
@@ -82,7 +84,6 @@ export const AcceptBtn = styled.button`
   color: #fa1db2;
   font-weight: 600;
   font-family: "Barlow Semi Condensed", sans-serif;
-  cursor: pointer;
   transition: all 0.25s ease;
 
   &:hover {
@@ -93,34 +94,15 @@ export const AcceptBtn = styled.button`
   }
 `;
 
-export const RejectBtn = styled.button`
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  border: 1px solid #fa1db2;
-  background: rgba(250, 29, 178, 0.1);
-  color: #fa1db2;
-  font-weight: 600;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  cursor: pointer;
-  transition: all 0.25s ease;
-
-  &:hover {
-    background: #fa1db2;
-    color: black;
-    box-shadow: 0 0 1.2rem rgba(250, 29, 178, 0.6);
-    transform: translateY(-2px);
-  }
-`;
-
-export const responsiveContent = css`
-  @media (max-width: 480px) {
-    padding: 32px 24px;
-    ${Buttons} {
-      flex-direction: column;
-    }
-    ${Title} {
-      font-size: 1.5rem;
-    }
-  }
-`;
+// export const responsiveContent = css`
+//   @media (max-width: 480px) {
+//     padding: 32px 24px;
+//     ${Buttons} {
+//       flex-direction: column;
+//     }
+//     ${Title} {
+//       font-size: 1.5rem;
+//     }
+//   }
+// `;
 
