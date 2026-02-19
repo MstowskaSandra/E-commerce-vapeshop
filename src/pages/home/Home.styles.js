@@ -14,7 +14,6 @@ export const TitleSection = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-
   width: 100%;
   min-height: 80vh;
   padding: 6rem 1rem;
@@ -25,7 +24,6 @@ export const TitleSection = styled.section`
     font-size: 2.4rem;
     font-weight: 600;
     text-transform: uppercase;
-
     background: linear-gradient(
       90deg,
       #ff6adf 0%,
@@ -126,7 +124,6 @@ export const AdvantagesContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-
   grid-template-columns: 1fr;
 
   @media (min-width: ${breakpoints.tablet}) {
@@ -144,11 +141,9 @@ export const AdvantagesItem = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem;
-
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   box-shadow: 8px 8px 10px black;
-
   animation: fadeUp both;
   animation-timeline: view(10% 5%);
 
@@ -347,7 +342,6 @@ export const CategoriesContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   justify-items: center;
-
   grid-template-columns: 1fr;
 
   @media (min-width: ${breakpoints.tablet}) {
@@ -372,7 +366,6 @@ export const CategorieItem = styled.div`
   width: 90%;
   max-width: 17.5rem;
   transition: transform 0.3s ease-in-out;
-
   animation: fadeUpOpacity both;
   animation-timeline: view(10% 5%);
 
@@ -423,7 +416,6 @@ export const CategorieItem = styled.div`
     border-radius: 8px;
     box-shadow: 8px 8px 12px black;
     background: transparent;
-    cursor: pointer;
 
     &:hover {
       border-color: black;
@@ -887,7 +879,6 @@ export const Photo = styled.div`
   align-items: center;
   height: 20rem;
   width: 15rem;
-
   animation: fadeUp both;
   animation-timeline: smooth view(20% 10%);
 
