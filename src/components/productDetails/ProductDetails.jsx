@@ -9,17 +9,8 @@ import toast from "react-hot-toast";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {
-    loading,
-    error,
-    collection,
-    slug,
-    attrs,
-    imgSrc,
-    title,
-    hasLiquids,
-    hasDevice,
-  } = useProductData();
+  const { loading, error, slug, attrs, imgSrc, title, hasLiquids, hasDevice } =
+    useProductData();
 
   const handleAddToCart = () => {
     dispatch(
@@ -39,12 +30,10 @@ const ProductDetails = () => {
   if (loading) return <div>Ładowanie...</div>;
   if (error) {
     return (
-      <div>
-        <h2>
-          Produkt nie znaleziony ({collection}: {slug})
-        </h2>
-        <button onClick={() => navigate(-1)}>← Powrót</button>
-      </div>
+      <S.ErrorInfo>
+        <h2>Produkt ({slug}) nie znaleziony w katalogu.</h2>
+        <S.CartBtn onClick={() => navigate(-1)}>Powrót</S.CartBtn>
+      </S.ErrorInfo>
     );
   }
 
@@ -59,7 +48,7 @@ const ProductDetails = () => {
         </S.ProductImage>
         <S.ProductInfo>
           <h2>{title}</h2>
-          <p className="price">
+          <p>
             <strong>Cena:</strong> {attrs.Price || "-"} zł
           </p>
           {attrs.Description && <p>{attrs.Description}</p>}
@@ -81,17 +70,17 @@ const ProductDetails = () => {
           )}
 
           {hasDevice && (
-            <div className="specs">
-              <div>
+            <S.InfoWrapper>
+              <p>
                 <strong>Kolor:</strong> {attrs.Color || "-"}
-              </div>
-              <div>
-                <strong>Pojemność baterii:</strong> {attrs.Battery || "-"}
-              </div>
-              <div>
+              </p>
+              <p>
+                <strong>Bateria:</strong> {attrs.Battery || "-"}
+              </p>
+              <p>
                 <strong>Zakres mocy:</strong> {attrs.Power || "-"}
-              </div>
-            </div>
+              </p>
+            </S.InfoWrapper>
           )}
 
           <S.CartBtn onClick={handleAddToCart}>Do koszyka</S.CartBtn>
