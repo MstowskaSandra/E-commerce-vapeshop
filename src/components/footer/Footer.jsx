@@ -12,13 +12,15 @@ const Footer = () => (
 
       <S.Copyright>
         &copy; 2026 Sandra Mstowska. Wszelkie prawa zastrzeżone.
+        <br />
+        Projekt ma charakter demonstracyjny i nie umożliwia składania zamówień.
       </S.Copyright>
 
       <S.MediaIcons>
         <p>Dołącz do nas - </p>
         <S.Icons>
           <S.IconLink
-            href="https://www.facebook.com/p/GoSmoke-OŁAWA-100094754190989/"
+            href="https://www.facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -26,7 +28,7 @@ const Footer = () => (
             <Facebook size={24} />
           </S.IconLink>
           <S.IconLink
-            href="https://www.instagram.com/gosmoke_vapeshop/"
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -35,6 +37,23 @@ const Footer = () => (
           </S.IconLink>
         </S.Icons>
       </S.MediaIcons>
+
+      <S.FooterItems>
+        <S.FooterEl>
+          <a href="/Regulamin.pdf" target="_blank" rel="noopener noreferrer">
+            Regulamin
+          </a>
+        </S.FooterEl>
+        <S.FooterEl>
+          <a
+            href="/PolitykaPrywatnościRODO.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Polityka Prywatności
+          </a>
+        </S.FooterEl>
+      </S.FooterItems>
     </S.FooterContainer>
   </S.Footer>
 );

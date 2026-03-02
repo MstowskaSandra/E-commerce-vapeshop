@@ -5,13 +5,14 @@ const OrderSuccessModal = ({ onClose }) => {
   return createPortal(
     <S.Overlay onClick={onClose}>
       <S.ModalCard onClick={(e) => e.stopPropagation()}>
-        <S.Title> Dziękujemy za złożenie zamówienia</S.Title>
+        <S.Title> Dziękujemy!</S.Title>
         <S.InfoText>
-          Poinformujemy Cię o kolejnych etapach twojego zamówienia w ciągu 1-7
-          dni pod podany przez Ciebie numer telefonu lub mailowo.
+          Zamówienie zostało zapisane w trybie demonstracyjnym.
         </S.InfoText>
-        <S.InfoText>Do usłyszenia! Pozdrawiamy, ekipa GoSmoke</S.InfoText>
-
+        <S.InfoText>
+          To projekt portfolio – nie obsługuje rzeczywistej sprzedaży ani
+          płatności.
+        </S.InfoText>
         <S.CloseBtn onClick={onClose}>Zamknij</S.CloseBtn>
       </S.ModalCard>
     </S.Overlay>,

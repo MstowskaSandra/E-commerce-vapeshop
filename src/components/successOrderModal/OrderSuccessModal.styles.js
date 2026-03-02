@@ -35,7 +35,7 @@ export const ModalCard = styled.div`
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   box-shadow:
     0 0 2rem rgba(250, 29, 178, 0.25),
     0 2rem 4rem rgba(0, 0, 0, 0.6);
@@ -74,10 +74,12 @@ export const InfoText = styled.p`
   line-height: 1.6;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
+  margin: 0;
 `;
 
 export const CloseBtn = styled.button`
   align-self: center;
+  margin-top: 2rem;
   padding: 0.8rem 2rem;
   border-radius: 1rem;
   background: rgba(250, 29, 178, 0.1);

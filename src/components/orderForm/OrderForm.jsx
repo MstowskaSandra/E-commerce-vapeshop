@@ -109,7 +109,10 @@ const OrderForm = () => {
               checked={formData.rules}
               onChange={(e) => handleChange("rules", e.target.checked)}
             />
-            Akceptuję <strong>regulamin</strong>
+            Akceptuję{" "}
+            <a href="/Regulamin.pdf" target="_blank" rel="noopener noreferrer">
+              <strong>regulamin</strong>
+            </a>
           </S.CheckboxLabel>
           {errors.rules && <S.ErrorText>{errors.rules}</S.ErrorText>}
         </S.CheckboxContainer>

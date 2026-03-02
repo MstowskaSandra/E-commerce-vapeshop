@@ -10,6 +10,7 @@ export const Footer = styled.footer`
   background-color: #231b26;
   border-top: 1px solid gray;
   padding: 1.5rem 0;
+  font-size: 0.85rem;
 `;
 
 export const FooterContainer = styled.div`
@@ -32,6 +33,8 @@ export const FooterItems = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 0.5rem;
 
   @media (max-width: ${breakpoints.mobile}) {
     flex-wrap: wrap;
@@ -50,14 +53,27 @@ export const FooterLink = styled(Link)`
   }
 `;
 
+export const FooterEl = styled.div`
+  border: none;
+  width: max-content;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    transform: scale(1.05);
+    color: #fa1db2;
+  }
+`;
+
 export const Copyright = styled.p`
   display: flex;
   align-self: center;
   font-family: "Barlow", sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
-  font-size: 1rem;
   margin: 0;
+  padding: 0 1rem;
+  text-align: center;
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 0.9rem;
@@ -69,13 +85,12 @@ export const MediaIcons = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 
   p {
     margin: 0;
     padding-bottom: 0.5rem;
     font-family: "Barlow", sans-serif;
-    font-size: 1rem;
     font-weight: 500;
   }
 `;

@@ -12,8 +12,10 @@ const AgeVerificationModal = ({ onAccept, onReject }) => {
         </S.Icon>
         <S.Title>Weryfikacja wieku</S.Title>
         <S.Description>
-          Sprzedajemy produkty z <strong>nikotyną</strong>. Tylko dla osób
-          powyżej <strong>18 lat</strong>.
+          Dostęp wyłącznie dla osób pełnoletnich <strong>(18+)</strong>.
+          <br />
+          Projekt ma charakter demonstracyjny i nie umożliwia składania
+          zamówień.
         </S.Description>
         <S.Buttons>
           <S.Button onClick={onAccept}>Tak, mam 18+ lat</S.Button>

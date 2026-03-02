@@ -74,7 +74,7 @@ const Home = () => {
   return (
     <S.Home>
       <S.TitleSection>
-        <h1>gosmoke vapeshop</h1>
+        <h1>VapeGo vapeshop</h1>
         <p>
           Doświadczenie którego nie da się zastąpić- łaczymy pasję, wiedzę i
           indywidualne podejście do każdego klienta
@@ -221,10 +221,10 @@ const Home = () => {
           <S.Shop>
             <h2>oława</h2>
             <p>
-              <strong>Tel: </strong>691 058 637
+              <strong>Tel: </strong>123 456 789
             </p>
             <p>
-              <strong>Email: </strong>vape.gosmoke@gmail.com
+              <strong>Email: </strong>demo.vapeshop@gmail.com
             </p>
             <p>
               <strong>Lokalizacja: </strong>Pl Gimnazjalny 9, Oława
@@ -252,10 +252,10 @@ const Home = () => {
           <S.Shop>
             <h2>Strzelin</h2>
             <p>
-              <strong>Tel: </strong>660 863 739
+              <strong>Tel: </strong>123 456 789
             </p>
             <p>
-              <strong>Email: </strong>vape.gosmoke@gmail.com
+              <strong>Email: </strong>demo.vapeshop@gmail.com
             </p>
             <p>
               <strong>Lokalizacja: </strong>Rynek 2a, 57-100 Strzelin

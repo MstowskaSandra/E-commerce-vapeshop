@@ -24,7 +24,7 @@ const Nav = () => {
     <S.NavContainer>
       <S.LogoWrapper to="/">
         <img src={Logo} alt="GoSmoke Logo" />
-        <span>GoSmoke</span>
+        <span>VapeGo</span>
       </S.LogoWrapper>
 
       <S.Menu>

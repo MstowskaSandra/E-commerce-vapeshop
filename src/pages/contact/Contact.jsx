@@ -13,10 +13,10 @@ const Contact = () => (
       <S.Shop>
         <h2>oława</h2>
         <p>
-          <strong>Tel: </strong>691 058 637
+          <strong>Tel: </strong>123 456 789
         </p>
         <p>
-          <strong>Email: </strong>vape.gosmoke@gmail.com
+          <strong>Email: </strong>demo.vapeshop@gmail.com
         </p>
         <p>
           <strong>Lokalizacja: </strong>Pl Gimnazjalny 9, Oława
@@ -44,10 +44,10 @@ const Contact = () => (
       <S.Shop>
         <h2>Strzelin</h2>
         <p>
-          <strong>Tel: </strong>660 863 739
+          <strong>Tel: </strong>123 456 789
         </p>
         <p>
-          <strong>Email: </strong>vape.gosmoke@gmail.com
+          <strong>Email: </strong>demo.vapeshop@gmail.com
         </p>
         <p>
           <strong>Lokalizacja: </strong>Rynek 2a, 57-100 Strzelin
