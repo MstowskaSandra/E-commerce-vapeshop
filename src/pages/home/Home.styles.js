@@ -727,10 +727,6 @@ export const Shops = styled.section`
   @media (max-width: ${breakpoints.laptop}) {
     grid-template-columns: 1fr;
   }
-
-  @media (max-width: ${breakpoints.laptop}) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 export const Shop = styled.div`

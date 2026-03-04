@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
+
+     @media (max-width: 768px) {
+      background-attachment: scroll;
+    }
   }
 
 

@@ -3,6 +3,7 @@ import GlobalStyles from "./styles/GlobalStyles.js";
 import PersistedProvider from "./components/PersistedProvider.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { useAgeVerification } from "./hooks/useAgeVerification.js";
 
 import Nav from "./components/nav/Nav.jsx";
 import Footer from "./components/footer/Footer.jsx";
@@ -11,6 +12,7 @@ import OrderForm from "./components/orderForm/OrderForm.jsx";
 import PodList from "./components/productList/PodList.jsx";
 import ProductList from "./components/productList/ProductList.jsx";
 import ProductDetails from "./components/productDetails/ProductDetails.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 import Home from "./pages/home/Home.jsx";
 import Products from "./pages/products/Products.jsx";
@@ -18,10 +20,7 @@ import Stores from "./pages/stores/Stores.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import OrderSummary from "./pages/summary/OrderSummary.jsx";
-
-import { useAgeVerification } from "./hooks/useAgeVerification.js";
 import NotFound from "./pages/notFound/NotFound.jsx";
-import ScrollToTop from "./components/ScrollToTop.jsx";
 
 
 function App() {
