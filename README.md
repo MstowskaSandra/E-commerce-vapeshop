@@ -1,5 +1,5 @@
 🛍️ **E-commerce Vape Shop**
-(public/web-mock.png)
+![Mockup](public/web-mock.png)
 A modern e-commerce application built with **React** and **Strapi CMS**.
 Originally developed as a commercial project for a client.
 The project was paused due to legal requirements on the client side.
