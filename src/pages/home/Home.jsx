@@ -74,14 +74,14 @@ const Home = () => {
   return (
     <S.Home>
       <S.TitleSection>
-        <h1>VapeGo vapeshop</h1>
+        <h1 data-text="VapeGo vapeshop">VapeGo vapeshop</h1>
         <p>
-          Doświadczenie którego nie da się zastąpić- łaczymy pasję, wiedzę i
+          Doświadczenie którego nie da się zastąpić- łączymy pasję, wiedzę i
           indywidualne podejście do każdego klienta
         </p>
         <p>Sprawdź nas</p>
         <S.ArrowWrapper>
-          <ArrowDown size={48} strokeWidth={2} />
+          <ArrowDown strokeWidth={2} />
         </S.ArrowWrapper>
       </S.TitleSection>
 

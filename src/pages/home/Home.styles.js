@@ -16,13 +16,14 @@ export const TitleSection = styled.section`
   gap: 1.5rem;
   width: 100%;
   min-height: 80vh;
-  padding: 6rem 1rem;
+  padding: 6rem 2rem;
   text-align: center;
 
   h1 {
     font-family: "Barlow Semi Condensed", sans-serif;
-    font-size: 2.4rem;
-    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    font-weight: 700;
     text-transform: uppercase;
     background: linear-gradient(
       90deg,
@@ -34,36 +35,18 @@ export const TitleSection = styled.section`
     -webkit-background-clip: text;
     color: transparent;
     background-size: 200% auto;
-    animation: gradientMove 6s ease infinite;
+    animation: gradientMove 8s ease infinite;
   }
 
   p {
-    max-width: 40rem;
+    max-width: 70%;
     font-family: "Barlow", sans-serif;
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    line-height: 1.7;
+    font-weight: 400;
   }
-
-  @media (min-width: ${breakpoints.tablet}) {
-    padding: 8rem 3rem;
-
-    h1 {
-      font-size: 3.5rem;
-    }
-
-    p {
-      font-size: 1.8rem;
-    }
-  }
-
-  @media (min-width: ${breakpoints.laptop}) {
-    h1 {
-      font-size: 4rem;
-    }
-
-    p {
-      font-size: 1.4rem;
-    }
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 3rem 1.5rem;
   }
 
   @keyframes gradientMove {
@@ -85,15 +68,8 @@ export const ArrowWrapper = styled.div`
   opacity: 0.7;
 
   svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  @media (min-width: ${breakpoints.tablet}) {
-    svg {
-      width: 48px;
-      height: 48px;
-    }
+    width: 48px;
+    height: 48px;
   }
 
   @keyframes floatDown {
@@ -847,7 +823,7 @@ export const Group = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 
   @media (max-width: ${breakpoints.laptop}) {
     width: 100%;
@@ -860,8 +836,8 @@ export const Photo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20rem;
-  width: 15rem;
+  width: clamp(14rem, 20vw, 20rem);
+  aspect-ratio: 1;
   animation: fadeUp both;
   animation-timeline: smooth view(20% 10%);
 
@@ -884,6 +860,7 @@ export const Photo = styled.div`
     border-radius: 16px;
     border: 1px solid gray;
     box-shadow: 8px 8px 10px black;
+    image-rendering: -webkit-optimize-contrast;
 
     &:hover {
       transform: scale(1.2);
