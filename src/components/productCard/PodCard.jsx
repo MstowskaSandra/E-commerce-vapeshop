@@ -7,10 +7,9 @@ import toast from "react-hot-toast";
 const PodCard = ({ pod }) => {
   const dispatch = useDispatch();
   const price = pod.Price || "Brak ceny";
-
-  const imageUrl = pod.Image?.[0]?.url
-    ? `${import.meta.env.VITE_STRAPI_URL}${pod.Image[0].url}`
-    : "/placeholder.jpg";
+  const image = pod.Image?.[0] || {};
+  const imageUrl =
+    image?.formats?.medium?.url || image?.formats?.large?.url || image?.url;
 
   const handleAddToCart = (e) => {
     e.preventDefault();

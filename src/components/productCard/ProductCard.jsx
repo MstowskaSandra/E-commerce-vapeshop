@@ -18,15 +18,14 @@ const ProductCard = ({ product }) => {
     });
   };
 
+  const imageUrl =
+    image?.formats?.medium?.url || image?.formats?.large?.url || image?.url;
+
   return (
     <Link to={`/products/${product.slug}`}>
       <S.ProductContainer>
         <S.ProductImage>
-          <img
-            src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
-            alt={product.Title}
-            loading="lazy"
-          />
+          <img src={imageUrl} alt={product.Title} loading="lazy" />
         </S.ProductImage>
         <h3>{product.Title}</h3>
         <S.ProductInfo>

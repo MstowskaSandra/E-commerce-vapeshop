@@ -2,15 +2,13 @@ import * as S from './CartItem.styles';
 
 const CartItem = ({ item, onIncrement, onDecrement, onRemove }) => {
   const image = item.Image?.[0] || {};
+  const imageUrl =
+    image?.formats?.medium?.url || image?.formats?.large?.url || image?.url;
   const title = item.Model ? item.Model : item.Title || item.Brand;
 
   return (
     <S.CartItemLi>
-      <img
-        src={`${import.meta.env.VITE_STRAPI_URL}${image.url}`}
-        alt={title}
-        width="80"
-      />
+      <img src={imageUrl} alt={title} width="80" />
       <S.Content>
         <h3>{title}</h3>
 

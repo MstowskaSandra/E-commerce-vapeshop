@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "http://localhost:1337/api/reviews?populate=*";
+const API_URL =
+  "https://grounded-renewal-b14c2059a0.strapiapp.com/api/reviews?populate=*";
 
 export const useReviews = () => {
   const [reviews, setReviews] = useState([]);
