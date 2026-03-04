@@ -677,11 +677,9 @@ export const ShopSection = styled.section`
   flex-direction: column;
   gap: 3rem;
   background: transparent;
-  /* backdrop-filter: blur(10px); */
   width: 100%;
   min-height: 75vh;
   padding: 8rem 0;
-  outline: 3px solid blue;
 
   h2 {
     margin-top: 8rem;
@@ -720,10 +718,10 @@ export const Shops = styled.div`
   max-width: 1200px;
   min-width: 0;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   padding: 4rem 2rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
 
   @media (max-width: ${breakpoints.laptop}) {
@@ -734,6 +732,7 @@ export const Shops = styled.div`
 export const Shop = styled.div`
   background-color: #231b26;
   border-radius: 16px;
+  min-width: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;

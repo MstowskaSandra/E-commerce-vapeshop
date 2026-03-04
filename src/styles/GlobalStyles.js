@@ -21,7 +21,6 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: white;
-    outline: 3px solid red;
   }
 
   body::before {
