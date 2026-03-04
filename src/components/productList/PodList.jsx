@@ -1,15 +1,15 @@
 import * as S from "./ProductList.styles";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../filters/Filters";
 import PodCard from "../../components/productCard/PodCard";
 import Pagination from "../pagination/Pagination";
 
 const PodList = () => {
-  const [loading, setLoading] = useState(true);
   const {
     items: pods,
     error,
+    loading,
     filters,
     setFilters,
     page,
@@ -23,12 +23,6 @@ const PodList = () => {
       behavior: "smooth",
     });
   }, [page]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
 
   if (error) return <div>Błąd: {error.message}</div>;
 

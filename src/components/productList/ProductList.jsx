@@ -1,16 +1,15 @@
 import * as S from "./ProductList.styles";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCollectionItems } from "../../hooks/useCollectionItems";
 import Filters from "../../components/filters/Filters";
 import ProductCard from "../productCard/ProductCard";
 import Pagination from "../pagination/Pagination";
 
 const ProductList = () => {
-  const [loading, setLoading] = useState(true);
-
   const {
     items: products,
     error,
+    loading,
     filters,
     setFilters,
     page,
@@ -24,12 +23,6 @@ const ProductList = () => {
       behavior: "smooth",
     });
   }, [page]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
 
   if (error) return <div className="error">Błąd: {error.message}</div>;
 
