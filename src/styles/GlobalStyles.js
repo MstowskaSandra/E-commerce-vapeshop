@@ -33,8 +33,10 @@ const GlobalStyles = createGlobalStyle`
     background-attachment: fixed;
     position: relative;
 
-     @media (max-width: 768px) {
-      background-attachment: scroll;
+    @supports (-webkit-touch-callout: none) {
+      @media (max-width: 768px) {
+        background-attachment: scroll !important;
+      }
     }
   }
 
