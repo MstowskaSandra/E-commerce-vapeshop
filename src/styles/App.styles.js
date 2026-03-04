@@ -7,11 +7,15 @@ export const Body = styled.div`
 `;
 
 export const Main = styled.main`
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
   max-width: 100%;
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
 `;

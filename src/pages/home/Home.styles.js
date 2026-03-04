@@ -718,7 +718,8 @@ export const ShopSection = styled.section`
 
 export const Shops = styled.div`
   max-width: 1200px;
-  width: 80%;
+  min-width: 0;
+  width: 100%;
   margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;
