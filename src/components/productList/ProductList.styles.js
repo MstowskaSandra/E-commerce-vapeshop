@@ -61,14 +61,15 @@ export const ProductsContainer = styled.div`
 export const ProductsGrid = styled.div`
   display: grid;
   width: 100%;
+  min-width: 0;
   gap: 2rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   @media (min-width: ${breakpoints.tablet}) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   @media (min-width: ${breakpoints.laptop}) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 `;
