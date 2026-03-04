@@ -54,7 +54,7 @@ export const ProductsContainer = styled.div`
   gap: 2rem;
 
   @media (max-width: ${breakpoints.mobile}) {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 `;
 
@@ -62,11 +62,12 @@ export const ProductsGrid = styled.div`
   display: grid;
   width: 100%;
   min-width: 0;
-  gap: 2rem;
+  gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 
   @media (min-width: ${breakpoints.tablet}) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
   }
 
   @media (min-width: ${breakpoints.laptop}) {
