@@ -677,10 +677,11 @@ export const ShopSection = styled.section`
   flex-direction: column;
   gap: 3rem;
   background: transparent;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   width: 100%;
   min-height: 75vh;
   padding: 8rem 0;
+  outline: 3px solid blue;
 
   h2 {
     margin-top: 8rem;
@@ -715,9 +716,9 @@ export const ShopSection = styled.section`
   }
 `;
 
-export const Shops = styled.section`
+export const Shops = styled.div`
   max-width: 1200px;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;

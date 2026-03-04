@@ -20,27 +20,8 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100dvh;
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    /* line-height: 1.5; */
     color: white;
-    /* background-image: 
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,0) 0%,
-        rgba(0,0,0,0) 40vh,
-        rgba(0,0,0,1.5) 100vh
-      ),
-      url(${BackgroundJPG});
-    background-size: cover;      
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-
-    @supports (-webkit-touch-callout: none) {
-      @media (max-width: 768px) {
-        background-attachment: scroll !important;
-      }
-    } */
+    outline: 3px solid red;
   }
 
   body::before {
