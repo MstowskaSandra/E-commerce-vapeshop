@@ -39,11 +39,12 @@ export const TitleSection = styled.section`
 
 export const ShopsSection = styled.section`
   max-width: 1200px;
+  min-width: 0;
   width: 100%;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  margin: 0;
+  padding: 4rem 1rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
 
   @media (max-width: ${breakpoints.laptop}) {
@@ -54,6 +55,7 @@ export const ShopsSection = styled.section`
 export const Shop = styled.div`
   background-color: #231b26;
   border-radius: 16px;
+  min-width: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -89,8 +91,12 @@ export const Shop = styled.div`
 
   iframe {
     margin-top: 2rem;
-    justify-self: center;
     align-self: center;
+    width: 100%;
+    max-width: 100%;
+    height: 18.75rem;
+    border: 0;
+    border-radius: 20px;
   }
 `;
 

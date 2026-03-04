@@ -719,7 +719,7 @@ export const Shops = styled.div`
   min-width: 0;
   width: 100%;
   margin: 0;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 3rem;
