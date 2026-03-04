@@ -264,7 +264,6 @@ const Home = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.7343917577955!2d17.0714203!3d50.7804971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fd5fada2e23c1%3A0x9a1f870b5acb75e8!2sGoSmoke%20Strzelin!5e0!3m2!1sen!2spl!4v1770054731574!5m2!1sen!2spl"
               width="80%"
               height="300"
-              style={{ border: 0, borderRadius: "20px" }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

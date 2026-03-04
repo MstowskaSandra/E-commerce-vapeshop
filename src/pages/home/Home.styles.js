@@ -769,8 +769,12 @@ export const Shop = styled.div`
 
   iframe {
     margin-top: 2rem;
-    justify-self: center;
     align-self: center;
+    width: 100%;
+    max-width: 100%;
+    height: 18.75rem;
+    border: 0;
+    border-radius: 20px;
   }
 `;
 
