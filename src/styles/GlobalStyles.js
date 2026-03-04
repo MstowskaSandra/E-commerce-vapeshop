@@ -12,14 +12,17 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 16px;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
-    min-height: 100vh;
+     position: relative;
+    min-height: 100dvh;
+    overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.5;
+    /* line-height: 1.5; */
     color: white;
-    background-image: 
+    /* background-image: 
       linear-gradient(
         to bottom,
         rgba(0,0,0,0) 0%,
@@ -37,13 +40,29 @@ const GlobalStyles = createGlobalStyle`
       @media (max-width: 768px) {
         background-attachment: scroll !important;
       }
-    }
+    } */
   }
+
+  body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(
+          to bottom,
+          rgba(0,0,0,0) 0%,
+          rgba(0,0,0,0) 40vh,
+          rgba(0,0,0,1) 100vh
+        ),
+        url(${BackgroundJPG});
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
 
 
   #root {
-    min-height: 100vh;
-    max-width: 100%;
+    min-height: 100dvh;
     width: 100%;
   }
 
